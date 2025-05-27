@@ -211,7 +211,7 @@ export const Settings: React.FC<SettingsProps> = () => {
         <div className="flex items-center justify-between p-4">
           <div className="flex items-center space-x-4">
             <h1 className="text-xl font-extralight tracking-widest">Einstellungen</h1>
-            <span className="text-xs align-top ml-2 text-amber-100">V0.824</span>
+            <span className="text-xs align-top ml-2 text-amber-100">V0.825</span>
           </div>
           <div className="flex items-center space-x-2">
             {hasChanges && (

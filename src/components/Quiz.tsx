@@ -225,10 +225,10 @@ export const Quiz: React.FC<QuizProps> = ({
       </div>
 
       {/* Quiz Card - Vollbild optimiert */}
-      <div className="flex-1 flex flex-col justify-center px-6 py-8">
-        <div className="bg-gradient-to-br from-amber-25 via-stone-25 to-amber-50 rounded-3xl shadow-2xl p-8 mx-auto w-full max-w-lg border border-amber-100/80" style={{ backgroundColor: '#fefdfb' }}>
+      <div className="flex-1 flex flex-col justify-center px-6 py-4">
+        <div className="bg-gradient-to-br from-amber-25 via-stone-25 to-amber-50 rounded-3xl shadow-2xl p-6 mx-auto w-full max-w-lg border border-amber-100/80" style={{ backgroundColor: '#fefdfb' }}>
           {/* Abfragerichtung Indikator - Klar als Info-Badge */}
-          <div className="text-center mb-8">
+          <div className="text-center mb-6">
             <div className="inline-flex items-center px-5 py-2 bg-stone-100/80 text-stone-600 text-sm font-light rounded-full border border-stone-200/60 shadow-sm">
               <div className="w-2 h-2 bg-amber-600 rounded-full mr-3 opacity-80"></div>
               {currentDirection === 'jp-to-de' && 'Japanisch → Deutsch'}
@@ -238,7 +238,7 @@ export const Quiz: React.FC<QuizProps> = ({
           </div>
 
           {/* Frage - Prominenter */}
-          <div className="text-center mb-12">
+          <div className="text-center mb-6">
             {currentDirection === 'jp-to-de' && (
               <div className="flex flex-row items-end justify-center gap-6">
                 <div className="text-6xl font-extralight text-stone-800 leading-tight" style={{ fontFamily: 'serif' }}>
@@ -250,35 +250,40 @@ export const Quiz: React.FC<QuizProps> = ({
                 </div>
               </div>
             )}
-            
             {currentDirection === 'de-to-jp' && (
-              <div className="flex flex-row items-end justify-center gap-6">
+              !showAnswer ? (
                 <div className="text-4xl font-light text-stone-800 leading-tight tracking-wide">
                   {currentVocab.de}
                 </div>
-                <div className="flex flex-col items-start justify-center gap-1">
+              ) : (
+                <div className="flex flex-row items-end justify-center gap-6">
                   <div className="text-3xl font-extralight text-stone-800" style={{ fontFamily: 'serif' }}>{currentVocab.kanji}</div>
-                  <div className="text-2xl text-stone-700 font-light">{currentVocab.kana}</div>
-                  <div className="text-lg text-stone-500 font-light">{currentVocab.romaji}</div>
+                  <div className="flex flex-col items-start justify-center gap-1">
+                    <div className="text-2xl text-stone-700 font-light">{currentVocab.kana}</div>
+                    <div className="text-lg text-stone-500 font-light">{currentVocab.romaji}</div>
+                  </div>
                 </div>
-              </div>
+              )
             )}
-            
             {currentDirection === 'kanji-to-reading' && (
-              <div className="flex flex-row items-end justify-center gap-6">
+              !showAnswer ? (
                 <div className="text-7xl font-extralight text-stone-800 leading-tight" style={{ fontFamily: 'serif' }}>
                   {currentVocab.kanji}
                 </div>
-                <div className="flex flex-col items-start justify-center gap-1">
-                  <div className="text-3xl font-light text-amber-800 tracking-wide">{currentVocab.kana}</div>
-                  <div className="text-2xl text-stone-600 font-light">{currentVocab.romaji}</div>
+              ) : (
+                <div className="flex flex-row items-end justify-center gap-6">
+                  <div className="flex flex-col items-center justify-center gap-1">
+                    <div className="text-3xl font-light text-amber-800 tracking-wide">{currentVocab.kana}</div>
+                    <div className="text-2xl text-stone-600 font-light">{currentVocab.romaji}</div>
+                    <div className="text-lg text-stone-500 font-light mt-2">{currentVocab.de}</div>
+                  </div>
                 </div>
-              </div>
+              )
             )}
           </div>
 
           {/* Answer Section - Größer und zentraler */}
-          <div className="border-t border-amber-200/60 pt-8">
+          <div className="border-t border-amber-200/60 pt-6">
             <div className="text-center mb-6">
               <h3 className="text-lg font-light text-stone-700 mb-4 tracking-wide">
                 {currentDirection === 'jp-to-de' && 'Deutsche Bedeutung:'}
@@ -318,11 +323,7 @@ export const Quiz: React.FC<QuizProps> = ({
                     </>
                   )}
                   {currentDirection === 'kanji-to-reading' && (
-                    <>
-                      <div className="text-3xl font-light text-amber-800 mb-2 tracking-wide">{currentVocab.kana}</div>
-                      <div className="text-2xl text-stone-600 mb-3 font-light">{currentVocab.romaji}</div>
-                      <div className="text-lg text-stone-500 font-light">({currentVocab.de})</div>
-                    </>
+                    <></>
                   )}
                 </div>
               ) : (
