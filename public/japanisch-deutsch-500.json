@@ -1,0 +1,7512 @@
+{
+  "meta": {
+    "setId": "jp-basic-2025",
+    "total_cards": 500,
+    "created": "2025-05-18",
+    "lastUpdated": "2025-05-26T14:35:13.472Z",
+    "sm2Enabled": true,
+    "version": "2.0"
+  },
+  "cards": [
+    {
+      "id": "basic-1",
+      "kanji": "犬",
+      "kana": "いぬ",
+      "romaji": "inu",
+      "de": "Hund",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-2",
+      "kanji": "猫",
+      "kana": "ねこ",
+      "romaji": "neko",
+      "de": "Katze",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-3",
+      "kanji": "人",
+      "kana": "ひと",
+      "romaji": "hito",
+      "de": "Mensch",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-4",
+      "kanji": "子供",
+      "kana": "こども",
+      "romaji": "kodomo",
+      "de": "Kind",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-5",
+      "kanji": "学校",
+      "kana": "がっこう",
+      "romaji": "gakkō",
+      "de": "Schule",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-6",
+      "kanji": "先生",
+      "kana": "せんせい",
+      "romaji": "sensei",
+      "de": "Lehrer",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-7",
+      "kanji": "車",
+      "kana": "くるま",
+      "romaji": "kuruma",
+      "de": "Auto",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-8",
+      "kanji": "山",
+      "kana": "やま",
+      "romaji": "yama",
+      "de": "Berg",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-9",
+      "kanji": "川",
+      "kana": "かわ",
+      "romaji": "kawa",
+      "de": "Fluss",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-10",
+      "kanji": "海",
+      "kana": "うみ",
+      "romaji": "umi",
+      "de": "Meer",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-11",
+      "kanji": "空",
+      "kana": "そら",
+      "romaji": "sora",
+      "de": "Himmel",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-12",
+      "kanji": "花",
+      "kana": "はな",
+      "romaji": "hana",
+      "de": "Blume",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-13",
+      "kanji": "木",
+      "kana": "き",
+      "romaji": "ki",
+      "de": "Baum",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-14",
+      "kanji": "雨",
+      "kana": "あめ",
+      "romaji": "ame",
+      "de": "Regen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-15",
+      "kanji": "雪",
+      "kana": "ゆき",
+      "romaji": "yuki",
+      "de": "Schnee",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-16",
+      "kanji": "風",
+      "kana": "かぜ",
+      "romaji": "kaze",
+      "de": "Wind",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-17",
+      "kanji": "日",
+      "kana": "ひ",
+      "romaji": "hi",
+      "de": "Tag/Sonne",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-18",
+      "kanji": "月",
+      "kana": "つき",
+      "romaji": "tsuki",
+      "de": "Mond/Monat",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-19",
+      "kanji": "火",
+      "kana": "ひ",
+      "romaji": "hi",
+      "de": "Feuer",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-20",
+      "kanji": "水",
+      "kana": "みず",
+      "romaji": "mizu",
+      "de": "Wasser",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-21",
+      "kanji": "金",
+      "kana": "きん",
+      "romaji": "kin",
+      "de": "Gold/Geld/Freitag",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-22",
+      "kanji": "土",
+      "kana": "つち",
+      "romaji": "tsuchi",
+      "de": "Erde/Samstag",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-23",
+      "kanji": "電話",
+      "kana": "でんわ",
+      "romaji": "denwa",
+      "de": "Telefon",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-24",
+      "kanji": "電車",
+      "kana": "でんしゃ",
+      "romaji": "densha",
+      "de": "Zug",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-25",
+      "kanji": "駅",
+      "kana": "えき",
+      "romaji": "eki",
+      "de": "Bahnhof",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-26",
+      "kanji": "食べる",
+      "kana": "たべる",
+      "romaji": "taberu",
+      "de": "essen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-27",
+      "kanji": "飲む",
+      "kana": "のむ",
+      "romaji": "nomu",
+      "de": "trinken",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-28",
+      "kanji": "見る",
+      "kana": "みる",
+      "romaji": "miru",
+      "de": "sehen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-29",
+      "kanji": "聞く",
+      "kana": "きく",
+      "romaji": "kiku",
+      "de": "hören/fragen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-30",
+      "kanji": "話す",
+      "kana": "はなす",
+      "romaji": "hanasu",
+      "de": "sprechen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-31",
+      "kanji": "行く",
+      "kana": "いく",
+      "romaji": "iku",
+      "de": "gehen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-32",
+      "kanji": "来る",
+      "kana": "くる",
+      "romaji": "kuru",
+      "de": "kommen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-33",
+      "kanji": "する",
+      "kana": "する",
+      "romaji": "suru",
+      "de": "machen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-34",
+      "kanji": "ある",
+      "kana": "ある",
+      "romaji": "aru",
+      "de": "sein (Dinge)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-35",
+      "kanji": "いる",
+      "kana": "いる",
+      "romaji": "iru",
+      "de": "sein (Lebewesen)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-36",
+      "kanji": "買う",
+      "kana": "かう",
+      "romaji": "kau",
+      "de": "kaufen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-37",
+      "kanji": "売る",
+      "kana": "うる",
+      "romaji": "uru",
+      "de": "verkaufen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-38",
+      "kanji": "読む",
+      "kana": "よむ",
+      "romaji": "yomu",
+      "de": "lesen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-39",
+      "kanji": "書く",
+      "kana": "かく",
+      "romaji": "kaku",
+      "de": "schreiben",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-40",
+      "kanji": "立つ",
+      "kana": "たつ",
+      "romaji": "tatsu",
+      "de": "stehen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-41",
+      "kanji": "座る",
+      "kana": "すわる",
+      "romaji": "suwaru",
+      "de": "sitzen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-42",
+      "kanji": "走る",
+      "kana": "はしる",
+      "romaji": "hashiru",
+      "de": "laufen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-43",
+      "kanji": "歩く",
+      "kana": "あるく",
+      "romaji": "aruku",
+      "de": "gehen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-44",
+      "kanji": "入る",
+      "kana": "はいる",
+      "romaji": "hairu",
+      "de": "eintreten",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-45",
+      "kanji": "出る",
+      "kana": "でる",
+      "romaji": "deru",
+      "de": "hinausgehen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-46",
+      "kanji": "起きる",
+      "kana": "おきる",
+      "romaji": "okiru",
+      "de": "aufstehen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-47",
+      "kanji": "寝る",
+      "kana": "ねる",
+      "romaji": "neru",
+      "de": "schlafen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-48",
+      "kanji": "開ける",
+      "kana": "あける",
+      "romaji": "akeru",
+      "de": "öffnen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-49",
+      "kanji": "閉める",
+      "kana": "しめる",
+      "romaji": "shimeru",
+      "de": "schließen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-50",
+      "kanji": "大きい",
+      "kana": "おおきい",
+      "romaji": "ōkii",
+      "de": "groß",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-51",
+      "kanji": "小さい",
+      "kana": "ちいさい",
+      "romaji": "chiisai",
+      "de": "klein",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-52",
+      "kanji": "新しい",
+      "kana": "あたらしい",
+      "romaji": "atarashii",
+      "de": "neu",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-53",
+      "kanji": "古い",
+      "kana": "ふるい",
+      "romaji": "furui",
+      "de": "alt",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-54",
+      "kanji": "早い",
+      "kana": "はやい",
+      "romaji": "hayai",
+      "de": "schnell/früh",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-55",
+      "kanji": "遅い",
+      "kana": "おそい",
+      "romaji": "osoi",
+      "de": "langsam/spät",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-56",
+      "kanji": "高い",
+      "kana": "たかい",
+      "romaji": "takai",
+      "de": "hoch/teuer",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-57",
+      "kanji": "低い",
+      "kana": "ひくい",
+      "romaji": "hikui",
+      "de": "niedrig",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-58",
+      "kanji": "安い",
+      "kana": "やすい",
+      "romaji": "yasui",
+      "de": "billig",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-59",
+      "kanji": "暑い",
+      "kana": "あつい",
+      "romaji": "atsui",
+      "de": "heiß",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-60",
+      "kanji": "寒い",
+      "kana": "さむい",
+      "romaji": "samui",
+      "de": "kalt",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-61",
+      "kanji": "明るい",
+      "kana": "あかるい",
+      "romaji": "akarui",
+      "de": "hell",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-62",
+      "kanji": "暗い",
+      "kana": "くらい",
+      "romaji": "kurai",
+      "de": "dunkel",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-63",
+      "kanji": "白い",
+      "kana": "しろい",
+      "romaji": "shiroi",
+      "de": "weiß",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-64",
+      "kanji": "黒い",
+      "kana": "くろい",
+      "romaji": "kuroi",
+      "de": "schwarz",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-65",
+      "kanji": "赤い",
+      "kana": "あかい",
+      "romaji": "akai",
+      "de": "rot",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-66",
+      "kanji": "青い",
+      "kana": "あおい",
+      "romaji": "aoi",
+      "de": "blau",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-67",
+      "kanji": "緑",
+      "kana": "みどり",
+      "romaji": "midori",
+      "de": "grün",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-68",
+      "kanji": "茶色",
+      "kana": "ちゃいろ",
+      "romaji": "chairo",
+      "de": "braun",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-69",
+      "kanji": "零",
+      "kana": "れい",
+      "romaji": "rei",
+      "de": "null",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-70",
+      "kanji": "一",
+      "kana": "いち",
+      "romaji": "ichi",
+      "de": "eins",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-71",
+      "kanji": "二",
+      "kana": "に",
+      "romaji": "ni",
+      "de": "zwei",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-72",
+      "kanji": "三",
+      "kana": "さん",
+      "romaji": "san",
+      "de": "drei",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-73",
+      "kanji": "四",
+      "kana": "よん",
+      "romaji": "yon",
+      "de": "vier",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-74",
+      "kanji": "五",
+      "kana": "ご",
+      "romaji": "go",
+      "de": "fünf",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-75",
+      "kanji": "六",
+      "kana": "ろく",
+      "romaji": "roku",
+      "de": "sechs",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-76",
+      "kanji": "七",
+      "kana": "なな",
+      "romaji": "nana",
+      "de": "sieben",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-77",
+      "kanji": "八",
+      "kana": "はち",
+      "romaji": "hachi",
+      "de": "acht",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-78",
+      "kanji": "九",
+      "kana": "きゅう",
+      "romaji": "kyū",
+      "de": "neun",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-79",
+      "kanji": "十",
+      "kana": "じゅう",
+      "romaji": "jū",
+      "de": "zehn",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-80",
+      "kanji": "百",
+      "kana": "ひゃく",
+      "romaji": "hyaku",
+      "de": "hundert",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-81",
+      "kanji": "千",
+      "kana": "せん",
+      "romaji": "sen",
+      "de": "tausend",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-82",
+      "kanji": "万",
+      "kana": "まん",
+      "romaji": "man",
+      "de": "zehntausend",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-83",
+      "kanji": "今日",
+      "kana": "きょう",
+      "romaji": "kyō",
+      "de": "heute",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-84",
+      "kanji": "昨日",
+      "kana": "きのう",
+      "romaji": "kinō",
+      "de": "gestern",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-85",
+      "kanji": "明日",
+      "kana": "あした",
+      "romaji": "ashita",
+      "de": "morgen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-86",
+      "kanji": "今",
+      "kana": "いま",
+      "romaji": "ima",
+      "de": "jetzt",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-87",
+      "kanji": "時間",
+      "kana": "じかん",
+      "romaji": "jikan",
+      "de": "Zeit",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-88",
+      "kanji": "分",
+      "kana": "ふん",
+      "romaji": "fun",
+      "de": "Minute",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-89",
+      "kanji": "午前",
+      "kana": "ごぜん",
+      "romaji": "gozen",
+      "de": "Vormittag",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-90",
+      "kanji": "午後",
+      "kana": "ごご",
+      "romaji": "gogo",
+      "de": "Nachmittag",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-91",
+      "kanji": "今年",
+      "kana": "ことし",
+      "romaji": "kotoshi",
+      "de": "dieses Jahr",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-92",
+      "kanji": "来年",
+      "kana": "らいねん",
+      "romaji": "rainen",
+      "de": "nächstes Jahr",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-93",
+      "kanji": "去年",
+      "kana": "きょねん",
+      "romaji": "kyonen",
+      "de": "letztes Jahr",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-94",
+      "kanji": "春",
+      "kana": "はる",
+      "romaji": "haru",
+      "de": "Frühling",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-95",
+      "kanji": "夏",
+      "kana": "なつ",
+      "romaji": "natsu",
+      "de": "Sommer",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-96",
+      "kanji": "秋",
+      "kana": "あき",
+      "romaji": "aki",
+      "de": "Herbst",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-97",
+      "kanji": "冬",
+      "kana": "ふゆ",
+      "romaji": "fuyu",
+      "de": "Winter",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-98",
+      "kanji": "友達",
+      "kana": "ともだち",
+      "romaji": "tomodachi",
+      "de": "Freund",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-99",
+      "kanji": "家族",
+      "kana": "かぞく",
+      "romaji": "kazoku",
+      "de": "Familie",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-100",
+      "kanji": "木曜日",
+      "kana": "もくようび",
+      "romaji": "mokuyōbi",
+      "de": "Donnerstag",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-101",
+      "kanji": "火曜日",
+      "kana": "かようび",
+      "romaji": "kayōbi",
+      "de": "Dienstag",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-102",
+      "kanji": "月曜日",
+      "kana": "げつようび",
+      "romaji": "getsuyōbi",
+      "de": "Montag",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-103",
+      "kanji": "金曜日",
+      "kana": "きんようび",
+      "romaji": "kin'yōbi",
+      "de": "Freitag",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-104",
+      "kanji": "水曜日",
+      "kana": "すいようび",
+      "romaji": "suiyōbi",
+      "de": "Mittwoch",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-105",
+      "kanji": "土曜日",
+      "kana": "どようび",
+      "romaji": "doyōbi",
+      "de": "Samstag",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-106",
+      "kanji": "日曜日",
+      "kana": "にちようび",
+      "romaji": "nichiyōbi",
+      "de": "Sonntag",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-107",
+      "kanji": "朝",
+      "kana": "あさ",
+      "romaji": "asa",
+      "de": "Morgen (Tageszeit)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-108",
+      "kanji": "昼",
+      "kana": "ひる",
+      "romaji": "hiru",
+      "de": "Mittag",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-109",
+      "kanji": "夜",
+      "kana": "よる",
+      "romaji": "yoru",
+      "de": "Nacht",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-110",
+      "kanji": "晩",
+      "kana": "ばん",
+      "romaji": "ban",
+      "de": "Abend",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-111",
+      "kanji": "食べ物",
+      "kana": "たべもの",
+      "romaji": "tabemono",
+      "de": "Lebensmittel",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-112",
+      "kanji": "飲み物",
+      "kana": "のみもの",
+      "romaji": "nomimono",
+      "de": "Getränk",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-113",
+      "kanji": "ご飯",
+      "kana": "ごはん",
+      "romaji": "gohan",
+      "de": "gekochter Reis, Mahlzeit",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-114",
+      "kanji": "パン",
+      "kana": "ぱん",
+      "romaji": "pan",
+      "de": "Brot",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-115",
+      "kanji": "肉",
+      "kana": "にく",
+      "romaji": "niku",
+      "de": "Fleisch",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-116",
+      "kanji": "魚",
+      "kana": "さかな",
+      "romaji": "sakana",
+      "de": "Fisch",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-117",
+      "kanji": "野菜",
+      "kana": "やさい",
+      "romaji": "yasai",
+      "de": "Gemüse",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-118",
+      "kanji": "果物",
+      "kana": "くだもの",
+      "romaji": "kudamono",
+      "de": "Obst",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-119",
+      "kanji": "水",
+      "kana": "みず",
+      "romaji": "mizu",
+      "de": "Wasser",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-120",
+      "kanji": "お茶",
+      "kana": "おちゃ",
+      "romaji": "ocha",
+      "de": "Tee",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-121",
+      "kanji": "牛乳",
+      "kana": "ぎゅうにゅう",
+      "romaji": "gyūnyū",
+      "de": "Milch",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-122",
+      "kanji": "ジュース",
+      "kana": "じゅーす",
+      "romaji": "jūsu",
+      "de": "Saft",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-123",
+      "kanji": "ビール",
+      "kana": "びーる",
+      "romaji": "bīru",
+      "de": "Bier",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-124",
+      "kanji": "酒",
+      "kana": "さけ",
+      "romaji": "sake",
+      "de": "Alkohol (meist Sake)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-125",
+      "kanji": "朝ご飯",
+      "kana": "あさごはん",
+      "romaji": "asagohan",
+      "de": "Frühstück",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-126",
+      "kanji": "昼ご飯",
+      "kana": "ひるごはん",
+      "romaji": "hirugohan",
+      "de": "Mittagessen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-127",
+      "kanji": "晩ご飯",
+      "kana": "ばんごはん",
+      "romaji": "bangohan",
+      "de": "Abendessen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-128",
+      "kanji": "店",
+      "kana": "みせ",
+      "romaji": "mise",
+      "de": "Laden, Geschäft",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-129",
+      "kanji": "レストラン",
+      "kana": "れすとらん",
+      "romaji": "resutoran",
+      "de": "Restaurant",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-130",
+      "kanji": "病院",
+      "kana": "びょういん",
+      "romaji": "byōin",
+      "de": "Krankenhaus",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-131",
+      "kanji": "銀行",
+      "kana": "ぎんこう",
+      "romaji": "ginkō",
+      "de": "Bank (Finanz)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-132",
+      "kanji": "郵便局",
+      "kana": "ゆうびんきょく",
+      "romaji": "yūbinkyoku",
+      "de": "Post",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-133",
+      "kanji": "図書館",
+      "kana": "としょかん",
+      "romaji": "toshokan",
+      "de": "Bibliothek",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-134",
+      "kanji": "本屋",
+      "kana": "ほんや",
+      "romaji": "hon'ya",
+      "de": "Buchladen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-135",
+      "kanji": "スーパー",
+      "kana": "すーぱー",
+      "romaji": "sūpā",
+      "de": "Supermarkt",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-136",
+      "kanji": "会社",
+      "kana": "かいしゃ",
+      "romaji": "kaisha",
+      "de": "Firma, Unternehmen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-137",
+      "kanji": "仕事",
+      "kana": "しごと",
+      "romaji": "shigoto",
+      "de": "Arbeit, Beruf",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-138",
+      "kanji": "店員",
+      "kana": "てんいん",
+      "romaji": "ten'in",
+      "de": "Verkäufer(in)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-139",
+      "kanji": "医者",
+      "kana": "いしゃ",
+      "romaji": "isha",
+      "de": "Arzt",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-140",
+      "kanji": "看護師",
+      "kana": "かんごし",
+      "romaji": "kangoshi",
+      "de": "Pflegekraft",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-141",
+      "kanji": "先生",
+      "kana": "せんせい",
+      "romaji": "sensei",
+      "de": "Lehrer",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-142",
+      "kanji": "学生",
+      "kana": "がくせい",
+      "romaji": "gakusei",
+      "de": "Student",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-143",
+      "kanji": "高校生",
+      "kana": "こうこうせい",
+      "romaji": "kōkōsei",
+      "de": "Oberschüler",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-144",
+      "kanji": "中学生",
+      "kana": "ちゅうがくせい",
+      "romaji": "chūgakusei",
+      "de": "Mittelschüler",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-145",
+      "kanji": "小学生",
+      "kana": "しょうがくせい",
+      "romaji": "shōgakusei",
+      "de": "Grundschüler",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-146",
+      "kanji": "年",
+      "kana": "とし",
+      "romaji": "toshi",
+      "de": "Jahr, Alter",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-147",
+      "kanji": "歳",
+      "kana": "さい",
+      "romaji": "sai",
+      "de": "… Jahre alt",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-148",
+      "kanji": "何",
+      "kana": "なに",
+      "romaji": "nani",
+      "de": "was",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-149",
+      "kanji": "誰",
+      "kana": "だれ",
+      "romaji": "dare",
+      "de": "wer",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-150",
+      "kanji": "どこ",
+      "kana": "どこ",
+      "romaji": "doko",
+      "de": "wo",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-151",
+      "kanji": "いつ",
+      "kana": "いつ",
+      "romaji": "itsu",
+      "de": "wann",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-152",
+      "kanji": "どう",
+      "kana": "どう",
+      "romaji": "dō",
+      "de": "wie",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-153",
+      "kanji": "なぜ",
+      "kana": "なぜ",
+      "romaji": "naze",
+      "de": "warum",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-154",
+      "kanji": "どれ",
+      "kana": "どれ",
+      "romaji": "dore",
+      "de": "welches (von mehreren)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-155",
+      "kanji": "どの",
+      "kana": "どの",
+      "romaji": "dono",
+      "de": "welches (mit Substantiv)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-156",
+      "kanji": "この",
+      "kana": "この",
+      "romaji": "kono",
+      "de": "dieses hier",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-157",
+      "kanji": "その",
+      "kana": "その",
+      "romaji": "sono",
+      "de": "dieses dort (nah beim Hörer)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-158",
+      "kanji": "あの",
+      "kana": "あの",
+      "romaji": "ano",
+      "de": "jenes dort (weiter entfernt)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-159",
+      "kanji": "私",
+      "kana": "わたし",
+      "romaji": "watashi",
+      "de": "ich (neutral)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-160",
+      "kanji": "僕",
+      "kana": "ぼく",
+      "romaji": "boku",
+      "de": "ich (männlich, höflich)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-161",
+      "kanji": "俺",
+      "kana": "おれ",
+      "romaji": "ore",
+      "de": "ich (männlich, informell)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-162",
+      "kanji": "あなた",
+      "kana": "あなた",
+      "romaji": "anata",
+      "de": "du/Sie",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-163",
+      "kanji": "彼",
+      "kana": "かれ",
+      "romaji": "kare",
+      "de": "er",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-164",
+      "kanji": "彼女",
+      "kana": "かのじょ",
+      "romaji": "kanojo",
+      "de": "sie",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-165",
+      "kanji": "名前",
+      "kana": "なまえ",
+      "romaji": "namae",
+      "de": "Name",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-166",
+      "kanji": "国",
+      "kana": "くに",
+      "romaji": "kuni",
+      "de": "Land",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-167",
+      "kanji": "日本",
+      "kana": "にほん",
+      "romaji": "nihon",
+      "de": "Japan",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-168",
+      "kanji": "ドイツ",
+      "kana": "どいつ",
+      "romaji": "doitsu",
+      "de": "Deutschland",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-169",
+      "kanji": "英語",
+      "kana": "えいご",
+      "romaji": "eigo",
+      "de": "Englisch (Sprache)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-170",
+      "kanji": "日本語",
+      "kana": "にほんご",
+      "romaji": "nihongo",
+      "de": "Japanisch (Sprache)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-171",
+      "kanji": "読む",
+      "kana": "よむ",
+      "romaji": "yomu",
+      "de": "lesen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-172",
+      "kanji": "書く",
+      "kana": "かく",
+      "romaji": "kaku",
+      "de": "schreiben",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-173",
+      "kanji": "聞く",
+      "kana": "きく",
+      "romaji": "kiku",
+      "de": "hören",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-174",
+      "kanji": "見る",
+      "kana": "みる",
+      "romaji": "miru",
+      "de": "sehen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-175",
+      "kanji": "言う",
+      "kana": "いう",
+      "romaji": "iu",
+      "de": "sagen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-176",
+      "kanji": "話す",
+      "kana": "はなす",
+      "romaji": "hanasu",
+      "de": "sprechen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-177",
+      "kanji": "考える",
+      "kana": "かんがえる",
+      "romaji": "kangaeru",
+      "de": "nachdenken",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-178",
+      "kanji": "知る",
+      "kana": "しる",
+      "romaji": "shiru",
+      "de": "wissen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-179",
+      "kanji": "分かる",
+      "kana": "わかる",
+      "romaji": "wakaru",
+      "de": "verstehen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-180",
+      "kanji": "覚える",
+      "kana": "おぼえる",
+      "romaji": "oboeru",
+      "de": "sich merken",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-181",
+      "kanji": "忘れる",
+      "kana": "わすれる",
+      "romaji": "wasureru",
+      "de": "vergessen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-182",
+      "kanji": "始まる",
+      "kana": "はじまる",
+      "romaji": "hajimaru",
+      "de": "anfangen (intr.)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-183",
+      "kanji": "始める",
+      "kana": "はじめる",
+      "romaji": "hajimeru",
+      "de": "beginnen (tr.)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-184",
+      "kanji": "終わる",
+      "kana": "おわる",
+      "romaji": "owaru",
+      "de": "enden",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-185",
+      "kanji": "使う",
+      "kana": "つかう",
+      "romaji": "tsukau",
+      "de": "benutzen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-186",
+      "kanji": "作る",
+      "kana": "つくる",
+      "romaji": "tsukuru",
+      "de": "machen, herstellen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-187",
+      "kanji": "開く",
+      "kana": "ひらく",
+      "romaji": "hiraku",
+      "de": "öffnen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-188",
+      "kanji": "閉じる",
+      "kana": "とじる",
+      "romaji": "tojiru",
+      "de": "schließen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-189",
+      "kanji": "持つ",
+      "kana": "もつ",
+      "romaji": "motsu",
+      "de": "halten, haben",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-190",
+      "kanji": "待つ",
+      "kana": "まつ",
+      "romaji": "matsu",
+      "de": "warten",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-191",
+      "kanji": "立つ",
+      "kana": "たつ",
+      "romaji": "tatsu",
+      "de": "aufstehen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-192",
+      "kanji": "座る",
+      "kana": "すわる",
+      "romaji": "suwaru",
+      "de": "sitzen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-193",
+      "kanji": "歩く",
+      "kana": "あるく",
+      "romaji": "aruku",
+      "de": "zu Fuß gehen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-194",
+      "kanji": "走る",
+      "kana": "はしる",
+      "romaji": "hashiru",
+      "de": "laufen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-195",
+      "kanji": "帰る",
+      "kana": "かえる",
+      "romaji": "kaeru",
+      "de": "zurückkehren",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-196",
+      "kanji": "乗る",
+      "kana": "のる",
+      "romaji": "noru",
+      "de": "einsteigen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-197",
+      "kanji": "降りる",
+      "kana": "おりる",
+      "romaji": "oriru",
+      "de": "aussteigen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-198",
+      "kanji": "使える",
+      "kana": "つかえる",
+      "romaji": "tsukaeru",
+      "de": "nützlich sein, verwendbar",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-199",
+      "kanji": "強い",
+      "kana": "つよい",
+      "romaji": "tsuyoi",
+      "de": "stark",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-200",
+      "kanji": "弱い",
+      "kana": "よわい",
+      "romaji": "yowai",
+      "de": "schwach",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-201",
+      "kanji": "重い",
+      "kana": "おもい",
+      "romaji": "omoi",
+      "de": "schwer (Gewicht)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-202",
+      "kanji": "軽い",
+      "kana": "かるい",
+      "romaji": "karui",
+      "de": "leicht (Gewicht)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-203",
+      "kanji": "長い",
+      "kana": "ながい",
+      "romaji": "nagai",
+      "de": "lang",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-204",
+      "kanji": "短い",
+      "kana": "みじかい",
+      "romaji": "mijikai",
+      "de": "kurz",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-205",
+      "kanji": "広い",
+      "kana": "ひろい",
+      "romaji": "hiroi",
+      "de": "weit, großflächig",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-206",
+      "kanji": "狭い",
+      "kana": "せまい",
+      "romaji": "semai",
+      "de": "eng, schmal",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-207",
+      "kanji": "忙しい",
+      "kana": "いそがしい",
+      "romaji": "isogashii",
+      "de": "beschäftigt",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-208",
+      "kanji": "暇",
+      "kana": "ひま",
+      "romaji": "hima",
+      "de": "frei (nicht beschäftigt)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-209",
+      "kanji": "簡単",
+      "kana": "かんたん",
+      "romaji": "kantan",
+      "de": "einfach",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-210",
+      "kanji": "難しい",
+      "kana": "むずかしい",
+      "romaji": "muzukashii",
+      "de": "schwierig",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-211",
+      "kanji": "近い",
+      "kana": "ちかい",
+      "romaji": "chikai",
+      "de": "nah",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-212",
+      "kanji": "遠い",
+      "kana": "とおい",
+      "romaji": "tōi",
+      "de": "weit entfernt",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-213",
+      "kanji": "左",
+      "kana": "ひだり",
+      "romaji": "hidari",
+      "de": "links",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-214",
+      "kanji": "右",
+      "kana": "みぎ",
+      "romaji": "migi",
+      "de": "rechts",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-215",
+      "kanji": "上",
+      "kana": "うえ",
+      "romaji": "ue",
+      "de": "oben",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-216",
+      "kanji": "下",
+      "kana": "した",
+      "romaji": "shita",
+      "de": "unten",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-217",
+      "kanji": "中",
+      "kana": "なか",
+      "romaji": "naka",
+      "de": "innen, Mitte",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-218",
+      "kanji": "外",
+      "kana": "そと",
+      "romaji": "soto",
+      "de": "außen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-219",
+      "kanji": "前",
+      "kana": "まえ",
+      "romaji": "mae",
+      "de": "vorne, vorher",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-220",
+      "kanji": "後ろ",
+      "kana": "うしろ",
+      "romaji": "ushiro",
+      "de": "hinten",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-221",
+      "kanji": "隣",
+      "kana": "となり",
+      "romaji": "tonari",
+      "de": "nebenan",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-222",
+      "kanji": "間",
+      "kana": "あいだ",
+      "romaji": "aida",
+      "de": "zwischen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-223",
+      "kanji": "方",
+      "kana": "ほう",
+      "romaji": "hō",
+      "de": "Richtung, Seite",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-224",
+      "kanji": "方角",
+      "kana": "ほうがく",
+      "romaji": "hōgaku",
+      "de": "Himmelsrichtung",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-225",
+      "kanji": "北",
+      "kana": "きた",
+      "romaji": "kita",
+      "de": "Norden",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-226",
+      "kanji": "南",
+      "kana": "みなみ",
+      "romaji": "minami",
+      "de": "Süden",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-227",
+      "kanji": "東",
+      "kana": "ひがし",
+      "romaji": "higashi",
+      "de": "Osten",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-228",
+      "kanji": "西",
+      "kana": "にし",
+      "romaji": "nishi",
+      "de": "Westen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-229",
+      "kanji": "上手",
+      "kana": "じょうず",
+      "romaji": "jōzu",
+      "de": "geschickt",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-230",
+      "kanji": "下手",
+      "kana": "へた",
+      "romaji": "heta",
+      "de": "ungeschickt",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-231",
+      "kanji": "有名",
+      "kana": "ゆうめい",
+      "romaji": "yūmei",
+      "de": "berühmt",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-232",
+      "kanji": "元気",
+      "kana": "げんき",
+      "romaji": "genki",
+      "de": "gesund, munter",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-233",
+      "kanji": "大丈夫",
+      "kana": "だいじょうぶ",
+      "romaji": "daijōbu",
+      "de": "in Ordnung",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-234",
+      "kanji": "危ない",
+      "kana": "あぶない",
+      "romaji": "abunai",
+      "de": "gefährlich",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-235",
+      "kanji": "静か",
+      "kana": "しずか",
+      "romaji": "shizuka",
+      "de": "ruhig",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-236",
+      "kanji": "賑やか",
+      "kana": "にぎやか",
+      "romaji": "nigiyaka",
+      "de": "lebhaft",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-237",
+      "kanji": "奇麗",
+      "kana": "きれい",
+      "romaji": "kirei",
+      "de": "schön, sauber",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-238",
+      "kanji": "汚い",
+      "kana": "きたない",
+      "romaji": "kitanai",
+      "de": "schmutzig",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-239",
+      "kanji": "寒い",
+      "kana": "さむい",
+      "romaji": "samui",
+      "de": "kalt (Wetter)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-240",
+      "kanji": "冷たい",
+      "kana": "つめたい",
+      "romaji": "tsumetai",
+      "de": "kalt (Gegenstand)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-241",
+      "kanji": "暖かい",
+      "kana": "あたたかい",
+      "romaji": "atatakai",
+      "de": "warm (Wetter)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-242",
+      "kanji": "温かい",
+      "kana": "あたたかい",
+      "romaji": "atatakai",
+      "de": "warm (z. B. Speise)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-243",
+      "kanji": "涼しい",
+      "kana": "すずしい",
+      "romaji": "suzushii",
+      "de": "kühl, angenehm",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-244",
+      "kanji": "暑い",
+      "kana": "あつい",
+      "romaji": "atsui",
+      "de": "heiß (Wetter)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-245",
+      "kanji": "熱い",
+      "kana": "あつい",
+      "romaji": "atsui",
+      "de": "heiß (Gegenstand)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-246",
+      "kanji": "痛い",
+      "kana": "いたい",
+      "romaji": "itai",
+      "de": "schmerzhaft",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-247",
+      "kanji": "楽しい",
+      "kana": "たのしい",
+      "romaji": "tanoshii",
+      "de": "unterhaltsam, spaßig",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-248",
+      "kanji": "面白い",
+      "kana": "おもしろい",
+      "romaji": "omoshiroi",
+      "de": "interessant, lustig",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-249",
+      "kanji": "つまらない",
+      "kana": "つまらない",
+      "romaji": "tsumaranai",
+      "de": "langweilig",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-250",
+      "kanji": "怖い",
+      "kana": "こわい",
+      "romaji": "kowai",
+      "de": "gruselig, furchteinflößend",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-251",
+      "kanji": "嬉しい",
+      "kana": "うれしい",
+      "romaji": "ureshii",
+      "de": "froh, erfreut",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-252",
+      "kanji": "悲しい",
+      "kana": "かなしい",
+      "romaji": "kanashii",
+      "de": "traurig",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-253",
+      "kanji": "恥ずかしい",
+      "kana": "はずかしい",
+      "romaji": "hazukashii",
+      "de": "peinlich, beschämt",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-254",
+      "kanji": "寂しい",
+      "kana": "さびしい",
+      "romaji": "sabishii",
+      "de": "einsam",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-255",
+      "kanji": "眠い",
+      "kana": "ねむい",
+      "romaji": "nemui",
+      "de": "schläfrig",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-256",
+      "kanji": "楽",
+      "kana": "らく",
+      "romaji": "raku",
+      "de": "bequem, angenehm",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-257",
+      "kanji": "大切",
+      "kana": "たいせつ",
+      "romaji": "taisetsu",
+      "de": "wichtig",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-258",
+      "kanji": "必要",
+      "kana": "ひつよう",
+      "romaji": "hitsuyō",
+      "de": "notwendig",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-259",
+      "kanji": "同じ",
+      "kana": "おなじ",
+      "romaji": "onaji",
+      "de": "gleich",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-260",
+      "kanji": "違う",
+      "kana": "ちがう",
+      "romaji": "chigau",
+      "de": "abweichen, falsch",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-261",
+      "kanji": "多い",
+      "kana": "おおい",
+      "romaji": "ōi",
+      "de": "viel",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-262",
+      "kanji": "少ない",
+      "kana": "すくない",
+      "romaji": "sukunai",
+      "de": "wenig",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-263",
+      "kanji": "全部",
+      "kana": "ぜんぶ",
+      "romaji": "zenbu",
+      "de": "alles",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-264",
+      "kanji": "何でも",
+      "kana": "なんでも",
+      "romaji": "nandemo",
+      "de": "alles, was auch immer",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-265",
+      "kanji": "皆",
+      "kana": "みんな",
+      "romaji": "minna",
+      "de": "alle (Menschen)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-266",
+      "kanji": "一人",
+      "kana": "ひとり",
+      "romaji": "hitori",
+      "de": "allein, eine Person",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-267",
+      "kanji": "二人",
+      "kana": "ふたり",
+      "romaji": "futari",
+      "de": "zwei Personen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-268",
+      "kanji": "三人",
+      "kana": "さんにん",
+      "romaji": "sannin",
+      "de": "drei Personen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-269",
+      "kanji": "数",
+      "kana": "かず",
+      "romaji": "kazu",
+      "de": "Anzahl",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-270",
+      "kanji": "数字",
+      "kana": "すうじ",
+      "romaji": "sūji",
+      "de": "Zahl, Ziffer",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-271",
+      "kanji": "全体",
+      "kana": "ぜんたい",
+      "romaji": "zentai",
+      "de": "Gesamtheit",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-272",
+      "kanji": "部分",
+      "kana": "ぶぶん",
+      "romaji": "bubun",
+      "de": "Teil",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-273",
+      "kanji": "形",
+      "kana": "かたち",
+      "romaji": "katachi",
+      "de": "Form, Gestalt",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-274",
+      "kanji": "色",
+      "kana": "いろ",
+      "romaji": "iro",
+      "de": "Farbe",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-275",
+      "kanji": "赤",
+      "kana": "あか",
+      "romaji": "aka",
+      "de": "rot",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-276",
+      "kanji": "青",
+      "kana": "あお",
+      "romaji": "ao",
+      "de": "blau",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-277",
+      "kanji": "黄",
+      "kana": "き",
+      "romaji": "ki",
+      "de": "gelb",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-278",
+      "kanji": "白",
+      "kana": "しろ",
+      "romaji": "shiro",
+      "de": "weiß",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-279",
+      "kanji": "黒",
+      "kana": "くろ",
+      "romaji": "kuro",
+      "de": "schwarz",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-280",
+      "kanji": "緑",
+      "kana": "みどり",
+      "romaji": "midori",
+      "de": "grün",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-281",
+      "kanji": "茶",
+      "kana": "ちゃ",
+      "romaji": "cha",
+      "de": "braun, Tee",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-282",
+      "kanji": "灰色",
+      "kana": "はいいろ",
+      "romaji": "haiiro",
+      "de": "grau",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-283",
+      "kanji": "金色",
+      "kana": "きんいろ",
+      "romaji": "kin'iro",
+      "de": "goldfarben",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-284",
+      "kanji": "銀色",
+      "kana": "ぎんいろ",
+      "romaji": "gin'iro",
+      "de": "silberfarben",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-285",
+      "kanji": "透明",
+      "kana": "とうめい",
+      "romaji": "tōmei",
+      "de": "transparent",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-286",
+      "kanji": "色々",
+      "kana": "いろいろ",
+      "romaji": "iroiro",
+      "de": "verschiedenes",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-287",
+      "kanji": "好き",
+      "kana": "すき",
+      "romaji": "suki",
+      "de": "mögen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-288",
+      "kanji": "嫌い",
+      "kana": "きらい",
+      "romaji": "kirai",
+      "de": "nicht mögen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-289",
+      "kanji": "大好き",
+      "kana": "だいすき",
+      "romaji": "daisuki",
+      "de": "sehr mögen, lieben",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-290",
+      "kanji": "欲しい",
+      "kana": "ほしい",
+      "romaji": "hoshii",
+      "de": "haben wollen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-291",
+      "kanji": "必要ない",
+      "kana": "ひつようない",
+      "romaji": "hitsuyō nai",
+      "de": "nicht notwendig",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-292",
+      "kanji": "上がる",
+      "kana": "あがる",
+      "romaji": "agaru",
+      "de": "steigen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-293",
+      "kanji": "下がる",
+      "kana": "さがる",
+      "romaji": "sagaru",
+      "de": "fallen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-294",
+      "kanji": "増える",
+      "kana": "ふえる",
+      "romaji": "fueru",
+      "de": "zunehmen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-295",
+      "kanji": "減る",
+      "kana": "へる",
+      "romaji": "heru",
+      "de": "abnehmen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-296",
+      "kanji": "続く",
+      "kana": "つづく",
+      "romaji": "tsuzuku",
+      "de": "fortsetzen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-297",
+      "kanji": "変わる",
+      "kana": "かわる",
+      "romaji": "kawaru",
+      "de": "sich ändern",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-298",
+      "kanji": "始まる",
+      "kana": "はじまる",
+      "romaji": "hajimaru",
+      "de": "anfangen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-299",
+      "kanji": "終わる",
+      "kana": "おわる",
+      "romaji": "owaru",
+      "de": "enden",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-300",
+      "kanji": "決める",
+      "kana": "きめる",
+      "romaji": "kimeru",
+      "de": "entscheiden",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-301",
+      "kanji": "決まる",
+      "kana": "きまる",
+      "romaji": "kimaru",
+      "de": "entschieden werden",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-302",
+      "kanji": "止まる",
+      "kana": "とまる",
+      "romaji": "tomaru",
+      "de": "anhalten",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-303",
+      "kanji": "止める",
+      "kana": "とめる",
+      "romaji": "tomeru",
+      "de": "anhalten (etwas)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-304",
+      "kanji": "始める",
+      "kana": "はじめる",
+      "romaji": "hajimeru",
+      "de": "beginnen (etwas)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-305",
+      "kanji": "終える",
+      "kana": "おえる",
+      "romaji": "oeru",
+      "de": "beenden",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-306",
+      "kanji": "分ける",
+      "kana": "わける",
+      "romaji": "wakeru",
+      "de": "teilen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-307",
+      "kanji": "合う",
+      "kana": "あう",
+      "romaji": "au",
+      "de": "passen, zusammenpassen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-308",
+      "kanji": "変える",
+      "kana": "かえる",
+      "romaji": "kaeru",
+      "de": "ändern (etwas)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-309",
+      "kanji": "働く",
+      "kana": "はたらく",
+      "romaji": "hataraku",
+      "de": "arbeiten",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-310",
+      "kanji": "勉強する",
+      "kana": "べんきょうする",
+      "romaji": "benkyō suru",
+      "de": "lernen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-311",
+      "kanji": "練習する",
+      "kana": "れんしゅうする",
+      "romaji": "renshū suru",
+      "de": "üben",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-312",
+      "kanji": "使う",
+      "kana": "つかう",
+      "romaji": "tsukau",
+      "de": "benutzen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-313",
+      "kanji": "助ける",
+      "kana": "たすける",
+      "romaji": "tasukeru",
+      "de": "helfen, retten",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-314",
+      "kanji": "救う",
+      "kana": "すくう",
+      "romaji": "sukuu",
+      "de": "retten (emotional/spirituell)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-315",
+      "kanji": "持ってくる",
+      "kana": "もってくる",
+      "romaji": "mottekuru",
+      "de": "mitbringen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-316",
+      "kanji": "連れていく",
+      "kana": "つれていく",
+      "romaji": "tsurete iku",
+      "de": "mitnehmen (Person)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-317",
+      "kanji": "送る",
+      "kana": "おくる",
+      "romaji": "okuru",
+      "de": "senden, schicken",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-318",
+      "kanji": "届ける",
+      "kana": "とどける",
+      "romaji": "todokeru",
+      "de": "ausliefern, abgeben",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-319",
+      "kanji": "受け取る",
+      "kana": "うけとる",
+      "romaji": "uketoru",
+      "de": "erhalten, empfangen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-320",
+      "kanji": "開ける",
+      "kana": "あける",
+      "romaji": "akeru",
+      "de": "öffnen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-321",
+      "kanji": "閉める",
+      "kana": "しめる",
+      "romaji": "shimeru",
+      "de": "schließen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-322",
+      "kanji": "借りる",
+      "kana": "かりる",
+      "romaji": "kariru",
+      "de": "leihen (ausborgen)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-323",
+      "kanji": "貸す",
+      "kana": "かす",
+      "romaji": "kasu",
+      "de": "verleihen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-324",
+      "kanji": "返す",
+      "kana": "かえす",
+      "romaji": "kaesu",
+      "de": "zurückgeben",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-325",
+      "kanji": "入れる",
+      "kana": "いれる",
+      "romaji": "ireru",
+      "de": "hineinlegen, hineintun",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-326",
+      "kanji": "出す",
+      "kana": "だす",
+      "romaji": "dasu",
+      "de": "herausnehmen, abgeben",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-327",
+      "kanji": "探す",
+      "kana": "さがす",
+      "romaji": "sagasu",
+      "de": "suchen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-328",
+      "kanji": "見つける",
+      "kana": "みつける",
+      "romaji": "mitsukeru",
+      "de": "finden",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-329",
+      "kanji": "注文する",
+      "kana": "ちゅうもんする",
+      "romaji": "chūmon suru",
+      "de": "bestellen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-330",
+      "kanji": "買い物",
+      "kana": "かいもの",
+      "romaji": "kaimono",
+      "de": "Einkauf, shoppen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-331",
+      "kanji": "払う",
+      "kana": "はらう",
+      "romaji": "harau",
+      "de": "bezahlen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-332",
+      "kanji": "会う",
+      "kana": "あう",
+      "romaji": "au",
+      "de": "jemanden treffen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-333",
+      "kanji": "訪ねる",
+      "kana": "たずねる",
+      "romaji": "tazuneru",
+      "de": "besuchen (Person)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-334",
+      "kanji": "訪れる",
+      "kana": "おとずれる",
+      "romaji": "otozureru",
+      "de": "besuchen (Ort)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-335",
+      "kanji": "帰る",
+      "kana": "かえる",
+      "romaji": "kaeru",
+      "de": "nach Hause gehen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-336",
+      "kanji": "通う",
+      "kana": "かよう",
+      "romaji": "kayou",
+      "de": "pendeln, regelmäßig besuchen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-337",
+      "kanji": "旅行",
+      "kana": "りょこう",
+      "romaji": "ryokō",
+      "de": "Reise",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-338",
+      "kanji": "旅",
+      "kana": "たび",
+      "romaji": "tabi",
+      "de": "Reise (poetisch)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-339",
+      "kanji": "外国",
+      "kana": "がいこく",
+      "romaji": "gaikoku",
+      "de": "Ausland",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-340",
+      "kanji": "海外",
+      "kana": "かいがい",
+      "romaji": "kaigai",
+      "de": "Übersee, Ausland",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-341",
+      "kanji": "国内",
+      "kana": "こくない",
+      "romaji": "kokunai",
+      "de": "Inland",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-342",
+      "kanji": "世界",
+      "kana": "せかい",
+      "romaji": "sekai",
+      "de": "Welt",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-343",
+      "kanji": "地球",
+      "kana": "ちきゅう",
+      "romaji": "chikyū",
+      "de": "Erde (Planet)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-344",
+      "kanji": "宇宙",
+      "kana": "うちゅう",
+      "romaji": "uchū",
+      "de": "Weltall, Universum",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-345",
+      "kanji": "空港",
+      "kana": "くうこう",
+      "romaji": "kūkō",
+      "de": "Flughafen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-346",
+      "kanji": "飛行機",
+      "kana": "ひこうき",
+      "romaji": "hikōki",
+      "de": "Flugzeug",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-347",
+      "kanji": "船",
+      "kana": "ふね",
+      "romaji": "fune",
+      "de": "Schiff",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-348",
+      "kanji": "車",
+      "kana": "くるま",
+      "romaji": "kuruma",
+      "de": "Auto",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-349",
+      "kanji": "自転車",
+      "kana": "じてんしゃ",
+      "romaji": "jitensha",
+      "de": "Fahrrad",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-350",
+      "kanji": "バス",
+      "kana": "ばす",
+      "romaji": "basu",
+      "de": "Bus",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-351",
+      "kanji": "電車",
+      "kana": "でんしゃ",
+      "romaji": "densha",
+      "de": "Zug",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-352",
+      "kanji": "駅",
+      "kana": "えき",
+      "romaji": "eki",
+      "de": "Bahnhof",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-353",
+      "kanji": "道",
+      "kana": "みち",
+      "romaji": "michi",
+      "de": "Weg, Straße",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-354",
+      "kanji": "交差点",
+      "kana": "こうさてん",
+      "romaji": "kōsaten",
+      "de": "Kreuzung",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-355",
+      "kanji": "信号",
+      "kana": "しんごう",
+      "romaji": "shingō",
+      "de": "Ampel",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-356",
+      "kanji": "橋",
+      "kana": "はし",
+      "romaji": "hashi",
+      "de": "Brücke",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-357",
+      "kanji": "角",
+      "kana": "かど",
+      "romaji": "kado",
+      "de": "Ecke",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-358",
+      "kanji": "曲がる",
+      "kana": "まがる",
+      "romaji": "magaru",
+      "de": "abbiegen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-359",
+      "kanji": "真っ直ぐ",
+      "kana": "まっすぐ",
+      "romaji": "massugu",
+      "de": "geradeaus",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-360",
+      "kanji": "近道",
+      "kana": "ちかみち",
+      "romaji": "chikamichi",
+      "de": "Abkürzung",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-361",
+      "kanji": "遠回り",
+      "kana": "とおまわり",
+      "romaji": "tōmawari",
+      "de": "Umweg",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-362",
+      "kanji": "目的地",
+      "kana": "もくてきち",
+      "romaji": "mokutekichi",
+      "de": "Zielort",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-363",
+      "kanji": "地図",
+      "kana": "ちず",
+      "romaji": "chizu",
+      "de": "Landkarte",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-364",
+      "kanji": "案内",
+      "kana": "あんない",
+      "romaji": "annai",
+      "de": "Führung, Auskunft",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-365",
+      "kanji": "案内する",
+      "kana": "あんないする",
+      "romaji": "annai suru",
+      "de": "führen, zeigen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-366",
+      "kanji": "説明する",
+      "kana": "せつめいする",
+      "romaji": "setsumei suru",
+      "de": "erklären",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-367",
+      "kanji": "紹介する",
+      "kana": "しょうかいする",
+      "romaji": "shōkai suru",
+      "de": "vorstellen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-368",
+      "kanji": "自己紹介",
+      "kana": "じこしょうかい",
+      "romaji": "jikoshōkai",
+      "de": "Selbstvorstellung",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-369",
+      "kanji": "名前",
+      "kana": "なまえ",
+      "romaji": "namae",
+      "de": "Name",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-370",
+      "kanji": "住所",
+      "kana": "じゅうしょ",
+      "romaji": "jūsho",
+      "de": "Adresse",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-371",
+      "kanji": "電話番号",
+      "kana": "でんわばんごう",
+      "romaji": "denwa bangō",
+      "de": "Telefonnummer",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-372",
+      "kanji": "年齢",
+      "kana": "ねんれい",
+      "romaji": "nenrei",
+      "de": "Alter",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-373",
+      "kanji": "性別",
+      "kana": "せいべつ",
+      "romaji": "seibetsu",
+      "de": "Geschlecht",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-374",
+      "kanji": "職業",
+      "kana": "しょくぎょう",
+      "romaji": "shokugyō",
+      "de": "Beruf",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-375",
+      "kanji": "趣味",
+      "kana": "しゅみ",
+      "romaji": "shumi",
+      "de": "Hobby, Interesse",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-376",
+      "kanji": "出身",
+      "kana": "しゅっしん",
+      "romaji": "shusshin",
+      "de": "Herkunftsort",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-377",
+      "kanji": "家族",
+      "kana": "かぞく",
+      "romaji": "kazoku",
+      "de": "Familie",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-378",
+      "kanji": "両親",
+      "kana": "りょうしん",
+      "romaji": "ryōshin",
+      "de": "Eltern",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-379",
+      "kanji": "父",
+      "kana": "ちち",
+      "romaji": "chichi",
+      "de": "Vater (mein)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-380",
+      "kanji": "母",
+      "kana": "はは",
+      "romaji": "haha",
+      "de": "Mutter (meine)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-381",
+      "kanji": "お父さん",
+      "kana": "おとうさん",
+      "romaji": "otōsan",
+      "de": "Vater (höflich)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-382",
+      "kanji": "お母さん",
+      "kana": "おかあさん",
+      "romaji": "okāsan",
+      "de": "Mutter (höflich)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-383",
+      "kanji": "兄弟",
+      "kana": "きょうだい",
+      "romaji": "kyōdai",
+      "de": "Geschwister",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-384",
+      "kanji": "兄",
+      "kana": "あに",
+      "romaji": "ani",
+      "de": "älterer Bruder",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-385",
+      "kanji": "弟",
+      "kana": "おとうと",
+      "romaji": "otōto",
+      "de": "jüngerer Bruder",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-386",
+      "kanji": "姉",
+      "kana": "あね",
+      "romaji": "ane",
+      "de": "ältere Schwester",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-387",
+      "kanji": "妹",
+      "kana": "いもうと",
+      "romaji": "imōto",
+      "de": "jüngere Schwester",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-388",
+      "kanji": "お兄さん",
+      "kana": "おにいさん",
+      "romaji": "onīsan",
+      "de": "Bruder (höflich)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-389",
+      "kanji": "お姉さん",
+      "kana": "おねえさん",
+      "romaji": "onēsan",
+      "de": "Schwester (höflich)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-390",
+      "kanji": "祖父",
+      "kana": "そふ",
+      "romaji": "sofu",
+      "de": "Großvater (mein)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-391",
+      "kanji": "祖母",
+      "kana": "そぼ",
+      "romaji": "sobo",
+      "de": "Großmutter (meine)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-392",
+      "kanji": "おじいさん",
+      "kana": "おじいさん",
+      "romaji": "ojīsan",
+      "de": "Großvater (höflich)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-393",
+      "kanji": "おばあさん",
+      "kana": "おばあさん",
+      "romaji": "obāsan",
+      "de": "Großmutter (höflich)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-394",
+      "kanji": "孫",
+      "kana": "まご",
+      "romaji": "mago",
+      "de": "Enkel/in",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-395",
+      "kanji": "親戚",
+      "kana": "しんせき",
+      "romaji": "shinseki",
+      "de": "Verwandte",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-396",
+      "kanji": "結婚",
+      "kana": "けっこん",
+      "romaji": "kekkon",
+      "de": "Ehe, Heirat",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-397",
+      "kanji": "夫",
+      "kana": "おっと",
+      "romaji": "otto",
+      "de": "Ehemann",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-398",
+      "kanji": "妻",
+      "kana": "つま",
+      "romaji": "tsuma",
+      "de": "Ehefrau",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-399",
+      "kanji": "主人",
+      "kana": "しゅじん",
+      "romaji": "shujin",
+      "de": "Ehemann (höflich)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-400",
+      "kanji": "家内",
+      "kana": "かない",
+      "romaji": "kanai",
+      "de": "Ehefrau (höflich)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-401",
+      "kanji": "夫婦",
+      "kana": "ふうふ",
+      "romaji": "fūfu",
+      "de": "Ehepaar",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-402",
+      "kanji": "恋人",
+      "kana": "こいびと",
+      "romaji": "koibito",
+      "de": "Liebespartner(in)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-403",
+      "kanji": "彼氏",
+      "kana": "かれし",
+      "romaji": "kareshi",
+      "de": "fester Freund",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-404",
+      "kanji": "彼女",
+      "kana": "かのじょ",
+      "romaji": "kanojo",
+      "de": "feste Freundin",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-405",
+      "kanji": "婚約",
+      "kana": "こんやく",
+      "romaji": "konyaku",
+      "de": "Verlobung",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-406",
+      "kanji": "離婚",
+      "kana": "りこん",
+      "romaji": "rikon",
+      "de": "Scheidung",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-407",
+      "kanji": "独身",
+      "kana": "どくしん",
+      "romaji": "dokushin",
+      "de": "ledig, alleinstehend",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-408",
+      "kanji": "未婚",
+      "kana": "みこん",
+      "romaji": "mikon",
+      "de": "unverheiratet",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-409",
+      "kanji": "既婚",
+      "kana": "きこん",
+      "romaji": "kikon",
+      "de": "verheiratet",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-410",
+      "kanji": "友達",
+      "kana": "ともだち",
+      "romaji": "tomodachi",
+      "de": "Freund(in), Kumpel",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-411",
+      "kanji": "親友",
+      "kana": "しんゆう",
+      "romaji": "shinyū",
+      "de": "bester Freund, enge Freundin",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-412",
+      "kanji": "知り合い",
+      "kana": "しりあい",
+      "romaji": "shiriai",
+      "de": "Bekannter",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-413",
+      "kanji": "仲間",
+      "kana": "なかま",
+      "romaji": "nakama",
+      "de": "Kamerad, Gefährte",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-414",
+      "kanji": "関係",
+      "kana": "かんけい",
+      "romaji": "kankei",
+      "de": "Beziehung, Zusammenhang",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-415",
+      "kanji": "紹介",
+      "kana": "しょうかい",
+      "romaji": "shōkai",
+      "de": "Vorstellung (Personen)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-416",
+      "kanji": "訪問",
+      "kana": "ほうもん",
+      "romaji": "hōmon",
+      "de": "Besuch",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-417",
+      "kanji": "出会う",
+      "kana": "であう",
+      "romaji": "deau",
+      "de": "begegnen, treffen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-418",
+      "kanji": "別れる",
+      "kana": "わかれる",
+      "romaji": "wakareru",
+      "de": "sich trennen, Abschied nehmen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-419",
+      "kanji": "集まる",
+      "kana": "あつまる",
+      "romaji": "atsumaru",
+      "de": "sich versammeln",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-420",
+      "kanji": "集める",
+      "kana": "あつめる",
+      "romaji": "atsumeru",
+      "de": "sammeln, versammeln (tr.)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-421",
+      "kanji": "招待",
+      "kana": "しょうたい",
+      "romaji": "shōtai",
+      "de": "Einladung",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-422",
+      "kanji": "招待する",
+      "kana": "しょうたいする",
+      "romaji": "shōtai suru",
+      "de": "einladen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-423",
+      "kanji": "歓迎",
+      "kana": "かんげい",
+      "romaji": "kangei",
+      "de": "Begrüßung, Willkommen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-424",
+      "kanji": "歓迎する",
+      "kana": "かんげいする",
+      "romaji": "kangei suru",
+      "de": "willkommen heißen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-425",
+      "kanji": "許す",
+      "kana": "ゆるす",
+      "romaji": "yurusu",
+      "de": "verzeihen, erlauben",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-426",
+      "kanji": "謝る",
+      "kana": "あやまる",
+      "romaji": "ayamaru",
+      "de": "sich entschuldigen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-427",
+      "kanji": "感謝",
+      "kana": "かんしゃ",
+      "romaji": "kansha",
+      "de": "Dankbarkeit",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-428",
+      "kanji": "感謝する",
+      "kana": "かんしゃする",
+      "romaji": "kansha suru",
+      "de": "danken, sich bedanken",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-429",
+      "kanji": "助け",
+      "kana": "たすけ",
+      "romaji": "tasuke",
+      "de": "Hilfe",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-430",
+      "kanji": "手伝う",
+      "kana": "てつだう",
+      "romaji": "tetsudau",
+      "de": "helfen, mithelfen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-431",
+      "kanji": "贈り物",
+      "kana": "おくりもの",
+      "romaji": "okurimono",
+      "de": "Geschenk",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-432",
+      "kanji": "プレゼント",
+      "kana": "ぷれぜんと",
+      "romaji": "purezento",
+      "de": "Geschenk (Katakana)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-433",
+      "kanji": "祝う",
+      "kana": "いわう",
+      "romaji": "iwau",
+      "de": "feiern, beglückwünschen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-434",
+      "kanji": "祝い",
+      "kana": "いわい",
+      "romaji": "iwai",
+      "de": "Feier, Gratulation",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-435",
+      "kanji": "誕生日",
+      "kana": "たんじょうび",
+      "romaji": "tanjōbi",
+      "de": "Geburtstag",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-436",
+      "kanji": "結婚式",
+      "kana": "けっこんしき",
+      "romaji": "kekkonshiki",
+      "de": "Hochzeitsfeier",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-437",
+      "kanji": "葬式",
+      "kana": "そうしき",
+      "romaji": "sōshiki",
+      "de": "Beerdigung",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-438",
+      "kanji": "式",
+      "kana": "しき",
+      "romaji": "shiki",
+      "de": "Zeremonie",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-439",
+      "kanji": "参加する",
+      "kana": "さんかする",
+      "romaji": "sanka suru",
+      "de": "teilnehmen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-440",
+      "kanji": "出席",
+      "kana": "しゅっせき",
+      "romaji": "shusseki",
+      "de": "Anwesenheit",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-441",
+      "kanji": "欠席",
+      "kana": "けっせき",
+      "romaji": "kesseki",
+      "de": "Abwesenheit",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-442",
+      "kanji": "予約",
+      "kana": "よやく",
+      "romaji": "yoyaku",
+      "de": "Reservierung",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-443",
+      "kanji": "約束",
+      "kana": "やくそく",
+      "romaji": "yakusoku",
+      "de": "Versprechen, Verabredung",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-444",
+      "kanji": "予定",
+      "kana": "よてい",
+      "romaji": "yotei",
+      "de": "Plan, Vorhaben",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-445",
+      "kanji": "変更",
+      "kana": "へんこう",
+      "romaji": "henkō",
+      "de": "Änderung",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-446",
+      "kanji": "中止",
+      "kana": "ちゅうし",
+      "romaji": "chūshi",
+      "de": "Abbruch, Absage",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-447",
+      "kanji": "延期",
+      "kana": "えんき",
+      "romaji": "enki",
+      "de": "Verschiebung",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-448",
+      "kanji": "再開",
+      "kana": "さいかい",
+      "romaji": "saikai",
+      "de": "Wiederaufnahme",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-449",
+      "kanji": "続ける",
+      "kana": "つづける",
+      "romaji": "tsuzukeru",
+      "de": "fortsetzen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-450",
+      "kanji": "終える",
+      "kana": "おえる",
+      "romaji": "oeru",
+      "de": "abschließen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-451",
+      "kanji": "始まる",
+      "kana": "はじまる",
+      "romaji": "hajimaru",
+      "de": "anfangen (intr.)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-452",
+      "kanji": "始める",
+      "kana": "はじめる",
+      "romaji": "hajimeru",
+      "de": "beginnen (tr.)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-453",
+      "kanji": "計画",
+      "kana": "けいかく",
+      "romaji": "keikaku",
+      "de": "Plan",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-454",
+      "kanji": "準備",
+      "kana": "じゅんび",
+      "romaji": "junbi",
+      "de": "Vorbereitung",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-455",
+      "kanji": "用意",
+      "kana": "ようい",
+      "romaji": "yōi",
+      "de": "Bereitstellung",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-456",
+      "kanji": "持っていく",
+      "kana": "もっていく",
+      "romaji": "motte iku",
+      "de": "mitnehmen (Sache)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-457",
+      "kanji": "持ち帰る",
+      "kana": "もちかえる",
+      "romaji": "mochikaeru",
+      "de": "mit nach Hause nehmen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-458",
+      "kanji": "取り出す",
+      "kana": "とりだす",
+      "romaji": "toridasu",
+      "de": "herausnehmen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-459",
+      "kanji": "入れる",
+      "kana": "いれる",
+      "romaji": "ireru",
+      "de": "hineintun",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-460",
+      "kanji": "出す",
+      "kana": "だす",
+      "romaji": "dasu",
+      "de": "herausnehmen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-461",
+      "kanji": "閉じる",
+      "kana": "とじる",
+      "romaji": "tojiru",
+      "de": "schließen (Buch, Datei)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-462",
+      "kanji": "開く",
+      "kana": "ひらく",
+      "romaji": "hiraku",
+      "de": "öffnen (allgemein)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-463",
+      "kanji": "鍵",
+      "kana": "かぎ",
+      "romaji": "kagi",
+      "de": "Schlüssel",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-464",
+      "kanji": "開ける",
+      "kana": "あける",
+      "romaji": "akeru",
+      "de": "aufschließen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-465",
+      "kanji": "閉める",
+      "kana": "しめる",
+      "romaji": "shimeru",
+      "de": "zuschließen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-466",
+      "kanji": "押す",
+      "kana": "おす",
+      "romaji": "osu",
+      "de": "drücken",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-467",
+      "kanji": "引く",
+      "kana": "ひく",
+      "romaji": "hiku",
+      "de": "ziehen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-468",
+      "kanji": "回す",
+      "kana": "まわす",
+      "romaji": "mawasu",
+      "de": "drehen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-469",
+      "kanji": "曲げる",
+      "kana": "まげる",
+      "romaji": "mageru",
+      "de": "biegen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-470",
+      "kanji": "折る",
+      "kana": "おる",
+      "romaji": "oru",
+      "de": "falten, brechen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-471",
+      "kanji": "破る",
+      "kana": "やぶる",
+      "romaji": "yaburu",
+      "de": "zerreißen, brechen (Regel)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-472",
+      "kanji": "壊す",
+      "kana": "こわす",
+      "romaji": "kowasu",
+      "de": "kaputtmachen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-473",
+      "kanji": "壊れる",
+      "kana": "こわれる",
+      "romaji": "kowareru",
+      "de": "kaputtgehen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-474",
+      "kanji": "直す",
+      "kana": "なおす",
+      "romaji": "naosu",
+      "de": "reparieren",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-475",
+      "kanji": "直る",
+      "kana": "なおる",
+      "romaji": "naoru",
+      "de": "repariert werden",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-476",
+      "kanji": "治す",
+      "kana": "なおす",
+      "romaji": "naosu",
+      "de": "heilen (jemanden)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-477",
+      "kanji": "治る",
+      "kana": "なおる",
+      "romaji": "naoru",
+      "de": "genesen, geheilt werden",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-478",
+      "kanji": "助ける",
+      "kana": "たすける",
+      "romaji": "tasukeru",
+      "de": "retten, helfen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-479",
+      "kanji": "救う",
+      "kana": "すくう",
+      "romaji": "sukuu",
+      "de": "retten (spirituell)",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-480",
+      "kanji": "守る",
+      "kana": "まもる",
+      "romaji": "mamoru",
+      "de": "beschützen, einhalten",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-481",
+      "kanji": "守れる",
+      "kana": "まもれる",
+      "romaji": "mamoreru",
+      "de": "beschützt werden",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-482",
+      "kanji": "禁止",
+      "kana": "きんし",
+      "romaji": "kinshi",
+      "de": "Verbot",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-483",
+      "kanji": "許可",
+      "kana": "きょか",
+      "romaji": "kyoka",
+      "de": "Erlaubnis",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-484",
+      "kanji": "必要",
+      "kana": "ひつよう",
+      "romaji": "hitsuyō",
+      "de": "notwendig",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-485",
+      "kanji": "不要",
+      "kana": "ふよう",
+      "romaji": "fuyō",
+      "de": "unnötig",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-486",
+      "kanji": "可能",
+      "kana": "かのう",
+      "romaji": "kanō",
+      "de": "möglich",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-487",
+      "kanji": "不可能",
+      "kana": "ふかのう",
+      "romaji": "fukanō",
+      "de": "unmöglich",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-488",
+      "kanji": "自由",
+      "kana": "じゆう",
+      "romaji": "jiyū",
+      "de": "Freiheit",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-489",
+      "kanji": "義務",
+      "kana": "ぎむ",
+      "romaji": "gimu",
+      "de": "Pflicht, Verpflichtung",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-490",
+      "kanji": "責任",
+      "kana": "せきにん",
+      "romaji": "sekinin",
+      "de": "Verantwortung",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-491",
+      "kanji": "努力",
+      "kana": "どりょく",
+      "romaji": "doryoku",
+      "de": "Anstrengung, Mühe",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-492",
+      "kanji": "成功",
+      "kana": "せいこう",
+      "romaji": "seikō",
+      "de": "Erfolg",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-493",
+      "kanji": "失敗",
+      "kana": "しっぱい",
+      "romaji": "shippai",
+      "de": "Misserfolg",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-494",
+      "kanji": "経験",
+      "kana": "けいけん",
+      "romaji": "keiken",
+      "de": "Erfahrung",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-495",
+      "kanji": "挑戦",
+      "kana": "ちょうせん",
+      "romaji": "chōsen",
+      "de": "Herausforderung",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-496",
+      "kanji": "目標",
+      "kana": "もくひょう",
+      "romaji": "mokuhyō",
+      "de": "Ziel",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-497",
+      "kanji": "夢",
+      "kana": "ゆめ",
+      "romaji": "yume",
+      "de": "Traum",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-498",
+      "kanji": "希望",
+      "kana": "きぼう",
+      "romaji": "kibō",
+      "de": "Hoffnung, Wunsch",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-499",
+      "kanji": "願い",
+      "kana": "ねがい",
+      "romaji": "negai",
+      "de": "Bitte, Wunsch",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    },
+    {
+      "id": "basic-500",
+      "kanji": "祈る",
+      "kana": "いのる",
+      "romaji": "inoru",
+      "de": "beten, wünschen",
+      "sm2": {
+        "easeFactor": 2.5,
+        "interval": 1,
+        "repetitions": 0,
+        "nextReview": null,
+        "lastReview": null,
+        "quality": null
+      }
+    }
+  ]
+}
