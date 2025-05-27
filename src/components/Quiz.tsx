@@ -240,28 +240,39 @@ export const Quiz: React.FC<QuizProps> = ({
           {/* Frage - Prominenter */}
           <div className="text-center mb-12">
             {currentDirection === 'jp-to-de' && (
-              <>
-                <div className="text-6xl font-extralight text-stone-800 mb-4 leading-tight" style={{ fontFamily: 'serif' }}>
+              <div className="flex flex-row items-end justify-center gap-6">
+                <div className="text-6xl font-extralight text-stone-800 leading-tight" style={{ fontFamily: 'serif' }}>
                   {currentVocab.kanji}
                 </div>
-                <div className="text-2xl text-stone-700 mb-2 font-light">
-                  {currentVocab.kana}
+                <div className="flex flex-col items-start justify-center gap-1">
+                  <div className="text-2xl text-stone-700 font-light">{currentVocab.kana}</div>
+                  <div className="text-lg text-stone-500 font-light">{currentVocab.romaji}</div>
                 </div>
-                <div className="text-lg text-stone-500 font-light">
-                  {currentVocab.romaji}
-                </div>
-              </>
+              </div>
             )}
             
             {currentDirection === 'de-to-jp' && (
-              <div className="text-4xl font-light text-stone-800 leading-tight tracking-wide">
-                {currentVocab.de}
+              <div className="flex flex-row items-end justify-center gap-6">
+                <div className="text-4xl font-light text-stone-800 leading-tight tracking-wide">
+                  {currentVocab.de}
+                </div>
+                <div className="flex flex-col items-start justify-center gap-1">
+                  <div className="text-3xl font-extralight text-stone-800" style={{ fontFamily: 'serif' }}>{currentVocab.kanji}</div>
+                  <div className="text-2xl text-stone-700 font-light">{currentVocab.kana}</div>
+                  <div className="text-lg text-stone-500 font-light">{currentVocab.romaji}</div>
+                </div>
               </div>
             )}
             
             {currentDirection === 'kanji-to-reading' && (
-              <div className="text-7xl font-extralight text-stone-800 leading-tight" style={{ fontFamily: 'serif' }}>
-                {currentVocab.kanji}
+              <div className="flex flex-row items-end justify-center gap-6">
+                <div className="text-7xl font-extralight text-stone-800 leading-tight" style={{ fontFamily: 'serif' }}>
+                  {currentVocab.kanji}
+                </div>
+                <div className="flex flex-col items-start justify-center gap-1">
+                  <div className="text-3xl font-light text-amber-800 tracking-wide">{currentVocab.kana}</div>
+                  <div className="text-2xl text-stone-600 font-light">{currentVocab.romaji}</div>
+                </div>
               </div>
             )}
           </div>
@@ -350,13 +361,6 @@ export const Quiz: React.FC<QuizProps> = ({
                 </button>
               ))}
             </div>
-            {/* Quiz beenden Button jetzt unten */}
-            <button
-              onClick={onComplete}
-              className="mt-4 px-6 py-3 bg-rose-400/90 text-white rounded-2xl hover:bg-rose-500 transition-all duration-300 font-light tracking-wide shadow-lg text-base w-full max-w-md"
-            >
-              Quiz beenden
-            </button>
           </div>
         )}
       </div>
