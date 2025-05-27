@@ -65,25 +65,24 @@ export const QuizTab: React.FC<QuizTabProps> = ({
     <div className="flex flex-col h-full bg-gradient-to-br from-amber-50 via-stone-50 to-orange-50">
       {/* Header */}
       <div className="bg-gradient-to-r from-stone-700 via-amber-800 to-stone-800 text-amber-50 p-4 shadow-2xl">
-        <div className="mb-4">
-          <h1 className="text-xl text-amber-200/90 font-extralight tracking-wide" style={{ fontFamily: 'serif' }}>
+        <div className="mb-2 flex flex-col items-center">
+          <h1 className="text-2xl md:text-3xl text-amber-200/90 font-extralight tracking-wide text-center" style={{ fontFamily: 'serif' }}>
             学習への愛 • Liebe zum Lernen
           </h1>
         </div>
-        
         {/* Quick Stats */}
-        <div className="grid grid-cols-3 gap-4 text-center">
+        <div className="grid grid-cols-3 gap-2 text-center text-base md:text-lg">
           <div>
-            <div className="text-2xl font-extralight tracking-wider">{getStats().learned}</div>
-            <div className="text-sm text-amber-100 font-light">Gelernt</div>
+            <div className="font-extralight tracking-wider">{getStats().learned}</div>
+            <div className="text-xs md:text-sm text-amber-100 font-light">Gelernt</div>
           </div>
           <div>
-            <div className="text-2xl font-extralight tracking-wider">{stats.due}</div>
-            <div className="text-sm text-amber-100 font-light">Fällig heute</div>
+            <div className="font-extralight tracking-wider">{stats.due}</div>
+            <div className="text-xs md:text-sm text-amber-100 font-light">Fällig heute</div>
           </div>
           <div>
-            <div className="text-2xl font-extralight tracking-wider">{stats.mastered}</div>
-            <div className="text-sm text-amber-100 font-light">Gemeistert</div>
+            <div className="font-extralight tracking-wider">{stats.mastered}</div>
+            <div className="text-xs md:text-sm text-amber-100 font-light">Gemeistert</div>
           </div>
         </div>
       </div>
@@ -92,10 +91,7 @@ export const QuizTab: React.FC<QuizTabProps> = ({
       <div className="flex-1 overflow-y-auto pb-20 p-4"> {/* pb-20 für Tab Bar */}
         
         {/* Aktuelle Einstellungen */}
-        <div className="bg-gradient-to-br from-amber-50 to-stone-100 rounded-3xl border border-amber-200/50 p-6 mb-6 shadow-lg">
-          <h2 className="text-lg font-light text-stone-800 mb-4 tracking-wide">
-            Quiz-Einstellungen
-          </h2>
+        <div className="bg-gradient-to-br from-amber-50 to-stone-100 rounded-3xl border border-amber-200/50 p-4 mb-6 shadow-lg">
           <div className="space-y-3 text-sm">
             <div className="flex justify-between">
               <span className="text-stone-600 font-light">Abfragerichtung:</span>
@@ -111,12 +107,6 @@ export const QuizTab: React.FC<QuizTabProps> = ({
               <span className="font-light text-stone-800">{quizSettings.wordsPerQuiz}</span>
             </div>
           </div>
-          <button
-            onClick={onSettings}
-            className="mt-4 text-amber-700 hover:text-amber-800 text-sm font-light tracking-wide transition-colors"
-          >
-            → Einstellungen ändern
-          </button>
         </div>
 
         {/* Quiz Modi */}
