@@ -1,91 +1,85 @@
-import { VocabularyCard } from '../types/vocabulary';
+import { VocabularyCard } from '../types';
 
 const DB_NAME = 'japanvoc-db';
-const DB_VERSION = 1;
 const STORE_NAME = 'vocabulary';
+const DB_VERSION = 1;
 
-// Datenbank initialisieren
+// IndexedDB initialisieren
 export const initDB = (): Promise<IDBDatabase> => {
   return new Promise((resolve, reject) => {
     const request = indexedDB.open(DB_NAME, DB_VERSION);
 
     request.onerror = () => {
-      console.error('Fehler beim Öffnen der Datenbank');
+      console.error('IndexedDB Fehler:', request.error);
       reject(request.error);
     };
 
     request.onsuccess = () => {
-      console.log('✅ Datenbank erfolgreich geöffnet');
       resolve(request.result);
     };
 
     request.onupgradeneeded = (event) => {
       const db = (event.target as IDBOpenDBRequest).result;
       if (!db.objectStoreNames.contains(STORE_NAME)) {
-        const store = db.createObjectStore(STORE_NAME, { keyPath: 'id' });
-        store.createIndex('kanji', 'kanji', { unique: false });
-        store.createIndex('kana', 'kana', { unique: false });
-        console.log('✅ Datenbank-Schema erstellt');
+        db.createObjectStore(STORE_NAME, { keyPath: 'id' });
       }
     };
   });
 };
 
-// Vokabeln speichern
-export const saveVocabulary = async (vocabs: VocabularyCard[]): Promise<void> => {
-  const db = await initDB();
-  return new Promise((resolve, reject) => {
+// Vokabeln in IndexedDB speichern
+export const saveVocabulary = async (vocabulary: VocabularyCard[]): Promise<void> => {
+  try {
+    const db = await initDB();
     const transaction = db.transaction([STORE_NAME], 'readwrite');
     const store = transaction.objectStore(STORE_NAME);
 
-    // Alte Daten löschen
-    store.clear();
-
-    // Neue Daten speichern
-    vocabs.forEach(vocab => {
-      store.add(vocab);
+    // Bestehende Daten löschen
+    await new Promise<void>((resolve, reject) => {
+      const clearRequest = store.clear();
+      clearRequest.onsuccess = () => resolve();
+      clearRequest.onerror = () => reject(clearRequest.error);
     });
 
-    transaction.oncomplete = () => {
-      console.log(`💾 ${vocabs.length} Vokabeln in IndexedDB gespeichert`);
-      resolve();
-    };
-
-    transaction.onerror = () => {
-      console.error('Fehler beim Speichern der Vokabeln');
-      reject(transaction.error);
-    };
-  });
+    // Neue Daten speichern
+    for (const card of vocabulary) {
+      await new Promise<void>((resolve, reject) => {
+        const request = store.add(card);
+        request.onsuccess = () => resolve();
+        request.onerror = () => reject(request.error);
+      });
+    }
+  } catch (err) {
+    console.error('Fehler beim Speichern in IndexedDB:', err);
+    throw err;
+  }
 };
 
-// Vokabeln laden
+// Vokabeln aus IndexedDB laden
 export const loadVocabulary = async (): Promise<VocabularyCard[]> => {
-  const db = await initDB();
-  return new Promise((resolve, reject) => {
+  try {
+    const db = await initDB();
     const transaction = db.transaction([STORE_NAME], 'readonly');
     const store = transaction.objectStore(STORE_NAME);
-    const request = store.getAll();
-
-    request.onsuccess = () => {
-      const vocabs = request.result;
-      console.log(`✅ ${vocabs.length} Vokabeln aus IndexedDB geladen`);
-      resolve(vocabs);
-    };
-
-    request.onerror = () => {
-      console.error('Fehler beim Laden der Vokabeln');
-      reject(request.error);
-    };
-  });
+    
+    return new Promise((resolve, reject) => {
+      const request = store.getAll();
+      request.onsuccess = () => resolve(request.result);
+      request.onerror = () => reject(request.error);
+    });
+  } catch (err) {
+    console.error('Fehler beim Laden aus IndexedDB:', err);
+    throw err;
+  }
 };
 
-// Backup in LocalStorage (zusätzliche Sicherheit)
-export const backupToLocalStorage = (vocabs: VocabularyCard[]): void => {
+// Backup in LocalStorage
+export const backupToLocalStorage = (vocabulary: VocabularyCard[]): void => {
   try {
-    localStorage.setItem('japanvoc-backup', JSON.stringify(vocabs));
-    console.log('💾 Backup in LocalStorage erstellt');
+    localStorage.setItem('japanvoc-backup', JSON.stringify(vocabulary));
   } catch (err) {
     console.error('Fehler beim Backup in LocalStorage:', err);
+    throw err;
   }
 };
 
@@ -93,13 +87,9 @@ export const backupToLocalStorage = (vocabs: VocabularyCard[]): void => {
 export const loadFromLocalStorage = (): VocabularyCard[] | null => {
   try {
     const backup = localStorage.getItem('japanvoc-backup');
-    if (backup) {
-      const vocabs = JSON.parse(backup);
-      console.log('✅ Backup aus LocalStorage geladen');
-      return vocabs;
-    }
+    return backup ? JSON.parse(backup) : null;
   } catch (err) {
-    console.error('Fehler beim Laden des Backups:', err);
+    console.error('Fehler beim Laden aus LocalStorage:', err);
+    return null;
   }
-  return null;
 }; 

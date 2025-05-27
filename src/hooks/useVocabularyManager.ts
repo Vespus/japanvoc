@@ -6,74 +6,83 @@ const STORAGE_KEY = 'japanvoc-vocabulary';
 
 export const useVocabularyManager = () => {
   const [vocabulary, setVocabulary] = useState<VocabularyCard[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  // Laden der Vokabeln (IndexedDB -> LocalStorage Backup -> JSON-Fallback)
-  useEffect(() => {
-    const loadVocabulary = async () => {
-      try {
-        setLoading(true);
-        setError(null);
-        
-        // Versuche zuerst aus IndexedDB zu laden
-        try {
-          const data = await loadVocabulary();
-          if (data && data.length > 0) {
-            setVocabulary(data);
-            // Backup in LocalStorage aktualisieren
-            backupToLocalStorage(data);
-            setLoading(false);
-            return;
-          }
-        } catch (err) {
-          console.warn('IndexedDB nicht verfügbar, versuche LocalStorage Backup');
-        }
-        
-        // Versuche LocalStorage Backup
-        const backup = loadFromLocalStorage();
-        if (backup && backup.length > 0) {
-          setVocabulary(backup);
-          // Versuche, Backup in IndexedDB zu speichern
-          try {
-            await saveVocabulary(backup);
-          } catch (err) {
-            console.warn('Konnte Backup nicht in IndexedDB speichern');
-          }
-          setLoading(false);
-          return;
-        }
-        
-        // Fallback: Lade aus JSON-Datei
-        const response = await fetch('/japanisch-deutsch-500.json');
-        if (!response.ok) {
-          throw new Error('Vokabeldaten konnten nicht geladen werden');
-        }
-        
-        const data: VocabularyData = await response.json();
-        
-        if (!data.cards || !Array.isArray(data.cards)) {
-          throw new Error('Ungültiges Datenformat');
-        }
-        
-        setVocabulary(data.cards);
-        // Speichere initial in IndexedDB und LocalStorage
-        try {
-          await saveVocabulary(data.cards);
-          backupToLocalStorage(data.cards);
-        } catch (err) {
-          console.warn('Konnte initiale Daten nicht speichern');
-        }
-        
-      } catch (err) {
-        console.error('Fehler beim Laden der Vokabeln:', err);
-        setError(err instanceof Error ? err.message : 'Unbekannter Fehler');
-      } finally {
-        setLoading(false);
+  // Vokabeln laden
+  const loadVocabularyData = async () => {
+    setIsLoading(true);
+    setError(null);
+    try {
+      // Versuche zuerst IndexedDB
+      const data = await loadVocabulary();
+      if (data && data.length > 0) {
+        setVocabulary(data);
+        // Backup in LocalStorage aktualisieren
+        backupToLocalStorage(data);
+        return;
       }
-    };
 
-    loadVocabulary();
+      // Wenn IndexedDB leer, versuche LocalStorage
+      const backupData = loadFromLocalStorage();
+      if (backupData && backupData.length > 0) {
+        setVocabulary(backupData);
+        // Wiederherstellen in IndexedDB
+        await saveVocabulary(backupData);
+        return;
+      }
+
+      // Wenn beide leer, lade aus JSON
+      const response = await fetch('/vocabulary.json');
+      if (!response.ok) {
+        throw new Error('Fehler beim Laden der Vokabeln');
+      }
+      const jsonData = await response.json();
+      setVocabulary(jsonData);
+      // Speichere in IndexedDB und LocalStorage
+      await saveVocabulary(jsonData);
+      backupToLocalStorage(jsonData);
+    } catch (err) {
+      console.error('Fehler beim Laden der Vokabeln:', err);
+      setError(err instanceof Error ? err.message : 'Unbekannter Fehler');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  // Vokabeln speichern
+  const saveVocabularyData = async (data: VocabularyCard[]) => {
+    try {
+      await saveVocabulary(data);
+      backupToLocalStorage(data);
+      setVocabulary(data);
+    } catch (err) {
+      console.error('Fehler beim Speichern der Vokabeln:', err);
+      setError(err instanceof Error ? err.message : 'Unbekannter Fehler');
+    }
+  };
+
+  // Vokabeln neu laden
+  const reloadVocabulary = async () => {
+    try {
+      // Lösche IndexedDB und LocalStorage
+      const db = await initDB();
+      const transaction = db.transaction(['vocabulary'], 'readwrite');
+      const store = transaction.objectStore('vocabulary');
+      await store.clear();
+      localStorage.removeItem('japanvoc-backup');
+      
+      // Lade neu
+      await loadVocabularyData();
+    } catch (err) {
+      console.error('Fehler beim Neuladen der Vokabeln:', err);
+      setError(err instanceof Error ? err.message : 'Unbekannter Fehler');
+    }
+  };
+
+  // Initial laden
+  useEffect(() => {
+    loadVocabularyData();
   }, []);
 
   // Speichern in IndexedDB und LocalStorage
@@ -186,7 +195,7 @@ export const useVocabularyManager = () => {
 
   return {
     vocabulary,
-    loading,
+    isLoading,
     error,
     addVocabulary,
     updateVocabulary,
@@ -195,17 +204,7 @@ export const useVocabularyManager = () => {
     getVocabularyById,
     checkDuplicate,
     getStats,
-    reload: async () => {
-      try {
-        const db = await initDB();
-        const transaction = db.transaction([STORE_NAME], 'readwrite');
-        const store = transaction.objectStore(STORE_NAME);
-        store.clear();
-        localStorage.removeItem('japanvoc-backup');
-        window.location.reload();
-      } catch (err) {
-        console.error('Fehler beim Zurücksetzen:', err);
-      }
-    }
+    reloadVocabulary,
+    saveVocabulary: saveVocabularyData
   };
 }; 
