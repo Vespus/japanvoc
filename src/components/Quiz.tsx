@@ -199,7 +199,7 @@ export const Quiz: React.FC<QuizProps> = ({
               <ArrowLeft size={24} className="text-amber-50 opacity-90" />
             </button>
             <div>
-              <h1 className="text-lg font-light tracking-wide">{getModeTitle()}</h1>
+              <h1 className="text-lg font-light tracking-wide">{getModeTitle()} <span className="text-xs align-top ml-2 text-amber-100">V0.82</span></h1>
               <p className="text-sm text-amber-100 font-light">
                 {currentIndex + 1} von {quizVocabulary.length}
               </p>
@@ -352,44 +352,19 @@ export const Quiz: React.FC<QuizProps> = ({
 
         {/* Action Buttons - Touch-optimiert */}
         {showAnswer && (
-          <div className="px-6 pb-8">
-            <div className="text-center text-lg font-light text-stone-700 mb-6 tracking-wide">
-              Wie gut kanntest du die Antwort?
+          <div className="fixed bottom-0 left-0 right-0 pb-4 flex flex-col items-center z-40">
+            <div className="w-full max-w-md mx-auto grid grid-cols-3 gap-3 bg-white/80 rounded-2xl shadow-2xl p-4 border border-amber-200/60">
+              {QUALITY_LABELS.map(q => (
+                <button
+                  key={q.value}
+                  onClick={() => handleQualityRating(q.value)}
+                  className={`min-w-[90px] max-w-[120px] py-3 px-1 rounded-2xl text-white font-light text-center transition-all duration-200 shadow-lg text-[0.98rem] leading-tight ${q.color}`}
+                  style={{ touchAction: 'manipulation' }}
+                >
+                  <span className="block break-words whitespace-pre-line">{q.label}</span>
+                </button>
+              ))}
             </div>
-            
-            {/* Quality Rating Buttons - Größer und touch-freundlicher */}
-            <div className="grid grid-cols-2 gap-4 mb-6">
-              {Object.entries(QUALITY_LABELS).map(([quality, info]) => {
-                // Elegante Farben für die Bewertungsbuttons
-                const getElegantColor = (originalColor: string) => {
-                  if (originalColor.includes('red')) return 'bg-gradient-to-br from-rose-400 to-rose-500';
-                  if (originalColor.includes('orange')) return 'bg-gradient-to-br from-amber-500 to-amber-600';
-                  if (originalColor.includes('yellow')) return 'bg-gradient-to-br from-amber-400 to-amber-500';
-                  if (originalColor.includes('green')) return 'bg-gradient-to-br from-teal-500 to-teal-600';
-                  return originalColor;
-                };
-                
-                return (
-                  <button
-                    key={quality}
-                    onClick={() => handleQualityRating(Number(quality))}
-                    className={`p-4 rounded-2xl text-white font-light transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105 min-h-[80px] ${getElegantColor(info.color)}`}
-                  >
-                    <div className="text-lg font-medium mb-1">{quality} - {info.label}</div>
-                    <div className="text-sm opacity-90 font-light">{info.description}</div>
-                  </button>
-                );
-              })}
-            </div>
-            
-            {/* Repeat Button - Größer */}
-            <button
-              onClick={repeatCard}
-              className="w-full py-4 px-6 border-2 border-stone-300 text-stone-700 rounded-2xl hover:bg-stone-50 hover:border-stone-400 transition-all duration-300 flex items-center justify-center font-light text-lg min-h-[56px] tracking-wide"
-            >
-              <RotateCcw size={24} className="mr-3 opacity-80" />
-              Nochmal anschauen
-            </button>
           </div>
         )}
       </div>
