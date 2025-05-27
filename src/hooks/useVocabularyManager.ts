@@ -33,15 +33,40 @@ export const useVocabularyManager = () => {
       }
 
       // Wenn beide leer, lade aus JSON
-      const response = await fetch('/vocabulary.json');
+      console.log('📥 Versuche Vokabeln aus JSON zu laden...');
+      const response = await fetch('/japanisch-deutsch-500.json');
       if (!response.ok) {
+        console.error('❌ JSON-Ladefehler:', response.status, response.statusText);
         throw new Error('Fehler beim Laden der Vokabeln');
       }
       const jsonData = await response.json();
-      setVocabulary(jsonData);
+      console.log(`✅ ${jsonData.length} Vokabeln aus JSON geladen`);
+      
+      // Konvertiere die Daten in das richtige Format
+      const formattedData = jsonData.map((item: any) => ({
+        id: `json-${item.id || Math.random().toString(36).substr(2, 9)}`,
+        kanji: item.kanji || '',
+        kana: item.kana || '',
+        romaji: item.romaji || '',
+        de: item.de || '',
+        sm2: {
+          easeFactor: 2.5,
+          interval: 1,
+          repetitions: 0,
+          nextReview: null,
+          lastReview: null,
+          quality: null
+        }
+      }));
+      
+      console.log('📝 Daten formatiert:', formattedData.length, 'Vokabeln');
+      setVocabulary(formattedData);
+      
       // Speichere in IndexedDB und LocalStorage
-      await saveVocabulary(jsonData);
-      backupToLocalStorage(jsonData);
+      console.log('💾 Speichere in IndexedDB...');
+      await saveVocabulary(formattedData);
+      console.log('💾 Backup in LocalStorage...');
+      backupToLocalStorage(formattedData);
     } catch (err) {
       console.error('Fehler beim Laden der Vokabeln:', err);
       setError(err instanceof Error ? err.message : 'Unbekannter Fehler');
