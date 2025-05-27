@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Save, RotateCcw } from 'lucide-react';
+import { initDB } from '../utils/storage';
 
 interface SettingsProps {
   // Keine Props mehr benötigt - Navigation über Tab Bar
