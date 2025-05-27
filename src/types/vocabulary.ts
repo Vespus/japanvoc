@@ -58,6 +58,14 @@ export interface AppState {
   error: string | null;
 }
 
+// Vokabel-Statistiken
+export interface VocabularyStats {
+  total: number;      // Gesamtanzahl der Vokabeln
+  learned: number;    // Anzahl der gelernten Vokabeln (repetitions > 0)
+  toReview: number;   // Anzahl der fälligen Wiederholungen
+  available: number;  // Anzahl der noch nicht gelernten Vokabeln
+}
+
 export interface VocabularyManagerReturnType {
   vocabulary: VocabularyCard[];
   isLoading: boolean;
