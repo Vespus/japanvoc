@@ -8,6 +8,7 @@ import { EditVocabulary } from './components/EditVocabulary';
 import { QuizMode } from './components/QuizSelection';
 import { Quiz } from './components/Quiz';
 import { Settings } from './components/Settings';
+
 import { VocabularyCard as VocabType } from './types/vocabulary';
 
 type AppView = 'tab' | 'add' | 'quiz' | 'settings' | 'edit';
@@ -108,9 +109,11 @@ function App() {
     return <Settings />;
   }
 
+
+
   // Tab-basierte Navigation (Standard)
   return (
-    <div className="h-screen flex flex-col bg-gray-50">
+    <div className="h-screen flex flex-col bg-gradient-to-br from-amber-50 via-stone-50 to-orange-50">
       {/* Tab Content */}
       <div className="flex-1 overflow-hidden">
         {activeTab === 'quiz' && (
@@ -132,11 +135,7 @@ function App() {
         
         {activeTab === 'stats' && <StatsTab />}
         
-        {activeTab === 'settings' && (
-          <div className="h-full">
-            <Settings />
-          </div>
-        )}
+        {activeTab === 'settings' && <Settings />}
       </div>
 
       {/* Tab Bar */}

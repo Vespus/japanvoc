@@ -153,11 +153,11 @@ export const Quiz: React.FC<QuizProps> = ({
   // Ladeansicht während Initialisierung
   if (loading || !isInitialized) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-amber-50 via-stone-50 to-orange-50 flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-          <h2 className="text-xl font-semibold text-gray-800 mb-2">Quiz wird vorbereitet...</h2>
-          <p className="text-gray-600">Vokabeln werden geladen</p>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-700 mx-auto mb-4"></div>
+          <h2 className="text-xl font-light text-stone-800 mb-2 tracking-wide">Quiz wird vorbereitet...</h2>
+          <p className="text-stone-600 font-light">Vokabeln werden geladen</p>
         </div>
       </div>
     );
@@ -166,11 +166,11 @@ export const Quiz: React.FC<QuizProps> = ({
   // Quiz abgeschlossen
   if (!currentVocab) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-amber-50 via-stone-50 to-orange-50 flex items-center justify-center">
         <div className="text-center">
-          <CheckCircle className="mx-auto mb-4 text-green-600" size={64} />
-          <h2 className="text-2xl font-bold text-gray-800 mb-2">Quiz abgeschlossen!</h2>
-          <p className="text-gray-600">Keine weiteren Vokabeln verfügbar.</p>
+          <CheckCircle className="mx-auto mb-4 text-teal-600" size={64} />
+          <h2 className="text-2xl font-light text-stone-800 mb-2 tracking-wide">Quiz abgeschlossen!</h2>
+          <p className="text-stone-600 font-light">Keine weiteren Vokabeln verfügbar.</p>
         </div>
       </div>
     );
@@ -186,21 +186,21 @@ export const Quiz: React.FC<QuizProps> = ({
   };
 
   return (
-    <div className="h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex flex-col">
+    <div className="h-screen bg-gradient-to-br from-amber-50 via-stone-50 to-orange-50 flex flex-col">
       {/* Header */}
-      <header className="bg-white shadow-sm border-b px-4 py-3">
+      <header className="bg-gradient-to-r from-stone-700 via-amber-800 to-stone-800 text-amber-50 shadow-2xl px-4 py-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <button
               onClick={onBack}
-              className="mr-3 p-3 hover:bg-gray-100 rounded-xl transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
+              className="mr-3 p-3 hover:bg-stone-700/50 rounded-xl transition-all duration-300 min-h-[44px] min-w-[44px] flex items-center justify-center"
               aria-label="Zurück"
             >
-              <ArrowLeft size={24} />
+              <ArrowLeft size={24} className="text-amber-50 opacity-90" />
             </button>
             <div>
-              <h1 className="text-lg font-semibold">{getModeTitle()}</h1>
-              <p className="text-sm text-gray-600">
+              <h1 className="text-lg font-light tracking-wide">{getModeTitle()}</h1>
+              <p className="text-sm text-amber-100 font-light">
                 {currentIndex + 1} von {quizVocabulary.length}
               </p>
             </div>
@@ -209,7 +209,7 @@ export const Quiz: React.FC<QuizProps> = ({
           {/* Quiz beenden Button */}
           <button
             onClick={onComplete}
-            className="px-4 py-2 bg-red-100 text-red-700 rounded-lg hover:bg-red-200 transition-colors min-h-[44px] font-medium"
+            className="px-4 py-2 bg-rose-400/80 text-white rounded-xl hover:bg-rose-500 transition-all duration-300 min-h-[44px] font-light tracking-wide shadow-lg"
           >
             Quiz beenden
           </button>
@@ -217,35 +217,35 @@ export const Quiz: React.FC<QuizProps> = ({
         
         {/* Session Stats */}
         <div className="flex justify-between items-center mt-3 text-sm">
-          <div className="text-gray-600">
+          <div className="text-amber-100 font-light">
             Richtig: {sessionStats.correct}/{sessionStats.total}
           </div>
-          <div className="text-blue-600 font-medium">
+          <div className="text-amber-200 font-light tracking-wide">
             Serie: {sessionStats.streak}
           </div>
         </div>
       </header>
 
       {/* Progress Bar */}
-      <div className="bg-white border-b px-4 py-2">
-        <div className="h-3 bg-gray-200 rounded-full overflow-hidden">
+      <div className="bg-gradient-to-r from-amber-50 to-stone-50 border-b border-amber-200/60 px-4 py-2">
+        <div className="h-3 bg-stone-200 rounded-full overflow-hidden">
           <div 
-            className="h-full bg-gradient-to-r from-blue-500 to-blue-600 transition-all duration-500 ease-out rounded-full"
+            className="h-full bg-gradient-to-r from-amber-600 to-stone-700 transition-all duration-500 ease-out rounded-full"
             style={{ width: `${((currentIndex + 1) / quizVocabulary.length) * 100}%` }}
           />
         </div>
-        <div className="text-xs text-gray-500 text-center mt-1">
+        <div className="text-xs text-stone-500 text-center mt-1 font-light">
           {Math.round(((currentIndex + 1) / quizVocabulary.length) * 100)}% abgeschlossen
         </div>
       </div>
 
       {/* Quiz Card - Vollbild optimiert */}
       <div className="flex-1 flex flex-col justify-center px-6 py-8">
-        <div className="bg-white rounded-3xl shadow-2xl p-8 mx-auto w-full max-w-lg">
+        <div className="bg-gradient-to-br from-amber-25 via-stone-25 to-amber-50 rounded-3xl shadow-2xl p-8 mx-auto w-full max-w-lg border border-amber-100/80" style={{ backgroundColor: '#fefdfb' }}>
           {/* Abfragerichtung Indikator - Klar als Info-Badge */}
           <div className="text-center mb-8">
-            <div className="inline-flex items-center px-4 py-2 bg-gray-100 text-gray-700 text-sm font-medium rounded-lg border border-gray-200">
-              <div className="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
+            <div className="inline-flex items-center px-5 py-2 bg-stone-100/80 text-stone-600 text-sm font-light rounded-full border border-stone-200/60 shadow-sm">
+              <div className="w-2 h-2 bg-amber-600 rounded-full mr-3 opacity-80"></div>
               {currentDirection === 'jp-to-de' && 'Japanisch → Deutsch'}
               {currentDirection === 'de-to-jp' && 'Deutsch → Japanisch'}
               {currentDirection === 'kanji-to-reading' && 'Kanji → Lesung'}
@@ -256,35 +256,35 @@ export const Quiz: React.FC<QuizProps> = ({
           <div className="text-center mb-12">
             {currentDirection === 'jp-to-de' && (
               <>
-                <div className="text-6xl font-bold text-gray-900 mb-4 leading-tight">
+                <div className="text-6xl font-extralight text-stone-800 mb-4 leading-tight" style={{ fontFamily: 'serif' }}>
                   {currentVocab.kanji}
                 </div>
-                <div className="text-2xl text-gray-700 mb-2 font-medium">
+                <div className="text-2xl text-stone-700 mb-2 font-light">
                   {currentVocab.kana}
                 </div>
-                <div className="text-lg text-gray-500">
+                <div className="text-lg text-stone-500 font-light">
                   {currentVocab.romaji}
                 </div>
               </>
             )}
             
             {currentDirection === 'de-to-jp' && (
-              <div className="text-4xl font-bold text-gray-900 leading-tight">
+              <div className="text-4xl font-light text-stone-800 leading-tight tracking-wide">
                 {currentVocab.de}
               </div>
             )}
             
             {currentDirection === 'kanji-to-reading' && (
-              <div className="text-7xl font-bold text-gray-900 leading-tight">
+              <div className="text-7xl font-extralight text-stone-800 leading-tight" style={{ fontFamily: 'serif' }}>
                 {currentVocab.kanji}
               </div>
             )}
           </div>
 
           {/* Answer Section - Größer und zentraler */}
-          <div className="border-t border-gray-100 pt-8">
+          <div className="border-t border-amber-200/60 pt-8">
             <div className="text-center mb-6">
-              <h3 className="text-lg font-semibold text-gray-800 mb-4">
+              <h3 className="text-lg font-light text-stone-700 mb-4 tracking-wide">
                 {currentDirection === 'jp-to-de' && 'Deutsche Bedeutung:'}
                 {currentDirection === 'de-to-jp' && 'Japanische Schreibung:'}
                 {currentDirection === 'kanji-to-reading' && 'Lesung:'}
@@ -292,45 +292,45 @@ export const Quiz: React.FC<QuizProps> = ({
               
               <button
                 onClick={toggleAnswer}
-                className="w-full py-4 px-6 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-2xl hover:from-blue-600 hover:to-blue-700 transition-all duration-200 font-semibold text-lg shadow-lg min-h-[56px] flex items-center justify-center"
+                className="w-full py-4 px-6 bg-gradient-to-r from-stone-600 to-amber-700 text-amber-50 rounded-2xl hover:from-stone-700 hover:to-amber-800 transition-all duration-500 font-light text-lg shadow-xl min-h-[56px] flex items-center justify-center tracking-wide"
               >
                 {showAnswer ? (
                   <>
-                    <EyeOff size={24} className="mr-3" />
+                    <EyeOff size={22} className="mr-3 opacity-90" />
                     Antwort verstecken
                   </>
                 ) : (
                   <>
-                    <Eye size={24} className="mr-3" />
+                    <Eye size={22} className="mr-3 opacity-90" />
                     Antwort anzeigen
                   </>
                 )}
               </button>
             </div>
             
-            <div className="min-h-[120px] flex items-center justify-center bg-gray-50 rounded-2xl p-6">
+            <div className="min-h-[120px] flex items-center justify-center bg-gradient-to-br from-amber-50 to-stone-50 rounded-2xl p-6 border border-amber-100/60 shadow-inner">
               {showAnswer ? (
                 <div className="text-center">
                   {currentDirection === 'jp-to-de' && (
-                    <div className="text-3xl font-bold text-blue-600">{currentVocab.de}</div>
+                    <div className="text-3xl font-light text-amber-800 tracking-wide">{currentVocab.de}</div>
                   )}
                   {currentDirection === 'de-to-jp' && (
                     <>
-                      <div className="text-4xl font-bold text-gray-900 mb-3">{currentVocab.kanji}</div>
-                      <div className="text-2xl text-gray-700 mb-2">{currentVocab.kana}</div>
-                      <div className="text-lg text-gray-500">{currentVocab.romaji}</div>
+                      <div className="text-4xl font-light text-stone-800 mb-3" style={{ fontFamily: 'serif' }}>{currentVocab.kanji}</div>
+                      <div className="text-2xl text-stone-700 mb-2 font-light">{currentVocab.kana}</div>
+                      <div className="text-lg text-stone-500 font-light">{currentVocab.romaji}</div>
                     </>
                   )}
                   {currentDirection === 'kanji-to-reading' && (
                     <>
-                      <div className="text-3xl font-bold text-blue-600 mb-2">{currentVocab.kana}</div>
-                      <div className="text-2xl text-gray-700 mb-3">{currentVocab.romaji}</div>
-                      <div className="text-lg text-gray-500">({currentVocab.de})</div>
+                      <div className="text-3xl font-light text-amber-800 mb-2 tracking-wide">{currentVocab.kana}</div>
+                      <div className="text-2xl text-stone-600 mb-3 font-light">{currentVocab.romaji}</div>
+                      <div className="text-lg text-stone-500 font-light">({currentVocab.de})</div>
                     </>
                   )}
                 </div>
               ) : (
-                <div className="text-gray-400 text-center text-lg">
+                <div className="text-stone-400 text-center text-lg font-extralight tracking-wide">
                   Versuche zuerst die Antwort zu erraten
                 </div>
               )}
@@ -338,10 +338,10 @@ export const Quiz: React.FC<QuizProps> = ({
           </div>
 
           {/* SM-2 Info - Besser lesbar */}
-          <div className="border-t border-gray-100 pt-6 mt-8">
-            <div className="text-sm text-gray-500 text-center bg-gray-50 rounded-xl p-4">
-              <div className="font-medium text-gray-600 mb-1">Lernstatistik</div>
-              <div className="space-y-1">
+          <div className="border-t border-amber-200/60 pt-6 mt-8">
+            <div className="text-sm text-stone-500 text-center bg-gradient-to-br from-amber-50 to-stone-100 rounded-xl p-4 border border-amber-200/50">
+              <div className="font-light text-stone-600 mb-2 tracking-wide">Lernstatistik</div>
+              <div className="space-y-1 font-light">
                 <div>Wiederholungen: {currentVocab.sm2.repetitions}</div>
                 <div>Intervall: {currentVocab.sm2.interval} Tag{currentVocab.sm2.interval !== 1 ? 'e' : ''}</div>
                 <div>Schwierigkeit: {currentVocab.sm2.easeFactor.toFixed(2)}</div>
@@ -353,30 +353,41 @@ export const Quiz: React.FC<QuizProps> = ({
         {/* Action Buttons - Touch-optimiert */}
         {showAnswer && (
           <div className="px-6 pb-8">
-            <div className="text-center text-lg font-medium text-gray-700 mb-6">
+            <div className="text-center text-lg font-light text-stone-700 mb-6 tracking-wide">
               Wie gut kanntest du die Antwort?
             </div>
             
             {/* Quality Rating Buttons - Größer und touch-freundlicher */}
             <div className="grid grid-cols-2 gap-4 mb-6">
-              {Object.entries(QUALITY_LABELS).map(([quality, info]) => (
-                <button
-                  key={quality}
-                  onClick={() => handleQualityRating(Number(quality))}
-                  className={`p-4 rounded-2xl text-white font-semibold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 min-h-[80px] ${info.color}`}
-                >
-                  <div className="text-lg font-bold mb-1">{quality} - {info.label}</div>
-                  <div className="text-sm opacity-90">{info.description}</div>
-                </button>
-              ))}
+              {Object.entries(QUALITY_LABELS).map(([quality, info]) => {
+                // Elegante Farben für die Bewertungsbuttons
+                const getElegantColor = (originalColor: string) => {
+                  if (originalColor.includes('red')) return 'bg-gradient-to-br from-rose-400 to-rose-500';
+                  if (originalColor.includes('orange')) return 'bg-gradient-to-br from-amber-500 to-amber-600';
+                  if (originalColor.includes('yellow')) return 'bg-gradient-to-br from-amber-400 to-amber-500';
+                  if (originalColor.includes('green')) return 'bg-gradient-to-br from-teal-500 to-teal-600';
+                  return originalColor;
+                };
+                
+                return (
+                  <button
+                    key={quality}
+                    onClick={() => handleQualityRating(Number(quality))}
+                    className={`p-4 rounded-2xl text-white font-light transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105 min-h-[80px] ${getElegantColor(info.color)}`}
+                  >
+                    <div className="text-lg font-medium mb-1">{quality} - {info.label}</div>
+                    <div className="text-sm opacity-90 font-light">{info.description}</div>
+                  </button>
+                );
+              })}
             </div>
             
             {/* Repeat Button - Größer */}
             <button
               onClick={repeatCard}
-              className="w-full py-4 px-6 border-2 border-gray-300 text-gray-700 rounded-2xl hover:bg-gray-50 hover:border-gray-400 transition-all duration-200 flex items-center justify-center font-semibold text-lg min-h-[56px]"
+              className="w-full py-4 px-6 border-2 border-stone-300 text-stone-700 rounded-2xl hover:bg-stone-50 hover:border-stone-400 transition-all duration-300 flex items-center justify-center font-light text-lg min-h-[56px] tracking-wide"
             >
-              <RotateCcw size={24} className="mr-3" />
+              <RotateCcw size={24} className="mr-3 opacity-80" />
               Nochmal anschauen
             </button>
           </div>
@@ -385,10 +396,10 @@ export const Quiz: React.FC<QuizProps> = ({
 
       {/* Quiz Complete Preview */}
       {isLastCard && showAnswer && (
-        <div className="fixed bottom-4 left-4 right-4 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg max-w-md mx-auto">
+        <div className="fixed bottom-4 left-4 right-4 bg-gradient-to-r from-teal-100 to-emerald-100 border border-teal-300/60 text-teal-800 px-4 py-3 rounded-2xl max-w-md mx-auto shadow-lg">
           <div className="text-center">
-            <div className="font-medium">Letzte Vokabel!</div>
-            <div className="text-sm">
+            <div className="font-light tracking-wide">Letzte Vokabel!</div>
+            <div className="text-sm font-light">
               Session: {sessionStats.correct}/{sessionStats.total + 1} richtig • 
               Beste Serie: {sessionStats.maxStreak}
             </div>

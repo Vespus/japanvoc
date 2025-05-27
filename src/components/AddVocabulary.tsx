@@ -117,25 +117,25 @@ export const AddVocabulary: React.FC<AddVocabularyProps> = ({
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-stone-50 to-orange-50">
       {/* Header */}
-      <header className="bg-white shadow-sm border-b">
+      <header className="bg-gradient-to-r from-stone-700 via-amber-800 to-stone-800 text-amber-50 shadow-2xl">
         <div className="flex items-center p-4">
           <button
             onClick={onBack}
-            className="mr-3 p-2 hover:bg-gray-100 rounded-lg transition-colors"
+            className="mr-3 p-2 hover:bg-stone-700/50 rounded-xl transition-all duration-300"
           >
-            <ArrowLeft size={24} />
+            <ArrowLeft size={24} className="text-amber-50 opacity-90" />
           </button>
-          <h1 className="text-xl font-semibold">Neue Vokabel hinzufügen</h1>
+          <h1 className="text-xl font-extralight tracking-widest">Neue Vokabel hinzufügen</h1>
         </div>
       </header>
 
       {/* Success Message */}
       {showSuccess && (
-        <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 mx-4 mt-4 rounded">
-          <div className="flex items-center">
-            <Check className="mr-2" size={20} />
+        <div className="bg-gradient-to-r from-teal-100 to-emerald-100 border border-teal-300/60 text-teal-800 px-4 py-3 mx-4 mt-4 rounded-2xl shadow-lg">
+          <div className="flex items-center font-light">
+            <Check className="mr-2 opacity-80" size={20} />
             <span>Vokabel erfolgreich hinzugefügt!</span>
           </div>
         </div>
@@ -143,143 +143,146 @@ export const AddVocabulary: React.FC<AddVocabularyProps> = ({
 
       {/* Form */}
       <div className="p-4 max-w-md mx-auto">
-        <form onSubmit={handleSubmit} className="space-y-6">
-          {/* Kanji */}
-          <div>
-            <label htmlFor="kanji" className="block text-sm font-medium text-gray-700 mb-2">
-              Kanji *
-            </label>
-            <input
-              id="kanji"
-              type="text"
-              value={formData.kanji}
-              onChange={(e) => handleInputChange('kanji', e.target.value)}
-              className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-2xl ${
-                errors.kanji ? 'border-red-500' : 'border-gray-300'
-              }`}
-              placeholder="例: 犬"
-            />
-            {errors.kanji && (
-              <p className="mt-1 text-sm text-red-600 flex items-center">
-                <AlertCircle size={16} className="mr-1" />
-                {errors.kanji}
-              </p>
-            )}
-          </div>
-
-          {/* Kana */}
-          <div>
-            <label htmlFor="kana" className="block text-sm font-medium text-gray-700 mb-2">
-              Kana (Hiragana/Katakana) *
-            </label>
-            <input
-              id="kana"
-              type="text"
-              value={formData.kana}
-              onChange={(e) => handleInputChange('kana', e.target.value)}
-              className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg ${
-                errors.kana ? 'border-red-500' : 'border-gray-300'
-              }`}
-              placeholder="例: いぬ"
-            />
-            {errors.kana && (
-              <p className="mt-1 text-sm text-red-600 flex items-center">
-                <AlertCircle size={16} className="mr-1" />
-                {errors.kana}
-              </p>
-            )}
-          </div>
-
-          {/* Romaji */}
-          <div>
-            <label htmlFor="romaji" className="block text-sm font-medium text-gray-700 mb-2">
-              Romaji *
-            </label>
-            <input
-              id="romaji"
-              type="text"
-              value={formData.romaji}
-              onChange={(e) => handleInputChange('romaji', e.target.value)}
-              className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
-                errors.romaji ? 'border-red-500' : 'border-gray-300'
-              }`}
-              placeholder="例: inu"
-            />
-            {errors.romaji && (
-              <p className="mt-1 text-sm text-red-600 flex items-center">
-                <AlertCircle size={16} className="mr-1" />
-                {errors.romaji}
-              </p>
-            )}
-          </div>
-
-          {/* Deutsch */}
-          <div>
-            <label htmlFor="de" className="block text-sm font-medium text-gray-700 mb-2">
-              Deutsche Übersetzung *
-            </label>
-            <input
-              id="de"
-              type="text"
-              value={formData.de}
-              onChange={(e) => handleInputChange('de', e.target.value)}
-              className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
-                errors.de ? 'border-red-500' : 'border-gray-300'
-              }`}
-              placeholder="例: Hund"
-            />
-            {errors.de && (
-              <p className="mt-1 text-sm text-red-600 flex items-center">
-                <AlertCircle size={16} className="mr-1" />
-                {errors.de}
-              </p>
-            )}
-          </div>
-
-          {/* Duplikat-Fehler */}
-          {errors.duplicate && (
-            <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
-              <div className="flex items-center">
-                <AlertCircle className="mr-2" size={20} />
-                <span>{errors.duplicate}</span>
-              </div>
+        <div className="bg-gradient-to-br from-white to-amber-50 rounded-3xl border border-amber-300/60 shadow-lg p-6">
+          <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Kanji */}
+            <div>
+              <label htmlFor="kanji" className="block text-sm font-light text-stone-700 mb-3 tracking-wide">
+                Kanji *
+              </label>
+              <input
+                id="kanji"
+                type="text"
+                value={formData.kanji}
+                onChange={(e) => handleInputChange('kanji', e.target.value)}
+                className={`w-full px-4 py-3 border rounded-2xl focus:ring-2 focus:ring-amber-500 focus:border-transparent text-2xl font-light bg-white/80 backdrop-blur-sm ${
+                  errors.kanji ? 'border-rose-400' : 'border-stone-300/60'
+                }`}
+                placeholder="例: 犬"
+                style={{ fontFamily: 'serif' }}
+              />
+              {errors.kanji && (
+                <p className="mt-2 text-sm text-rose-600 flex items-center font-light">
+                  <AlertCircle size={16} className="mr-1 opacity-80" />
+                  {errors.kanji}
+                </p>
+              )}
             </div>
-          )}
 
-          {/* Submit-Fehler */}
-          {errors.submit && (
-            <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
-              <div className="flex items-center">
-                <AlertCircle className="mr-2" size={20} />
-                <span>{errors.submit}</span>
-              </div>
+            {/* Kana */}
+            <div>
+              <label htmlFor="kana" className="block text-sm font-light text-stone-700 mb-3 tracking-wide">
+                Kana (Hiragana/Katakana) *
+              </label>
+              <input
+                id="kana"
+                type="text"
+                value={formData.kana}
+                onChange={(e) => handleInputChange('kana', e.target.value)}
+                className={`w-full px-4 py-3 border rounded-2xl focus:ring-2 focus:ring-amber-500 focus:border-transparent text-lg font-light bg-white/80 backdrop-blur-sm ${
+                  errors.kana ? 'border-rose-400' : 'border-stone-300/60'
+                }`}
+                placeholder="例: いぬ"
+              />
+              {errors.kana && (
+                <p className="mt-2 text-sm text-rose-600 flex items-center font-light">
+                  <AlertCircle size={16} className="mr-1 opacity-80" />
+                  {errors.kana}
+                </p>
+              )}
             </div>
-          )}
 
-          {/* Submit Button */}
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white font-medium py-3 px-4 rounded-lg transition-colors flex items-center justify-center"
-          >
-            {isSubmitting ? (
-              <>
-                <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-                Speichern...
-              </>
-            ) : (
-              <>
-                <Save className="mr-2" size={20} />
-                Vokabel speichern
-              </>
+            {/* Romaji */}
+            <div>
+              <label htmlFor="romaji" className="block text-sm font-light text-stone-700 mb-3 tracking-wide">
+                Romaji *
+              </label>
+              <input
+                id="romaji"
+                type="text"
+                value={formData.romaji}
+                onChange={(e) => handleInputChange('romaji', e.target.value)}
+                className={`w-full px-4 py-3 border rounded-2xl focus:ring-2 focus:ring-amber-500 focus:border-transparent font-light bg-white/80 backdrop-blur-sm tracking-wide ${
+                  errors.romaji ? 'border-rose-400' : 'border-stone-300/60'
+                }`}
+                placeholder="例: inu"
+              />
+              {errors.romaji && (
+                <p className="mt-2 text-sm text-rose-600 flex items-center font-light">
+                  <AlertCircle size={16} className="mr-1 opacity-80" />
+                  {errors.romaji}
+                </p>
+              )}
+            </div>
+
+            {/* Deutsch */}
+            <div>
+              <label htmlFor="de" className="block text-sm font-light text-stone-700 mb-3 tracking-wide">
+                Deutsche Übersetzung *
+              </label>
+              <input
+                id="de"
+                type="text"
+                value={formData.de}
+                onChange={(e) => handleInputChange('de', e.target.value)}
+                className={`w-full px-4 py-3 border rounded-2xl focus:ring-2 focus:ring-amber-500 focus:border-transparent font-light bg-white/80 backdrop-blur-sm tracking-wide ${
+                  errors.de ? 'border-rose-400' : 'border-stone-300/60'
+                }`}
+                placeholder="例: Hund"
+              />
+              {errors.de && (
+                <p className="mt-2 text-sm text-rose-600 flex items-center font-light">
+                  <AlertCircle size={16} className="mr-1 opacity-80" />
+                  {errors.de}
+                </p>
+              )}
+            </div>
+
+            {/* Duplikat-Fehler */}
+            {errors.duplicate && (
+              <div className="bg-gradient-to-r from-rose-100 to-rose-200 border border-rose-300/60 text-rose-800 px-4 py-3 rounded-2xl shadow-sm">
+                <div className="flex items-center font-light">
+                  <AlertCircle className="mr-2 opacity-80" size={20} />
+                  <span>{errors.duplicate}</span>
+                </div>
+              </div>
             )}
-          </button>
-        </form>
+
+            {/* Submit-Fehler */}
+            {errors.submit && (
+              <div className="bg-gradient-to-r from-rose-100 to-rose-200 border border-rose-300/60 text-rose-800 px-4 py-3 rounded-2xl shadow-sm">
+                <div className="flex items-center font-light">
+                  <AlertCircle className="mr-2 opacity-80" size={20} />
+                  <span>{errors.submit}</span>
+                </div>
+              </div>
+            )}
+
+            {/* Submit Button */}
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 disabled:from-amber-400 disabled:to-amber-500 text-white font-light py-4 px-6 rounded-2xl transition-all duration-300 flex items-center justify-center shadow-lg tracking-wide"
+            >
+              {isSubmitting ? (
+                <>
+                  <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2 opacity-80"></div>
+                  Speichern...
+                </>
+              ) : (
+                <>
+                  <Save className="mr-2 opacity-90" size={20} />
+                  Vokabel speichern
+                </>
+              )}
+            </button>
+          </form>
+        </div>
 
         {/* Hinweise */}
-        <div className="mt-8 p-4 bg-blue-50 rounded-lg">
-          <h3 className="font-medium text-blue-900 mb-2">Hinweise:</h3>
-          <ul className="text-sm text-blue-800 space-y-1">
+        <div className="mt-6 p-5 bg-gradient-to-br from-amber-50 to-amber-100 border border-amber-200/60 rounded-3xl shadow-sm">
+          <h3 className="font-light text-amber-800 mb-3 tracking-wide">Hinweise:</h3>
+          <ul className="text-sm text-amber-700 space-y-2 font-light leading-relaxed">
             <li>• Alle Felder sind erforderlich</li>
             <li>• Duplikate werden automatisch erkannt</li>
             <li>• Die Vokabel wird mit SM-2 Standard-Werten erstellt</li>

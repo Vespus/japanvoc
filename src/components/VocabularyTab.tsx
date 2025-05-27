@@ -32,35 +32,35 @@ export const VocabularyTab: React.FC<VocabularyTabProps> = ({
   const displayVocabs = searchTerm.trim() ? searchResults : vocabulary.slice(0, 50); // Zeige nur erste 50 wenn keine Suche
 
   return (
-    <div className="flex flex-col h-full bg-gray-50">
+    <div className="flex flex-col h-full bg-gradient-to-br from-amber-50 via-stone-50 to-orange-50">
       {/* Header mit Suche */}
-      <div className="bg-white border-b border-gray-200 p-4">
+      <div className="bg-gradient-to-r from-amber-50 to-stone-50 border-b border-amber-200/60 p-4 shadow-lg">
         <div className="flex items-center space-x-3">
           {/* Suchfeld */}
           <div className="flex-1 relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-stone-400 opacity-80" size={20} />
             <input
               type="text"
               placeholder="Vokabeln durchsuchen..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full pl-10 pr-4 py-3 border border-stone-300/60 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-transparent bg-white/80 backdrop-blur-sm font-light tracking-wide placeholder:text-stone-400"
             />
           </div>
           
           {/* Add Button */}
           <button
             onClick={onAddVocab}
-            className="flex items-center justify-center w-12 h-12 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="flex items-center justify-center w-12 h-12 bg-gradient-to-r from-amber-600 to-amber-700 text-white rounded-xl hover:from-amber-700 hover:to-amber-800 transition-all duration-300 shadow-lg"
             aria-label="Neue Vokabel hinzufügen"
           >
-            <Plus size={24} />
+            <Plus size={24} className="opacity-90" />
           </button>
         </div>
         
         {/* Suchergebnisse Info */}
         {searchTerm.trim() && (
-          <div className="mt-3 text-sm text-gray-600">
+          <div className="mt-3 text-sm text-stone-600 font-light">
             {isSearching ? (
               'Suche läuft...'
             ) : (
@@ -73,12 +73,12 @@ export const VocabularyTab: React.FC<VocabularyTabProps> = ({
       {/* Vokabelliste */}
       <div className="flex-1 overflow-y-auto pb-20"> {/* pb-20 für Tab Bar Platz */}
         {displayVocabs.length === 0 ? (
-          <div className="flex flex-col items-center justify-center h-64 text-gray-500">
-            <FileText size={48} className="mb-4 text-gray-300" />
-            <h3 className="text-lg font-medium mb-2">
+          <div className="flex flex-col items-center justify-center h-64 text-stone-500">
+            <FileText size={48} className="mb-4 text-stone-300 opacity-60" />
+            <h3 className="text-lg font-light mb-2 tracking-wide">
               {searchTerm.trim() ? 'Keine Ergebnisse' : 'Keine Vokabeln'}
             </h3>
-            <p className="text-center text-sm">
+            <p className="text-center text-sm font-light">
               {searchTerm.trim() 
                 ? 'Versuche einen anderen Suchbegriff'
                 : 'Füge deine erste Vokabel hinzu'
@@ -87,7 +87,7 @@ export const VocabularyTab: React.FC<VocabularyTabProps> = ({
             {!searchTerm.trim() && (
               <button
                 onClick={onAddVocab}
-                className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                className="mt-4 px-4 py-2 bg-gradient-to-r from-amber-600 to-amber-700 text-white rounded-xl hover:from-amber-700 hover:to-amber-800 transition-all duration-300 font-light tracking-wide shadow-lg"
               >
                 Vokabel hinzufügen
               </button>
@@ -98,24 +98,24 @@ export const VocabularyTab: React.FC<VocabularyTabProps> = ({
             {displayVocabs.map((vocab: VocabularyCard) => (
               <div
                 key={vocab.id}
-                className="bg-white rounded-lg border border-gray-200 p-4 hover:shadow-md transition-shadow"
+                className="bg-gradient-to-br from-white to-amber-50 rounded-2xl border border-amber-300/60 p-5 hover:shadow-xl transition-all duration-300 hover:scale-[1.01] shadow-md"
               >
                 <div className="flex items-start justify-between">
                   <div className="flex-1 min-w-0">
                     {/* Japanisch */}
-                    <div className="flex items-center space-x-2 mb-2">
-                      <span className="text-xl font-bold text-gray-900">{vocab.kanji}</span>
-                      <span className="text-lg text-gray-700">{vocab.kana}</span>
+                    <div className="flex items-center space-x-3 mb-3">
+                      <span className="text-xl font-light text-stone-800" style={{ fontFamily: 'serif' }}>{vocab.kanji}</span>
+                      <span className="text-lg text-stone-700 font-light">{vocab.kana}</span>
                     </div>
                     
                     {/* Romaji */}
-                    <div className="text-sm text-gray-500 mb-2">{vocab.romaji}</div>
+                    <div className="text-sm text-stone-500 mb-3 font-light tracking-wide">{vocab.romaji}</div>
                     
                     {/* Deutsche Bedeutung */}
-                    <div className="text-base text-blue-600 font-medium">{vocab.de}</div>
+                    <div className="text-base text-amber-800 font-light tracking-wide">{vocab.de}</div>
                     
                     {/* SM-2 Info */}
-                    <div className="mt-2 text-xs text-gray-400">
+                    <div className="mt-3 text-xs text-stone-400 font-light">
                       {vocab.sm2.repetitions > 0 ? (
                         `${vocab.sm2.repetitions} Wiederholungen • Faktor: ${vocab.sm2.easeFactor.toFixed(1)}`
                       ) : (
@@ -128,17 +128,17 @@ export const VocabularyTab: React.FC<VocabularyTabProps> = ({
                   <div className="flex items-center space-x-2 ml-4">
                     <button
                       onClick={() => onEditVocab(vocab)}
-                      className="p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                      className="p-2 text-stone-500 hover:text-amber-700 hover:bg-amber-100/60 rounded-xl transition-all duration-300"
                       aria-label="Bearbeiten"
                     >
-                      <Edit3 size={18} />
+                      <Edit3 size={18} className="opacity-80" />
                     </button>
                     <button
                       onClick={() => setShowDeleteConfirm(vocab.id)}
-                      className="p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
+                      className="p-2 text-stone-500 hover:text-rose-600 hover:bg-rose-100/60 rounded-xl transition-all duration-300"
                       aria-label="Löschen"
                     >
-                      <Trash2 size={18} />
+                      <Trash2 size={18} className="opacity-80" />
                     </button>
                   </div>
                 </div>
@@ -147,7 +147,7 @@ export const VocabularyTab: React.FC<VocabularyTabProps> = ({
             
             {/* Mehr laden Hinweis */}
             {!searchTerm.trim() && vocabulary.length > 50 && (
-              <div className="text-center py-4 text-gray-500 text-sm">
+              <div className="text-center py-4 text-stone-500 text-sm font-light">
                 Verwende die Suche um alle {vocabulary.length} Vokabeln zu durchsuchen
               </div>
             )}
@@ -157,18 +157,18 @@ export const VocabularyTab: React.FC<VocabularyTabProps> = ({
 
       {/* Delete Confirmation Modal */}
       {showDeleteConfirm && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-          <div className="bg-white rounded-lg p-6 max-w-sm w-full">
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50">
+          <div className="bg-gradient-to-br from-amber-50 to-stone-100 rounded-3xl p-6 max-w-sm w-full border border-amber-200/50 shadow-2xl">
+            <h3 className="text-lg font-light text-stone-800 mb-3 tracking-wide">
               Vokabel löschen?
             </h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-stone-600 mb-6 font-light">
               Diese Aktion kann nicht rückgängig gemacht werden.
             </p>
             <div className="flex space-x-3">
               <button
                 onClick={() => setShowDeleteConfirm(null)}
-                className="flex-1 px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
+                className="flex-1 px-4 py-2 border border-stone-300 text-stone-700 rounded-xl hover:bg-stone-50 transition-all duration-300 font-light tracking-wide"
               >
                 Abbrechen
               </button>
@@ -177,7 +177,7 @@ export const VocabularyTab: React.FC<VocabularyTabProps> = ({
                   const vocab = vocabulary.find(v => v.id === showDeleteConfirm);
                   if (vocab) handleDelete(vocab);
                 }}
-                className="flex-1 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
+                className="flex-1 px-4 py-2 bg-gradient-to-r from-rose-500 to-rose-600 text-white rounded-xl hover:from-rose-600 hover:to-rose-700 transition-all duration-300 font-light tracking-wide shadow-lg"
               >
                 Löschen
               </button>

@@ -37,7 +37,7 @@ export const TabBar: React.FC<TabBarProps> = ({ activeTab, onTabChange }) => {
   ];
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 safe-area-pb">
+    <div className="fixed bottom-0 left-0 right-0 bg-gradient-to-r from-amber-50 to-stone-50 border-t border-amber-200/60 safe-area-pb shadow-2xl backdrop-blur-sm">
       <div className="flex">
         {tabs.map((tab) => {
           const Icon = tab.icon;
@@ -47,19 +47,19 @@ export const TabBar: React.FC<TabBarProps> = ({ activeTab, onTabChange }) => {
             <button
               key={tab.id}
               onClick={() => onTabChange(tab.id)}
-              className={`flex-1 flex flex-col items-center justify-center py-2 px-1 min-h-[60px] transition-colors ${
+              className={`flex-1 flex flex-col items-center justify-center py-3 px-1 min-h-[60px] transition-all duration-300 ${
                 isActive 
-                  ? 'text-blue-600' 
-                  : 'text-gray-500 hover:text-gray-700'
+                  ? 'text-amber-700' 
+                  : 'text-stone-500 hover:text-stone-700'
               }`}
               aria-label={`${tab.label} - ${tab.description}`}
             >
               <Icon 
-                size={24} 
-                className={`mb-1 ${isActive ? 'text-blue-600' : 'text-gray-500'}`}
+                size={22} 
+                className={`mb-1 opacity-90 ${isActive ? 'text-amber-700' : 'text-stone-500'}`}
               />
-              <span className={`text-xs font-medium ${
-                isActive ? 'text-blue-600' : 'text-gray-500'
+              <span className={`text-xs font-light tracking-wide ${
+                isActive ? 'text-amber-700' : 'text-stone-500'
               }`}>
                 {tab.label}
               </span>
