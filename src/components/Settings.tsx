@@ -205,7 +205,7 @@ export const Settings: React.FC<SettingsProps> = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-stone-50 to-orange-50">
+    <div className="min-h-[100dvh] bg-gradient-to-br from-amber-50 via-stone-50 to-orange-50 pb-32">
       {/* Header */}
       <header className="bg-gradient-to-r from-stone-700 via-amber-800 to-stone-800 text-amber-50 shadow-2xl">
         <div className="flex items-center justify-between p-4">
