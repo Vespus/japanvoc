@@ -251,19 +251,20 @@ export const Quiz: React.FC<QuizProps> = ({
               </div>
             )}
             {currentDirection === 'de-to-jp' && (
-              !showAnswer ? (
-                <div className="text-4xl font-light text-stone-800 leading-tight tracking-wide">
+              <>
+                <div className="text-4xl font-light text-stone-800 leading-tight tracking-wide mb-2">
                   {currentVocab.de}
                 </div>
-              ) : (
-                <div className="flex flex-row items-end justify-center gap-6">
-                  <div className="text-3xl font-extralight text-stone-800" style={{ fontFamily: 'serif' }}>{currentVocab.kanji}</div>
-                  <div className="flex flex-col items-start justify-center gap-1">
-                    <div className="text-2xl text-stone-700 font-light">{currentVocab.kana}</div>
-                    <div className="text-lg text-stone-500 font-light">{currentVocab.romaji}</div>
+                {showAnswer && (
+                  <div className="flex flex-row items-end justify-center gap-6 mt-2">
+                    <div className="text-3xl font-extralight text-stone-800" style={{ fontFamily: 'serif' }}>{currentVocab.kanji}</div>
+                    <div className="flex flex-col items-start justify-center gap-1">
+                      <div className="text-2xl text-stone-700 font-light">{currentVocab.kana}</div>
+                      <div className="text-lg text-stone-500 font-light">{currentVocab.romaji}</div>
+                    </div>
                   </div>
-                </div>
-              )
+                )}
+              </>
             )}
             {currentDirection === 'kanji-to-reading' && (
               <>
