@@ -56,4 +56,19 @@ export interface AppState {
   vocabulary: VocabularyCard[];
   loading: boolean;
   error: string | null;
+}
+
+export interface VocabularyManagerReturnType {
+  vocabulary: VocabularyCard[];
+  isLoading: boolean;
+  error: string | null;
+  addVocabulary: (newVocab: Omit<VocabularyCard, 'id' | 'sm2'>) => VocabularyCard;
+  updateVocabulary: (id: string, updates: Partial<Omit<VocabularyCard, 'id'>>) => VocabularyCard | undefined;
+  deleteVocabulary: (id: string) => boolean;
+  updateSM2Data: (id: string, sm2Data: Partial<VocabularyCard['sm2']>) => VocabularyCard | undefined;
+  getVocabularyById: (id: string) => VocabularyCard | undefined;
+  checkDuplicate: (kanji: string, kana: string, romaji: string, excludeId?: string) => boolean;
+  getStats: () => VocabularyStats;
+  reloadVocabulary: () => Promise<void>;
+  saveVocabulary: (data: VocabularyCard[]) => Promise<void>;
 } 

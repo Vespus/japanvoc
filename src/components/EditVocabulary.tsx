@@ -16,7 +16,7 @@ export const EditVocabulary: React.FC<EditVocabularyProps> = ({
   onSuccess,
   onDelete
 }) => {
-  const { getVocabularyById, updateVocabulary, deleteVocabulary, checkDuplicate, loading } = useVocabularyManager();
+  const { getVocabularyById, updateVocabulary, deleteVocabulary, checkDuplicate, isLoading } = useVocabularyManager();
   
   const [formData, setFormData] = useState({
     kanji: '',
@@ -34,7 +34,7 @@ export const EditVocabulary: React.FC<EditVocabularyProps> = ({
   // Vokabel laden
   useEffect(() => {
     // Warte bis die Daten geladen sind
-    if (loading) return;
+    if (isLoading) return;
     
     const vocab = getVocabularyById(vocabId);
     if (vocab) {
@@ -54,7 +54,7 @@ export const EditVocabulary: React.FC<EditVocabularyProps> = ({
     } else {
       setErrors({ load: 'Vokabel nicht gefunden' });
     }
-  }, [vocabId, getVocabularyById, loading]);
+  }, [vocabId, getVocabularyById, isLoading]);
 
   // Validierung
   const validateForm = () => {
@@ -166,7 +166,7 @@ export const EditVocabulary: React.FC<EditVocabularyProps> = ({
   );
 
   // Loading-Zustand anzeigen
-  if (loading) {
+  if (isLoading) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-amber-50 via-stone-50 to-orange-50 flex items-center justify-center">
         <div className="text-center">

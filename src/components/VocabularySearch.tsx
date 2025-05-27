@@ -15,7 +15,7 @@ export const VocabularySearch: React.FC<VocabularySearchProps> = ({
   onEditVocab,
   onDeleteVocab
 }) => {
-  const { vocabulary, loading, error, deleteVocabulary } = useVocabularyManager();
+  const { vocabulary, isLoading, error, deleteVocabulary } = useVocabularyManager();
   const [showDeleteConfirm, setShowDeleteConfirm] = useState<string | null>(null);
   
   const {
@@ -41,13 +41,10 @@ export const VocabularySearch: React.FC<VocabularySearchProps> = ({
     }
   };
 
-  if (loading) {
+  if (isLoading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-center">
-          <Loader2 className="mx-auto mb-4 animate-spin" size={48} />
-          <p className="text-gray-600">Lade Vokabeln...</p>
-        </div>
+      <div className="min-h-screen bg-gradient-to-br from-amber-50 via-stone-50 to-orange-50 flex items-center justify-center">
+        <div className="text-stone-600">Lade Vokabeln...</div>
       </div>
     );
   }

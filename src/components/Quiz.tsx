@@ -22,7 +22,7 @@ export const Quiz: React.FC<QuizProps> = ({
   onBack,
   onComplete
 }) => {
-  const { vocabulary, updateSM2Data, loading } = useVocabularyManager();
+  const { vocabulary, updateSM2Data, isLoading } = useVocabularyManager();
   const quizSettings = useQuizSettings();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showAnswer, setShowAnswer] = useState(false);
@@ -80,12 +80,12 @@ export const Quiz: React.FC<QuizProps> = ({
 
   // Initialisierung nach dem Laden der Daten
   useEffect(() => {
-    if (!loading && vocabulary.length > 0 && !isInitialized) {
+    if (!isLoading && vocabulary.length > 0 && !isInitialized) {
       console.log('🚀 Quiz initialisiert mit', vocabulary.length, 'Vokabeln');
       console.log('⚙️ Quiz-Einstellungen:', quizSettings);
       setIsInitialized(true);
     }
-  }, [loading, vocabulary.length, isInitialized, quizSettings]);
+  }, [isLoading, vocabulary.length, isInitialized, quizSettings]);
 
   // Abfragerichtung für aktuelle Vokabel bestimmen
   useEffect(() => {
@@ -151,7 +151,7 @@ export const Quiz: React.FC<QuizProps> = ({
   };
 
   // Ladeansicht während Initialisierung
-  if (loading || !isInitialized) {
+  if (isLoading || !isInitialized) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-amber-50 via-stone-50 to-orange-50 flex items-center justify-center">
         <div className="text-center">
