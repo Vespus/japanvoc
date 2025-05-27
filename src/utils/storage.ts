@@ -1,4 +1,4 @@
-import { VocabularyCard } from '../types';
+import { VocabularyCard } from '../types/vocabulary';
 
 const DB_NAME = 'japanvoc-db';
 const STORE_NAME = 'vocabulary';
