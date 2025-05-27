@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { VocabularyData, VocabularyCard } from '../types/vocabulary';
-import { saveVocabulary, loadVocabulary, backupToLocalStorage, loadFromLocalStorage } from '../utils/storage';
+import { saveVocabulary, loadVocabulary, backupToLocalStorage, loadFromLocalStorage, initDB } from '../utils/storage';
 
 const STORAGE_KEY = 'japanvoc-vocabulary';
 
