@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Save, RotateCcw, Info } from 'lucide-react';
 import { initDB, loadVocabulary, loadFromLocalStorage } from '../utils/storage';
+import { FabQuizTest } from './FabQuizTest';
 
 interface SettingsProps {
   // Keine Props mehr benötigt - Navigation über Tab Bar
@@ -135,6 +136,7 @@ export const Settings: React.FC<SettingsProps> = () => {
   const [hasChanges, setHasChanges] = useState(false);
   const [showSaved, setShowSaved] = useState(false);
   const [showDebug, setShowDebug] = useState(false);
+  const [showFabTest, setShowFabTest] = useState(false);
 
   // Einstellungen laden
   useEffect(() => {
@@ -197,6 +199,10 @@ export const Settings: React.FC<SettingsProps> = () => {
   ];
 
   const wordsPerQuizOptions = [5, 10, 15, 20, 25, 30, 50];
+
+  if (showFabTest) {
+    return <FabQuizTest onBack={() => setShowFabTest(false)} />;
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-amber-50 via-stone-50 to-orange-50">
@@ -304,10 +310,17 @@ export const Settings: React.FC<SettingsProps> = () => {
           
           <button
             onClick={resetSettings}
-            className="w-full flex items-center justify-center px-4 py-3 border border-stone-300 text-stone-700 rounded-2xl hover:bg-stone-50 hover:border-stone-400 transition-all duration-300 font-light tracking-wide shadow-sm"
+            className="w-full flex items-center justify-center px-4 py-3 border border-stone-300 text-stone-700 rounded-2xl hover:bg-stone-50 hover:border-stone-400 transition-all duration-300 font-light tracking-wide shadow-sm mb-3"
           >
             <RotateCcw size={16} className="mr-2 opacity-80" />
             Auf Standardwerte zurücksetzen
+          </button>
+          {/* FAB-Test Button */}
+          <button
+            onClick={() => setShowFabTest(true)}
+            className="w-full flex items-center justify-center px-4 py-3 border border-amber-400 text-amber-800 rounded-2xl hover:bg-amber-50 hover:border-amber-500 transition-all duration-300 font-light tracking-wide shadow-sm"
+          >
+            <span className="mr-2">🧪</span> FAB-Test anzeigen
           </button>
         </div>
 
