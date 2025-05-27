@@ -1,5 +1,5 @@
 import React from 'react';
-import { Play, Clock, Brain, Target, Shuffle, Settings as SettingsIcon } from 'lucide-react';
+import { Play, Clock, Brain, Target, Shuffle } from 'lucide-react';
 import { useVocabularyManager } from '../hooks/useVocabularyManager';
 import { useQuizSettings } from './Settings';
 import { getLearningStats, getDueVocabulary } from '../utils/sm2Algorithm';
@@ -64,16 +64,11 @@ export const QuizTab: React.FC<QuizTabProps> = ({
   return (
     <div className="flex flex-col h-full bg-gradient-to-br from-amber-50 via-stone-50 to-orange-50">
       {/* Header */}
-      <div className="bg-gradient-to-r from-stone-700 via-amber-800 to-stone-800 text-amber-50 p-6 shadow-2xl">
-        <div className="flex items-center justify-between mb-4">
-          <h1 className="text-2xl font-extralight tracking-widest">Quiz starten</h1>
-          <button
-            onClick={onSettings}
-            className="p-2 text-amber-100 hover:text-amber-50 hover:bg-stone-700/50 rounded-xl transition-all duration-300"
-            aria-label="Einstellungen"
-          >
-            <SettingsIcon size={24} className="opacity-90" />
-          </button>
+      <div className="bg-gradient-to-r from-stone-700 via-amber-800 to-stone-800 text-amber-50 p-4 shadow-2xl">
+        <div className="mb-4">
+          <h1 className="text-xl text-amber-200/90 font-extralight tracking-wide" style={{ fontFamily: 'serif' }}>
+            学習への愛 • Liebe zum Lernen
+          </h1>
         </div>
         
         {/* Quick Stats */}
