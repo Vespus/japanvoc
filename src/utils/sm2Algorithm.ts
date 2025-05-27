@@ -195,10 +195,10 @@ export function getLearningStats(vocabulary: VocabularyCard[]) {
  * Qualitäts-Labels für die UI
  */
 export const QUALITY_LABELS = [
-  { value: 0, label: 'Totaler Blackout', description: 'Keine Ahnung', color: 'bg-red-600' },
-  { value: 1, label: 'Falsch', description: 'Falsch, aber vertraut', color: 'bg-red-500' },
-  { value: 2, label: 'Schwer falsch', description: 'Falsch, aber erinnerbar', color: 'bg-orange-500' },
-  { value: 3, label: 'Schwer richtig', description: 'Richtig mit Mühe', color: 'bg-yellow-500' },
-  { value: 4, label: 'Richtig', description: 'Richtig nach Zögern', color: 'bg-green-500' },
-  { value: 5, label: 'Perfekt', description: 'Sofort richtig', color: 'bg-green-600' }
+  { value: 0, label: 'Keine Ahnung', color: 'bg-rose-400' },
+  { value: 1, label: 'Falsch aber vertraut', color: 'bg-rose-500' },
+  { value: 2, label: 'Falsch aber erinnert', color: 'bg-amber-400' },
+  { value: 3, label: 'Richtig aber mühsam', color: 'bg-amber-500' },
+  { value: 4, label: 'Richtig nach Zögern', color: 'bg-teal-500' },
+  { value: 5, label: 'Sofort richtig', color: 'bg-emerald-500' }
 ] as const; 

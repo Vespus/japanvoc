@@ -209,7 +209,10 @@ export const Settings: React.FC<SettingsProps> = () => {
       {/* Header */}
       <header className="bg-gradient-to-r from-stone-700 via-amber-800 to-stone-800 text-amber-50 shadow-2xl">
         <div className="flex items-center justify-between p-4">
-          <h1 className="text-xl font-extralight tracking-widest">Einstellungen</h1>
+          <div className="flex items-center space-x-4">
+            <h1 className="text-xl font-extralight tracking-widest">Einstellungen</h1>
+            <span className="text-xs align-top ml-2 text-amber-100">V0.821</span>
+          </div>
           <div className="flex items-center space-x-2">
             {hasChanges && (
               <button
@@ -320,7 +323,7 @@ export const Settings: React.FC<SettingsProps> = () => {
               onClick={() => setShowFabTest(true)}
               className="w-full flex items-center justify-center px-4 py-3 border border-amber-400 text-amber-800 rounded-2xl hover:bg-amber-50 hover:border-amber-500 transition-all duration-300 font-light tracking-wide shadow-sm"
             >
-              <span className="mr-2">��</span> FAB-Test anzeigen
+              <span className="mr-2">FAB-Test anzeigen</span>
             </button>
           </div>
 

@@ -188,41 +188,26 @@ export const Quiz: React.FC<QuizProps> = ({
   return (
     <div className="h-screen bg-gradient-to-br from-amber-50 via-stone-50 to-orange-50 flex flex-col">
       {/* Header */}
-      <header className="bg-gradient-to-r from-stone-700 via-amber-800 to-stone-800 text-amber-50 shadow-2xl px-4 py-3">
+      <header className="bg-gradient-to-r from-stone-700 via-amber-800 to-stone-800 text-amber-50 shadow-2xl px-4 py-2">
         <div className="flex items-center justify-between">
-          <div className="flex items-center">
-            <button
-              onClick={onBack}
-              className="mr-3 p-3 hover:bg-stone-700/50 rounded-xl transition-all duration-300 min-h-[44px] min-w-[44px] flex items-center justify-center"
-              aria-label="Zurück"
-            >
-              <ArrowLeft size={24} className="text-amber-50 opacity-90" />
-            </button>
-            <div>
-              <h1 className="text-lg font-light tracking-wide">{getModeTitle()} <span className="text-xs align-top ml-2 text-amber-100">V0.821</span></h1>
-              <p className="text-sm text-amber-100 font-light">
-                {currentIndex + 1} von {quizVocabulary.length}
-              </p>
+          {/* Kompakter Zurück-Pfeil */}
+          <button
+            onClick={onBack}
+            className="mr-2 p-2 hover:bg-stone-700/50 rounded-lg transition-all duration-300 min-h-[36px] min-w-[36px] flex items-center justify-center"
+            aria-label="Zurück"
+          >
+            <ArrowLeft size={20} className="text-amber-50 opacity-90" />
+          </button>
+          {/* Fortschritt + Statistiken in einer Zeile */}
+          <div className="flex-1 flex flex-col items-center">
+            <div className="flex items-center space-x-4 text-sm font-light">
+              <span className="text-amber-100">{currentIndex + 1} von {quizVocabulary.length}</span>
+              <span className="text-amber-100">Richtig: {sessionStats.correct}/{sessionStats.total}</span>
+              <span className="text-amber-200">Serie: {sessionStats.streak}</span>
             </div>
           </div>
-          
-          {/* Quiz beenden Button */}
-          <button
-            onClick={onComplete}
-            className="px-4 py-2 bg-rose-400/80 text-white rounded-xl hover:bg-rose-500 transition-all duration-300 min-h-[44px] font-light tracking-wide shadow-lg"
-          >
-            Quiz beenden
-          </button>
-        </div>
-        
-        {/* Session Stats */}
-        <div className="flex justify-between items-center mt-3 text-sm">
-          <div className="text-amber-100 font-light">
-            Richtig: {sessionStats.correct}/{sessionStats.total}
-          </div>
-          <div className="text-amber-200 font-light tracking-wide">
-            Serie: {sessionStats.streak}
-          </div>
+          {/* Platzhalter für zentrierten Header */}
+          <div style={{ width: 36 }} />
         </div>
       </header>
 
@@ -365,6 +350,13 @@ export const Quiz: React.FC<QuizProps> = ({
                 </button>
               ))}
             </div>
+            {/* Quiz beenden Button jetzt unten */}
+            <button
+              onClick={onComplete}
+              className="mt-4 px-6 py-3 bg-rose-400/90 text-white rounded-2xl hover:bg-rose-500 transition-all duration-300 font-light tracking-wide shadow-lg text-base w-full max-w-md"
+            >
+              Quiz beenden
+            </button>
           </div>
         )}
       </div>
