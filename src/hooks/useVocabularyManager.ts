@@ -40,24 +40,17 @@ export const useVocabularyManager = () => {
         throw new Error('Fehler beim Laden der Vokabeln');
       }
       const jsonData = await response.json();
-      console.log(`✅ ${jsonData.length} Vokabeln aus JSON geladen`);
+      console.log('📦 JSON-Daten geladen:', jsonData.meta);
       
-      // Konvertiere die Daten in das richtige Format
-      const formattedData = jsonData.map((item: any) => ({
-        id: `json-${item.id || Math.random().toString(36).substr(2, 9)}`,
-        kanji: item.kanji || '',
-        kana: item.kana || '',
-        romaji: item.romaji || '',
-        de: item.de || '',
-        sm2: {
-          easeFactor: 2.5,
-          interval: 1,
-          repetitions: 0,
-          nextReview: null,
-          lastReview: null,
-          quality: null
-        }
-      }));
+      if (!jsonData.cards || !Array.isArray(jsonData.cards)) {
+        console.error('❌ Ungültiges JSON-Format:', jsonData);
+        throw new Error('Ungültiges JSON-Format');
+      }
+      
+      console.log(`✅ ${jsonData.cards.length} Vokabeln aus JSON geladen`);
+      
+      // Die Karten sind bereits im richtigen Format
+      const formattedData = jsonData.cards;
       
       console.log('📝 Daten formatiert:', formattedData.length, 'Vokabeln');
       setVocabulary(formattedData);
