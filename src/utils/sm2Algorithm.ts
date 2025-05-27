@@ -111,8 +111,6 @@ export function getDueVocabulary(vocabulary: VocabularyCard[]): VocabularyCard[]
   return due;
 }
 
-
-
 /**
  * Sortiert Vokabeln nach Priorität (überfällige zuerst, dann nach Schwierigkeit)
  */
@@ -196,11 +194,11 @@ export function getLearningStats(vocabulary: VocabularyCard[]) {
 /**
  * Qualitäts-Labels für die UI
  */
-export const QUALITY_LABELS = {
-  0: { label: 'Totaler Blackout', description: 'Keine Ahnung', color: 'bg-red-600' },
-  1: { label: 'Falsch', description: 'Falsch, aber vertraut', color: 'bg-red-500' },
-  2: { label: 'Schwer falsch', description: 'Falsch, aber erinnerbar', color: 'bg-orange-500' },
-  3: { label: 'Schwer richtig', description: 'Richtig mit Mühe', color: 'bg-yellow-500' },
-  4: { label: 'Richtig', description: 'Richtig nach Zögern', color: 'bg-green-500' },
-  5: { label: 'Perfekt', description: 'Sofort richtig', color: 'bg-green-600' }
-} as const; 
+export const QUALITY_LABELS = [
+  { value: 0, label: 'Totaler Blackout', description: 'Keine Ahnung', color: 'bg-red-600' },
+  { value: 1, label: 'Falsch', description: 'Falsch, aber vertraut', color: 'bg-red-500' },
+  { value: 2, label: 'Schwer falsch', description: 'Falsch, aber erinnerbar', color: 'bg-orange-500' },
+  { value: 3, label: 'Schwer richtig', description: 'Richtig mit Mühe', color: 'bg-yellow-500' },
+  { value: 4, label: 'Richtig', description: 'Richtig nach Zögern', color: 'bg-green-500' },
+  { value: 5, label: 'Perfekt', description: 'Sofort richtig', color: 'bg-green-600' }
+] as const; 

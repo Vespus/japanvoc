@@ -199,7 +199,7 @@ export const Quiz: React.FC<QuizProps> = ({
               <ArrowLeft size={24} className="text-amber-50 opacity-90" />
             </button>
             <div>
-              <h1 className="text-lg font-light tracking-wide">{getModeTitle()} <span className="text-xs align-top ml-2 text-amber-100">V0.82</span></h1>
+              <h1 className="text-lg font-light tracking-wide">{getModeTitle()} <span className="text-xs align-top ml-2 text-amber-100">V0.821</span></h1>
               <p className="text-sm text-amber-100 font-light">
                 {currentIndex + 1} von {quizVocabulary.length}
               </p>
