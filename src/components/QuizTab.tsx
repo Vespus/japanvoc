@@ -67,7 +67,7 @@ export const QuizTab: React.FC<QuizTabProps> = ({
       <div className="bg-gradient-to-r from-stone-700 via-amber-800 to-stone-800 text-amber-50 p-4 shadow-2xl">
         <div className="mb-4">
           <h1 className="text-xl text-amber-200/90 font-extralight tracking-wide" style={{ fontFamily: 'serif' }}>
-            学習への愛 • Liebe zum Lernen <span className="text-xs align-top ml-2 text-amber-100">V0.813</span>
+            学習への愛 • Liebe zum Lernen <span className="text-xs align-top ml-2 text-amber-100">V0.814</span>
           </h1>
         </div>
         

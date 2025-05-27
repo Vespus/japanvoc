@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 
 const QUALITY_LABELS = [
-  { value: 0, label: 'Totale Blackout', color: 'bg-rose-400', desc: 'Keine Ahnung' },
-  { value: 1, label: 'Falsch', color: 'bg-rose-500', desc: 'Falsch, aber vertraut' },
-  { value: 2, label: 'Schwer falsch', color: 'bg-amber-400', desc: 'Falsch, aber erinnerbar' },
-  { value: 3, label: 'Schwer richtig', color: 'bg-amber-500', desc: 'Richtig mit Mühe' },
-  { value: 4, label: 'Richtig', color: 'bg-teal-500', desc: 'Richtig nach Zögern' },
-  { value: 5, label: 'Perfekt', color: 'bg-emerald-500', desc: 'Sofort richtig' },
+  { value: 0, label: '0 - Keine Ahnung', color: 'bg-rose-400' },
+  { value: 1, label: '1 - Falsch aber vertraut', color: 'bg-rose-500' },
+  { value: 2, label: '2 - Falsch aber erinnert', color: 'bg-amber-400' },
+  { value: 3, label: '3 - Richtig aber mühsam', color: 'bg-amber-500' },
+  { value: 4, label: '4 - Richtig nach Zögern', color: 'bg-teal-500' },
+  { value: 5, label: '5 - Sofort richtig', color: 'bg-emerald-500' },
 ];
 
 interface FabQuizTestProps {
@@ -61,16 +61,15 @@ export const FabQuizTest: React.FC<FabQuizTestProps> = ({ onBack }) => {
       {/* Floating Action Buttons */}
       {showAnswer && (
         <div className="fixed bottom-0 left-0 right-0 pb-4 flex flex-col items-center z-40">
-          <div className="w-full max-w-md mx-auto flex flex-wrap justify-center gap-3 bg-white/80 rounded-2xl shadow-2xl p-4 border border-amber-200/60">
+          <div className="w-full max-w-md mx-auto grid grid-cols-3 gap-3 bg-white/80 rounded-2xl shadow-2xl p-4 border border-amber-200/60">
             {QUALITY_LABELS.map(q => (
               <button
                 key={q.value}
                 onClick={() => setSelected(q.value)}
-                className={`flex-1 min-w-[120px] max-w-[140px] p-3 m-1 rounded-2xl text-white font-light text-center transition-all duration-200 shadow-lg text-base ${q.color} ${selected === q.value ? 'ring-4 ring-amber-400 scale-105' : ''}`}
+                className={`min-w-[90px] max-w-[120px] py-4 px-2 rounded-2xl text-white font-light text-center transition-all duration-200 shadow-lg text-base ${q.color} ${selected === q.value ? 'ring-4 ring-amber-400 scale-105' : ''}`}
                 style={{ touchAction: 'manipulation' }}
               >
-                <div className="font-medium mb-1">{q.value} – {q.label}</div>
-                <div className="text-xs opacity-90 font-light">{q.desc}</div>
+                <div className="font-medium">{q.label}</div>
               </button>
             ))}
           </div>
