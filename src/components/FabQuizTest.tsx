@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 
 const QUALITY_LABELS = [
-  { value: 0, label: '0 - Keine Ahnung', color: 'bg-rose-400' },
-  { value: 1, label: '1 - Falsch aber vertraut', color: 'bg-rose-500' },
-  { value: 2, label: '2 - Falsch aber erinnert', color: 'bg-amber-400' },
-  { value: 3, label: '3 - Richtig aber mühsam', color: 'bg-amber-500' },
-  { value: 4, label: '4 - Richtig nach Zögern', color: 'bg-teal-500' },
-  { value: 5, label: '5 - Sofort richtig', color: 'bg-emerald-500' },
+  { value: 0, label: 'Keine Ahnung', color: 'bg-rose-400' },
+  { value: 1, label: 'Falsch aber vertraut', color: 'bg-rose-500' },
+  { value: 2, label: 'Falsch aber erinnert', color: 'bg-amber-400' },
+  { value: 3, label: 'Richtig aber mühsam', color: 'bg-amber-500' },
+  { value: 4, label: 'Richtig nach Zögern', color: 'bg-teal-500' },
+  { value: 5, label: 'Sofort richtig', color: 'bg-emerald-500' },
 ];
 
 interface FabQuizTestProps {
@@ -66,10 +66,10 @@ export const FabQuizTest: React.FC<FabQuizTestProps> = ({ onBack }) => {
               <button
                 key={q.value}
                 onClick={() => setSelected(q.value)}
-                className={`min-w-[90px] max-w-[120px] py-4 px-2 rounded-2xl text-white font-light text-center transition-all duration-200 shadow-lg text-base ${q.color} ${selected === q.value ? 'ring-4 ring-amber-400 scale-105' : ''}`}
+                className={`min-w-[90px] max-w-[120px] py-3 px-1 rounded-2xl text-white font-light text-center transition-all duration-200 shadow-lg text-[0.98rem] leading-tight ${q.color} ${selected === q.value ? 'ring-4 ring-amber-400 scale-105' : ''}`}
                 style={{ touchAction: 'manipulation' }}
               >
-                <div className="font-medium">{q.label}</div>
+                <span className="block break-words whitespace-pre-line">{q.label}</span>
               </button>
             ))}
           </div>
