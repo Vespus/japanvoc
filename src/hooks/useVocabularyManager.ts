@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { VocabularyData, VocabularyCard } from '../types/vocabulary';
+import { saveVocabulary, loadVocabulary, backupToLocalStorage, loadFromLocalStorage } from '../utils/storage';
 
 const STORAGE_KEY = 'japanvoc-vocabulary';
 
@@ -8,19 +9,37 @@ export const useVocabularyManager = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  // Laden der Vokabeln (erst LocalStorage, dann JSON-Fallback)
+  // Laden der Vokabeln (IndexedDB -> LocalStorage Backup -> JSON-Fallback)
   useEffect(() => {
     const loadVocabulary = async () => {
       try {
         setLoading(true);
         setError(null);
         
-        // Versuche zuerst aus LocalStorage zu laden
-        const stored = localStorage.getItem(STORAGE_KEY);
-        if (stored) {
-          const data = JSON.parse(stored);
-          setVocabulary(data);
-          console.log(`✅ ${data.length} Vokabeln aus LocalStorage geladen`);
+        // Versuche zuerst aus IndexedDB zu laden
+        try {
+          const data = await loadVocabulary();
+          if (data && data.length > 0) {
+            setVocabulary(data);
+            // Backup in LocalStorage aktualisieren
+            backupToLocalStorage(data);
+            setLoading(false);
+            return;
+          }
+        } catch (err) {
+          console.warn('IndexedDB nicht verfügbar, versuche LocalStorage Backup');
+        }
+        
+        // Versuche LocalStorage Backup
+        const backup = loadFromLocalStorage();
+        if (backup && backup.length > 0) {
+          setVocabulary(backup);
+          // Versuche, Backup in IndexedDB zu speichern
+          try {
+            await saveVocabulary(backup);
+          } catch (err) {
+            console.warn('Konnte Backup nicht in IndexedDB speichern');
+          }
           setLoading(false);
           return;
         }
@@ -38,9 +57,13 @@ export const useVocabularyManager = () => {
         }
         
         setVocabulary(data.cards);
-        // Speichere initial in LocalStorage
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(data.cards));
-        console.log(`✅ ${data.cards.length} Vokabeln aus JSON geladen und gespeichert`);
+        // Speichere initial in IndexedDB und LocalStorage
+        try {
+          await saveVocabulary(data.cards);
+          backupToLocalStorage(data.cards);
+        } catch (err) {
+          console.warn('Konnte initiale Daten nicht speichern');
+        }
         
       } catch (err) {
         console.error('Fehler beim Laden der Vokabeln:', err);
@@ -53,10 +76,11 @@ export const useVocabularyManager = () => {
     loadVocabulary();
   }, []);
 
-  // Speichern in LocalStorage
-  const saveToStorage = useCallback((vocabs: VocabularyCard[]) => {
+  // Speichern in IndexedDB und LocalStorage
+  const saveToStorage = useCallback(async (vocabs: VocabularyCard[]) => {
     try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(vocabs));
+      await saveVocabulary(vocabs);
+      backupToLocalStorage(vocabs);
       console.log(`💾 ${vocabs.length} Vokabeln gespeichert`);
     } catch (err) {
       console.error('Fehler beim Speichern:', err);
@@ -171,9 +195,17 @@ export const useVocabularyManager = () => {
     getVocabularyById,
     checkDuplicate,
     getStats,
-    reload: () => {
-      localStorage.removeItem(STORAGE_KEY);
-      window.location.reload();
+    reload: async () => {
+      try {
+        const db = await initDB();
+        const transaction = db.transaction([STORE_NAME], 'readwrite');
+        const store = transaction.objectStore(STORE_NAME);
+        store.clear();
+        localStorage.removeItem('japanvoc-backup');
+        window.location.reload();
+      } catch (err) {
+        console.error('Fehler beim Zurücksetzen:', err);
+      }
     }
   };
 }; 

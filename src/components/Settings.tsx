@@ -19,6 +19,62 @@ const DEFAULT_SETTINGS: QuizSettings = {
   wordsPerQuiz: 20
 };
 
+// Debug-Bereich für Speicherstatus
+const DebugStorage = () => {
+  const [storageInfo, setStorageInfo] = useState<{
+    indexedDB: number;
+    localStorage: number;
+  }>({ indexedDB: 0, localStorage: 0 });
+
+  const checkStorage = async () => {
+    try {
+      // IndexedDB prüfen
+      const db = await initDB();
+      const transaction = db.transaction(['vocabulary'], 'readonly');
+      const store = transaction.objectStore('vocabulary');
+      const countRequest = store.count();
+      countRequest.onsuccess = () => {
+        setStorageInfo(prev => ({
+          ...prev,
+          indexedDB: countRequest.result
+        }));
+      };
+
+      // LocalStorage prüfen
+      const backup = localStorage.getItem('japanvoc-backup');
+      if (backup) {
+        const data = JSON.parse(backup);
+        setStorageInfo(prev => ({
+          ...prev,
+          localStorage: data.length
+        }));
+      }
+    } catch (err) {
+      console.error('Fehler beim Prüfen des Speichers:', err);
+    }
+  };
+
+  useEffect(() => {
+    checkStorage();
+  }, []);
+
+  return (
+    <div className="mt-8 p-4 bg-amber-50 rounded-lg">
+      <h3 className="text-lg font-medium text-stone-700 mb-2">Speicherstatus</h3>
+      <div className="space-y-2 text-sm text-stone-600">
+        <p>IndexedDB: {storageInfo.indexedDB} Vokabeln</p>
+        <p>LocalStorage Backup: {storageInfo.localStorage} Vokabeln</p>
+        <button
+          onClick={checkStorage}
+          className="mt-2 px-3 py-1 bg-amber-200 text-stone-700 rounded hover:bg-amber-300"
+        >
+          Aktualisieren
+        </button>
+      </div>
+    </div>
+  );
+};
+
 export const Settings: React.FC<SettingsProps> = () => {
   const [settings, setSettings] = useState<QuizSettings>(DEFAULT_SETTINGS);
   const [hasChanges, setHasChanges] = useState(false);
@@ -199,6 +255,9 @@ export const Settings: React.FC<SettingsProps> = () => {
           </p>
         </div>
       </div>
+
+      {/* Debug-Bereich nur im Entwicklungsmodus anzeigen */}
+      {process.env.NODE_ENV === 'development' && <DebugStorage />}
     </div>
   );
 };
