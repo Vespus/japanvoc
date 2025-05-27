@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Save, RotateCcw } from 'lucide-react';
-import { initDB } from '../utils/storage';
+import { Save, RotateCcw, Info } from 'lucide-react';
+import { initDB, loadVocabulary, loadFromLocalStorage } from '../utils/storage';
 
 interface SettingsProps {
   // Keine Props mehr benötigt - Navigation über Tab Bar
@@ -76,10 +76,65 @@ const DebugStorage = () => {
   );
 };
 
+function DebugVocabularyStorage({ onClose }: { onClose: () => void }) {
+  const [indexedCount, setIndexedCount] = useState<number | null>(null);
+  const [localCount, setLocalCount] = useState<number | null>(null);
+  const [preview, setPreview] = useState<any[]>([]);
+
+  const check = async () => {
+    try {
+      const indexed = await loadVocabulary();
+      setIndexedCount(indexed.length);
+      setPreview(indexed.slice(0, 3));
+    } catch {
+      setIndexedCount(null);
+    }
+    try {
+      const local = loadFromLocalStorage();
+      setLocalCount(local ? local.length : 0);
+    } catch {
+      setLocalCount(null);
+    }
+  };
+
+  useEffect(() => { check(); }, []);
+
+  return (
+    <div className="fixed inset-0 bg-black/30 flex items-center justify-center z-50">
+      <div className="bg-white border border-amber-200 rounded-2xl shadow-2xl p-6 min-w-[320px] max-w-xs relative">
+        <button
+          onClick={onClose}
+          className="absolute top-2 right-2 p-1 rounded-full hover:bg-amber-100"
+          title="Schließen"
+        >
+          ×
+        </button>
+        <div className="font-light text-stone-700 mb-2">Speicher-Info</div>
+        <div className="text-sm text-stone-600 mb-2">
+          IndexedDB: <b>{indexedCount ?? '–'}</b> Vokabeln<br />
+          LocalStorage: <b>{localCount ?? '–'}</b> Vokabeln
+        </div>
+        {preview.length > 0 && (
+          <div className="text-xs text-stone-500">
+            <div className="mb-1">Vorschau (erste 3):</div>
+            <ul className="list-disc ml-5">
+              {preview.map((v, i) => (
+                <li key={i}>{v.kanji} / {v.kana} – {v.de}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+        <button onClick={check} className="mt-3 px-3 py-1 bg-amber-200 rounded font-light text-stone-700 hover:bg-amber-300 transition">Aktualisieren</button>
+      </div>
+    </div>
+  );
+}
+
 export const Settings: React.FC<SettingsProps> = () => {
   const [settings, setSettings] = useState<QuizSettings>(DEFAULT_SETTINGS);
   const [hasChanges, setHasChanges] = useState(false);
   const [showSaved, setShowSaved] = useState(false);
+  const [showDebug, setShowDebug] = useState(false);
 
   // Einstellungen laden
   useEffect(() => {
@@ -149,16 +204,25 @@ export const Settings: React.FC<SettingsProps> = () => {
       <header className="bg-gradient-to-r from-stone-700 via-amber-800 to-stone-800 text-amber-50 shadow-2xl">
         <div className="flex items-center justify-between p-4">
           <h1 className="text-xl font-extralight tracking-widest">Einstellungen</h1>
-          
-          {hasChanges && (
+          <div className="flex items-center space-x-2">
+            {hasChanges && (
+              <button
+                onClick={saveSettings}
+                className="flex items-center px-4 py-2 bg-gradient-to-r from-amber-600 to-amber-700 text-white rounded-xl hover:from-amber-700 hover:to-amber-800 transition-all duration-300 shadow-lg font-light tracking-wide"
+              >
+                <Save size={16} className="mr-2 opacity-90" />
+                Speichern
+              </button>
+            )}
+            {/* Info-Icon für Debug */}
             <button
-              onClick={saveSettings}
-              className="flex items-center px-4 py-2 bg-gradient-to-r from-amber-600 to-amber-700 text-white rounded-xl hover:from-amber-700 hover:to-amber-800 transition-all duration-300 shadow-lg font-light tracking-wide"
+              onClick={() => setShowDebug(v => !v)}
+              className="ml-2 p-2 rounded-full hover:bg-amber-200/30 transition"
+              title="Speicher-Info anzeigen"
             >
-              <Save size={16} className="mr-2 opacity-90" />
-              Speichern
+              <Info size={22} className="text-amber-100 hover:text-amber-400" />
             </button>
-          )}
+          </div>
         </div>
       </header>
 
@@ -257,8 +321,8 @@ export const Settings: React.FC<SettingsProps> = () => {
         </div>
       </div>
 
-      {/* Debug-Bereich nur im Entwicklungsmodus anzeigen */}
-      {process.env.NODE_ENV === 'development' && <DebugStorage />}
+      {/* Debug-Overlay (immer verfügbar, auch in Produktion) */}
+      {showDebug && <DebugVocabularyStorage onClose={() => setShowDebug(false)} />}
     </div>
   );
 };
