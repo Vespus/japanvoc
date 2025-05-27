@@ -105,14 +105,7 @@ function App() {
   }
 
   if (currentView === 'settings') {
-    return (
-      <Settings
-        onBack={() => {
-          setActiveTab('settings');
-          navigateTo('tab');
-        }}
-      />
-    );
+    return <Settings />;
   }
 
   // Tab-basierte Navigation (Standard)
@@ -141,12 +134,7 @@ function App() {
         
         {activeTab === 'settings' && (
           <div className="h-full">
-            <Settings
-              onBack={() => {
-                setActiveTab('settings');
-                navigateTo('tab');
-              }}
-            />
+            <Settings />
           </div>
         )}
       </div>

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowLeft, Save, RotateCcw } from 'lucide-react';
+import { Save, RotateCcw } from 'lucide-react';
 
 interface SettingsProps {
-  onBack: () => void;
+  // Keine Props mehr benötigt - Navigation über Tab Bar
 }
 
 export type QuizDirection = 'jp-to-de' | 'de-to-jp' | 'kanji-to-reading' | 'random';
@@ -19,7 +19,7 @@ const DEFAULT_SETTINGS: QuizSettings = {
   wordsPerQuiz: 20
 };
 
-export const Settings: React.FC<SettingsProps> = ({ onBack }) => {
+export const Settings: React.FC<SettingsProps> = () => {
   const [settings, setSettings] = useState<QuizSettings>(DEFAULT_SETTINGS);
   const [hasChanges, setHasChanges] = useState(false);
   const [showSaved, setShowSaved] = useState(false);
@@ -91,15 +91,7 @@ export const Settings: React.FC<SettingsProps> = ({ onBack }) => {
       {/* Header */}
       <header className="bg-white shadow-sm border-b">
         <div className="flex items-center justify-between p-4">
-          <div className="flex items-center">
-            <button
-              onClick={onBack}
-              className="mr-3 p-2 hover:bg-gray-100 rounded-lg transition-colors"
-            >
-              <ArrowLeft size={24} />
-            </button>
-            <h1 className="text-xl font-semibold">Einstellungen</h1>
-          </div>
+          <h1 className="text-xl font-semibold">Einstellungen</h1>
           
           {hasChanges && (
             <button
