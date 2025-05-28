@@ -1,5 +1,6 @@
 import { VercelRequest, VercelResponse } from '@vercel/node';
-import fetch from 'node-fetch';
+// @ts-ignore
+const fetch = require('node-fetch');
 
 interface Vocabulary {
   japanese: string;
