@@ -20,7 +20,15 @@ export default async function handler(
   }
 
   try {
-    const { count } = req.body;
+    let body: any = req.body;
+    if (typeof body === 'string') {
+      try {
+        body = JSON.parse(body);
+      } catch (e) {
+        return res.status(400).json({ error: 'Invalid JSON in request body' });
+      }
+    }
+    const { count } = body;
     
     if (!count || typeof count !== 'number' || count < 1 || count > 20) {
       console.log('API: Invalid count', { count });
