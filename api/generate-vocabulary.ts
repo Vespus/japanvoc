@@ -1,4 +1,4 @@
-import { VercelRequest, VercelResponse } from '@vercel/node';
+const { VercelRequest, VercelResponse } = require('@vercel/node');
 // @ts-ignore
 const fetch = require('node-fetch');
 
@@ -9,10 +9,11 @@ interface Vocabulary {
   example?: string;
 }
 
-export default async function handler(
-  req: VercelRequest,
-  res: VercelResponse
-) {
+/**
+ * @param {VercelRequest} req
+ * @param {VercelResponse} res
+ */
+module.exports = async function handler(req, res) {
   console.log('API: Request received', { method: req.method, body: req.body });
 
   if (req.method !== 'POST') {
@@ -21,7 +22,7 @@ export default async function handler(
   }
 
   try {
-    let body: any = req.body;
+    let body = req.body;
     if (typeof body === 'string') {
       try {
         body = JSON.parse(body);
@@ -99,7 +100,7 @@ Wichtige Regeln:
       throw new Error(`API error: ${response.status} - ${errorText}`);
     }
 
-    const data = await response.json() as any;
+    const data = await response.json();
     console.log('API: Anthropic response received', { 
       hasContent: !!data.content,
       contentLength: data.content?.[0]?.text?.length
