@@ -337,6 +337,17 @@ export const Settings: React.FC<SettingsProps> = () => {
               Du kannst sie jederzeit hier ändern.
             </p>
           </div>
+
+          {/* KI Vokabel Generator Button */}
+          <div className="mb-6">
+            <button
+              onClick={() => setShowKiVocab(true)}
+              className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition"
+            >
+              <Sparkles size={20} />
+              <span>KI Vokabel Generator</span>
+            </button>
+          </div>
         </div>
       </div>
 
@@ -345,9 +356,6 @@ export const Settings: React.FC<SettingsProps> = () => {
 
       {showKiVocab && (
         <KiVocabPrototype onClose={() => setShowKiVocab(false)} />
-      )}
-      {showDebug && (
-        <DebugVocabularyStorage onClose={() => setShowDebug(false)} />
       )}
       {showFabTest && (
         <FabQuizTest onBack={() => setShowFabTest(false)} />
