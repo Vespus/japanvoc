@@ -148,6 +148,7 @@ Schrittweise Verbesserung eines bestehenden React-basierten Vokabeltrainers mit 
     - Anthropic/Claude Client Setup
     - API-Key Management
     - Test-Call
+    - Umstellung auf Vercel Serverless Functions
 
 [ ] 3. Vokabel-Generierung
     - Prompt-Design
@@ -164,10 +165,10 @@ Schrittweise Verbesserung eines bestehenden React-basierten Vokabeltrainers mit 
     - Test-Training
     - Feedback
 
-### Aktueller Schritt: Vokabel-Generierung
-- Prompt-Design
-- Response-Parsing
-- Fehlerbehandlung
+### Aktueller Schritt: Deployment & Test
+- Repository erstellen
+- Vercel Deployment
+- API-Test durchführen
 
 ### Abgeschlossen
 ✅ Basis-Setup:
@@ -183,8 +184,11 @@ Schrittweise Verbesserung eines bestehenden React-basierten Vokabeltrainers mit 
   - Frontend-Integration implementiert
   - Fehlerbehandlung hinzugefügt
   - Vorschau der generierten Vokabeln
+  - Umstellung auf Vercel Serverless Functions
+  - @vercel/node Dependency hinzugefügt
+  - API-Route in korrektes Verzeichnis verschoben
 
 ### Nächster Schritt
-- Prompt-Design optimieren
-- Response-Parsing verbessern
-- Fehlerbehandlung erweitern 
+- Repository erstellen
+- Vercel Deployment durchführen
+- API-Funktionalität testen 
