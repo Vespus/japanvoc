@@ -1,4 +1,5 @@
 import { VercelRequest, VercelResponse } from '@vercel/node';
+import fetch from 'node-fetch';
 
 interface Vocabulary {
   japanese: string;
@@ -89,7 +90,7 @@ Wichtige Regeln:
       throw new Error(`API error: ${response.status} - ${errorText}`);
     }
 
-    const data = await response.json();
+    const data = await response.json() as any;
     console.log('API: Anthropic response received', { 
       hasContent: !!data.content,
       contentLength: data.content?.[0]?.text?.length
