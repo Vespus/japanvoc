@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Save, RotateCcw, Info } from 'lucide-react';
+import { Save, RotateCcw, Info, Sparkles } from 'lucide-react';
 import { initDB, loadVocabulary, loadFromLocalStorage } from '../utils/storage';
 import { FabQuizTest } from './FabQuizTest';
+import { KiVocabPrototype } from './prototype/KiVocabPrototype';
 
 interface SettingsProps {
   // Keine Props mehr benötigt - Navigation über Tab Bar
@@ -137,6 +138,7 @@ export const Settings: React.FC<SettingsProps> = () => {
   const [showSaved, setShowSaved] = useState(false);
   const [showDebug, setShowDebug] = useState(false);
   const [showFabTest, setShowFabTest] = useState(false);
+  const [showKiVocab, setShowKiVocab] = useState(false);
 
   // Einstellungen laden
   useEffect(() => {
@@ -200,8 +202,8 @@ export const Settings: React.FC<SettingsProps> = () => {
 
   const wordsPerQuizOptions = [5, 10, 15, 20, 25, 30, 50];
 
-  if (showFabTest) {
-    return <FabQuizTest onBack={() => setShowFabTest(false)} />;
+  if (showKiVocab) {
+    return <KiVocabPrototype onClose={() => setShowKiVocab(false)} />;
   }
 
   return (
@@ -340,6 +342,16 @@ export const Settings: React.FC<SettingsProps> = () => {
 
       {/* Debug-Overlay (immer verfügbar, auch in Produktion) */}
       {showDebug && <DebugVocabularyStorage onClose={() => setShowDebug(false)} />}
+
+      {showKiVocab && (
+        <KiVocabPrototype onClose={() => setShowKiVocab(false)} />
+      )}
+      {showDebug && (
+        <DebugVocabularyStorage onClose={() => setShowDebug(false)} />
+      )}
+      {showFabTest && (
+        <FabQuizTest onBack={() => setShowFabTest(false)} />
+      )}
     </div>
   );
 };

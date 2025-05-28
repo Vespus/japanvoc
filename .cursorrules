@@ -135,3 +135,56 @@ Schrittweise Verbesserung eines bestehenden React-basierten Vokabeltrainers mit 
 - Signalfarben: teal-600, rose-300
 - Akzente: amber-200, stone-200
 - Typografie: font-light, font-extralight, tracking-wide 
+
+## Neue Aufgabe: KI Vokabel Feature - Prototyp
+
+### Implementierungsplan
+[X] 1. Basis-Setup
+    - Prototyp-Komponente erstellen
+    - Einfache UI mit Anzahl-Eingabe
+    - Test-Button in Settings.tsx
+
+[X] 2. API-Integration
+    - Anthropic/Claude Client Setup
+    - API-Key Management
+    - Test-Call
+
+[ ] 3. Vokabel-Generierung
+    - Prompt-Design
+    - Response-Parsing
+    - Fehlerbehandlung
+
+[ ] 4. Duplikatprüfung
+    - Vergleichslogik
+    - Vorschau-Interface
+    - Bestätigung/Ablehnung
+
+[ ] 5. Test-Integration
+    - Temporäre Speicherung
+    - Test-Training
+    - Feedback
+
+### Aktueller Schritt: Vokabel-Generierung
+- Prompt-Design
+- Response-Parsing
+- Fehlerbehandlung
+
+### Abgeschlossen
+✅ Basis-Setup:
+  - KiVocabPrototype Komponente erstellt
+  - Einfache UI mit Anzahl-Eingabe implementiert
+  - Test-Button in Settings.tsx hinzugefügt
+  - Modal-Dialog mit Schließen-Funktion
+  - Ladezustand für API-Call vorbereitet
+
+✅ API-Integration:
+  - API-Route für Vokabelgenerierung erstellt
+  - Vercel Environment Variable konfiguriert
+  - Frontend-Integration implementiert
+  - Fehlerbehandlung hinzugefügt
+  - Vorschau der generierten Vokabeln
+
+### Nächster Schritt
+- Prompt-Design optimieren
+- Response-Parsing verbessern
+- Fehlerbehandlung erweitern 
