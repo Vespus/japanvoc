@@ -21,6 +21,7 @@ type Status =
   | 'error';
 
 const MAX_REFETCH_ATTEMPTS = 3;
+const BATCH_SIZE = 10;
 
 export const KiVocabPrototype: React.FC<KiVocabPrototypeProps> = ({ onClose }) => {
   const [count, setCount] = useState<number>(5);
@@ -30,6 +31,7 @@ export const KiVocabPrototype: React.FC<KiVocabPrototypeProps> = ({ onClose }) =
   const [duplicateCount, setDuplicateCount] = useState<number>(0);
   const [missingCount, setMissingCount] = useState<number>(0);
   const [refetchProgress, setRefetchProgress] = useState<{current: number, total: number, attempts: number}>({current: 0, total: 0, attempts: 0});
+  const [apiPrompts, setApiPrompts] = useState<string[]>([]);
 
   // Hole den aktuellen Vokabelbestand
   const { vocabulary: existingVocabulary, isLoading: vocabLoading } = useVocabularyManager();
@@ -58,6 +60,9 @@ export const KiVocabPrototype: React.FC<KiVocabPrototypeProps> = ({ onClose }) =
     );
   };
 
+  // Prompt-Tracking
+  const prompts: string[] = [];
+
   // Hauptfunktion: KI-Call, Duplikatprüfung, ggf. Nachfordern
   const handleGenerate = async () => {
     setStatus('fetching');
@@ -65,17 +70,20 @@ export const KiVocabPrototype: React.FC<KiVocabPrototypeProps> = ({ onClose }) =
     setDuplicateCount(0);
     setMissingCount(0);
     setRefetchProgress({current: 0, total: 0, attempts: 0});
+    setApiPrompts([]);
     let allVocabs: Vocabulary[] = [];
     let totalDuplicates = 0;
     let missing = 0;
     try {
       // Initialer KI-Call
+      const initialPrompt = JSON.stringify({ count });
+      prompts.push(initialPrompt);
       const response = await fetch('/api/prototype/generate-vocabulary', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ count })
+        body: initialPrompt
       });
 
       if (!response.ok) {
@@ -105,14 +113,16 @@ export const KiVocabPrototype: React.FC<KiVocabPrototypeProps> = ({ onClose }) =
         setStatus('refetching');
         setRefetchProgress({current: allVocabs.length, total: count, attempts: attempts+1});
         const toFetch = count - allVocabs.length;
-        // Hole maximal 3 pro Versuch, um API zu schonen
-        const batchSize = Math.min(toFetch, 3);
+        let batchSize = toFetch;
+        if (toFetch >= 11) batchSize = BATCH_SIZE;
+        const refetchPrompt = JSON.stringify({ count: batchSize });
+        prompts.push(refetchPrompt);
         const refetchResponse = await fetch('/api/prototype/generate-vocabulary', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ count: batchSize })
+          body: refetchPrompt
         });
         if (!refetchResponse.ok) {
           const errorData = await refetchResponse.json();
@@ -130,6 +140,7 @@ export const KiVocabPrototype: React.FC<KiVocabPrototypeProps> = ({ onClose }) =
       setVocabularies(allVocabs.slice(0, count));
       setDuplicateCount(count - allVocabs.length > 0 ? count - allVocabs.length : 0);
       setMissingCount(count - allVocabs.length > 0 ? count - allVocabs.length : 0);
+      setApiPrompts([...prompts]);
       setTimeout(() => setStatus('done'), 1000);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Ein unbekannter Fehler ist aufgetreten');
@@ -169,7 +180,7 @@ export const KiVocabPrototype: React.FC<KiVocabPrototypeProps> = ({ onClose }) =
       <div className="bg-white rounded-lg shadow-lg p-6 max-w-md w-full max-h-[90vh] overflow-y-auto">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-light text-stone-700">KI Vokabel Generator</h2>
-          <span className="text-xs text-stone-400 ml-2">v0.08</span>
+          <span className="text-xs text-stone-400 ml-2">v0.09</span>
           <button
             onClick={onClose}
             className="text-stone-400 hover:text-stone-600"
@@ -246,6 +257,14 @@ export const KiVocabPrototype: React.FC<KiVocabPrototypeProps> = ({ onClose }) =
                   </div>
                 ))}
               </div>
+            </div>
+          )}
+
+          {/* Prompts anzeigen */}
+          {status === 'done' && apiPrompts.length > 0 && (
+            <div className="mt-6">
+              <h4 className="text-xs font-semibold text-stone-500 mb-1">Verwendete API-Prompts:</h4>
+              <pre className="bg-stone-100 text-xs p-2 rounded max-h-40 overflow-y-auto whitespace-pre-wrap">{apiPrompts.map((p, i) => `#${i+1}: ${p}`).join('\n')}</pre>
             </div>
           )}
         </div>
