@@ -1,10 +1,10 @@
-const fetch = require('node-fetch');
+import fetch from 'node-fetch';
 
 /**
  * @param {import('@vercel/node').VercelRequest} req
  * @param {import('@vercel/node').VercelResponse} res
  */
-module.exports = async function handler(req, res) {
+export default async function handler(req, res) {
   console.log('API: Request received', { method: req.method, body: req.body });
 
   if (req.method !== 'POST') {
