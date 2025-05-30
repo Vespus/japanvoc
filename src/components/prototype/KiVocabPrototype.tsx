@@ -20,6 +20,8 @@ type Status =
   | 'done'
   | 'error';
 
+const MAX_REFETCH_ATTEMPTS = 3;
+
 export const KiVocabPrototype: React.FC<KiVocabPrototypeProps> = ({ onClose }) => {
   const [count, setCount] = useState<number>(5);
   const [status, setStatus] = useState<Status>('idle');
@@ -27,6 +29,7 @@ export const KiVocabPrototype: React.FC<KiVocabPrototypeProps> = ({ onClose }) =
   const [vocabularies, setVocabularies] = useState<Vocabulary[]>([]);
   const [duplicateCount, setDuplicateCount] = useState<number>(0);
   const [missingCount, setMissingCount] = useState<number>(0);
+  const [refetchProgress, setRefetchProgress] = useState<{current: number, total: number, attempts: number}>({current: 0, total: 0, attempts: 0});
 
   // Hole den aktuellen Vokabelbestand
   const { vocabulary: existingVocabulary, isLoading: vocabLoading } = useVocabularyManager();
@@ -41,12 +44,32 @@ export const KiVocabPrototype: React.FC<KiVocabPrototypeProps> = ({ onClose }) =
     }
   };
 
+  // Hilfsfunktion: Duplikatprüfung gegen Bestand und bereits generierte Vokabeln
+  const isDuplicate = (vocab: Vocabulary, allVocabs: Vocabulary[], existing: typeof existingVocabulary) => {
+    return (
+      allVocabs.some(v =>
+        (v.japanese && v.japanese === vocab.japanese) ||
+        (v.kana && v.kana === vocab.kana)
+      ) ||
+      existing.some(ev =>
+        (ev.kanji && ev.kanji === vocab.japanese) ||
+        (ev.kana && ev.kana === vocab.kana)
+      )
+    );
+  };
+
+  // Hauptfunktion: KI-Call, Duplikatprüfung, ggf. Nachfordern
   const handleGenerate = async () => {
     setStatus('fetching');
     setError(null);
     setDuplicateCount(0);
     setMissingCount(0);
+    setRefetchProgress({current: 0, total: 0, attempts: 0});
+    let allVocabs: Vocabulary[] = [];
+    let totalDuplicates = 0;
+    let missing = 0;
     try {
+      // Initialer KI-Call
       const response = await fetch('/api/prototype/generate-vocabulary', {
         method: 'POST',
         headers: {
@@ -65,21 +88,49 @@ export const KiVocabPrototype: React.FC<KiVocabPrototypeProps> = ({ onClose }) =
       setStatus('checking-duplicates');
       // Duplikatprüfung (1:1 auf Kanji und Kana)
       const duplicates = data.vocabularies.filter((vocab: Vocabulary) =>
-        existingVocabulary.some(ev =>
-          (ev.kanji && ev.kanji === vocab.japanese) ||
-          (ev.kana && ev.kana === vocab.kana)
-        )
+        isDuplicate(vocab, [], existingVocabulary)
       );
       const uniqueVocabs = data.vocabularies.filter((vocab: Vocabulary) =>
-        !existingVocabulary.some(ev =>
-          (ev.kanji && ev.kanji === vocab.japanese) ||
-          (ev.kana && ev.kana === vocab.kana)
-        )
+        !isDuplicate(vocab, [], existingVocabulary)
       );
-      setDuplicateCount(duplicates.length);
-      setMissingCount(count - uniqueVocabs.length);
-      setVocabularies(uniqueVocabs);
-      setTimeout(() => setStatus('done'), 1000); // Simulierte Wartezeit für UI
+      totalDuplicates = duplicates.length;
+      missing = count - uniqueVocabs.length;
+      setDuplicateCount(totalDuplicates);
+      setMissingCount(missing);
+      allVocabs = [...uniqueVocabs];
+
+      // Nachfordern, falls nötig
+      let attempts = 0;
+      while (allVocabs.length < count && attempts < MAX_REFETCH_ATTEMPTS) {
+        setStatus('refetching');
+        setRefetchProgress({current: allVocabs.length, total: count, attempts: attempts+1});
+        const toFetch = count - allVocabs.length;
+        // Hole maximal 3 pro Versuch, um API zu schonen
+        const batchSize = Math.min(toFetch, 3);
+        const refetchResponse = await fetch('/api/prototype/generate-vocabulary', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ count: batchSize })
+        });
+        if (!refetchResponse.ok) {
+          const errorData = await refetchResponse.json();
+          setStatus('error');
+          throw new Error(errorData.error || 'Fehler bei der Nachgenerierung');
+        }
+        const refetchData = await refetchResponse.json();
+        // Prüfe neue Vokabeln auf Duplikate gegen Bestand und bereits generierte
+        const newUnique = refetchData.vocabularies.filter((vocab: Vocabulary) =>
+          !isDuplicate(vocab, allVocabs, existingVocabulary)
+        );
+        allVocabs = [...allVocabs, ...newUnique];
+        attempts++;
+      }
+      setVocabularies(allVocabs.slice(0, count));
+      setDuplicateCount(count - allVocabs.length > 0 ? count - allVocabs.length : 0);
+      setMissingCount(count - allVocabs.length > 0 ? count - allVocabs.length : 0);
+      setTimeout(() => setStatus('done'), 1000);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Ein unbekannter Fehler ist aufgetreten');
       setStatus('error');
@@ -100,7 +151,12 @@ export const KiVocabPrototype: React.FC<KiVocabPrototypeProps> = ({ onClose }) =
           </div>
         );
       case 'refetching':
-        return <div className="text-amber-700 flex items-center gap-2"><span className="animate-spin inline-block w-4 h-4 border-2 border-amber-400 border-t-transparent rounded-full"></span>Ersatz für Duplikate wird abgefragt...</div>;
+        return (
+          <div className="text-amber-700 flex flex-col gap-1 items-start">
+            <div className="flex items-center gap-2"><span className="animate-spin inline-block w-4 h-4 border-2 border-amber-400 border-t-transparent rounded-full"></span>Ersatz für Duplikate wird abgefragt...</div>
+            <div className="text-xs text-stone-600">{refetchProgress.current} / {refetchProgress.total} Vokabeln duplikatfrei, Versuch {refetchProgress.attempts} von {MAX_REFETCH_ATTEMPTS}</div>
+          </div>
+        );
       case 'error':
         return <div className="bg-rose-50 border border-rose-200 text-rose-700 px-4 py-3 rounded-md">{error}</div>;
       default:
@@ -113,7 +169,7 @@ export const KiVocabPrototype: React.FC<KiVocabPrototypeProps> = ({ onClose }) =
       <div className="bg-white rounded-lg shadow-lg p-6 max-w-md w-full max-h-[90vh] overflow-y-auto">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-light text-stone-700">KI Vokabel Generator</h2>
-          <span className="text-xs text-stone-400 ml-2">v0.07</span>
+          <span className="text-xs text-stone-400 ml-2">v0.08</span>
           <button
             onClick={onClose}
             className="text-stone-400 hover:text-stone-600"
