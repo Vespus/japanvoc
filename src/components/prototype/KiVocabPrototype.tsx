@@ -32,9 +32,8 @@ export const KiVocabPrototype: React.FC<KiVocabPrototypeProps> = ({ onClose }) =
   const [missingCount, setMissingCount] = useState<number>(0);
   const [refetchProgress, setRefetchProgress] = useState<{current: number, total: number, attempts: number}>({current: 0, total: 0, attempts: 0});
   const [apiPrompts, setApiPrompts] = useState<string[]>([]);
-
-  // Hole den aktuellen Vokabelbestand
-  const { vocabulary: existingVocabulary, isLoading: vocabLoading } = useVocabularyManager();
+  const { vocabulary: existingVocabulary, isLoading: vocabLoading, addVocabulary } = useVocabularyManager();
+  const [successMsg, setSuccessMsg] = useState<string | null>(null);
 
   // Simulierte Statuswechsel für Testzwecke
   const simulateStatus = (newStatus: Status) => {
@@ -149,6 +148,27 @@ export const KiVocabPrototype: React.FC<KiVocabPrototypeProps> = ({ onClose }) =
     }
   };
 
+  // Übernahme-Handler
+  const handleAccept = () => {
+    try {
+      vocabularies.forEach(vocab => {
+        addVocabulary({
+          kanji: vocab.japanese,
+          kana: vocab.kana,
+          romaji: '', // KI liefert aktuell kein Romaji
+          de: vocab.german
+        });
+      });
+      setSuccessMsg(`${vocabularies.length} neue Vokabel(n) übernommen!`);
+      setTimeout(() => {
+        setSuccessMsg(null);
+        onClose();
+      }, 1800);
+    } catch (e) {
+      setError('Fehler beim Übernehmen der Vokabeln.');
+    }
+  };
+
   // UI für Statusmeldungen
   const renderStatus = () => {
     switch (status) {
@@ -257,6 +277,28 @@ export const KiVocabPrototype: React.FC<KiVocabPrototypeProps> = ({ onClose }) =
                   </div>
                 ))}
               </div>
+              {/* Übernehmen/Abbrechen-Buttons */}
+              <div className="flex gap-3 mt-4">
+                <button
+                  onClick={handleAccept}
+                  className="flex-1 bg-amber-600 text-white py-2 rounded-md hover:bg-amber-700 transition"
+                  disabled={!!successMsg}
+                >
+                  Übernehmen
+                </button>
+                <button
+                  onClick={onClose}
+                  className="flex-1 bg-stone-200 text-stone-700 py-2 rounded-md hover:bg-stone-300 transition"
+                  disabled={!!successMsg}
+                >
+                  Abbrechen
+                </button>
+              </div>
+              {successMsg && (
+                <div className="mt-3 bg-teal-100 border border-teal-300 text-teal-800 px-4 py-2 rounded-md text-center">
+                  {successMsg}
+                </div>
+              )}
             </div>
           )}
 
