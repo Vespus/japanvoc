@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useVocabularyManager } from '../../hooks/useVocabularyManager';
 
 interface Vocabulary {
   japanese: string;
@@ -24,6 +25,11 @@ export const KiVocabPrototype: React.FC<KiVocabPrototypeProps> = ({ onClose }) =
   const [status, setStatus] = useState<Status>('idle');
   const [error, setError] = useState<string | null>(null);
   const [vocabularies, setVocabularies] = useState<Vocabulary[]>([]);
+  const [duplicateCount, setDuplicateCount] = useState<number>(0);
+  const [missingCount, setMissingCount] = useState<number>(0);
+
+  // Hole den aktuellen Vokabelbestand
+  const { vocabulary: existingVocabulary, isLoading: vocabLoading } = useVocabularyManager();
 
   // Simulierte Statuswechsel für Testzwecke
   const simulateStatus = (newStatus: Status) => {
@@ -38,6 +44,8 @@ export const KiVocabPrototype: React.FC<KiVocabPrototypeProps> = ({ onClose }) =
   const handleGenerate = async () => {
     setStatus('fetching');
     setError(null);
+    setDuplicateCount(0);
+    setMissingCount(0);
     try {
       const response = await fetch('/api/prototype/generate-vocabulary', {
         method: 'POST',
@@ -54,8 +62,24 @@ export const KiVocabPrototype: React.FC<KiVocabPrototypeProps> = ({ onClose }) =
       }
 
       const data = await response.json();
-      setVocabularies(data.vocabularies);
-      setStatus('done');
+      setStatus('checking-duplicates');
+      // Duplikatprüfung (1:1 auf Kanji und Kana)
+      const duplicates = data.vocabularies.filter((vocab: Vocabulary) =>
+        existingVocabulary.some(ev =>
+          (ev.kanji && ev.kanji === vocab.japanese) ||
+          (ev.kana && ev.kana === vocab.kana)
+        )
+      );
+      const uniqueVocabs = data.vocabularies.filter((vocab: Vocabulary) =>
+        !existingVocabulary.some(ev =>
+          (ev.kanji && ev.kanji === vocab.japanese) ||
+          (ev.kana && ev.kana === vocab.kana)
+        )
+      );
+      setDuplicateCount(duplicates.length);
+      setMissingCount(count - uniqueVocabs.length);
+      setVocabularies(uniqueVocabs);
+      setTimeout(() => setStatus('done'), 1000); // Simulierte Wartezeit für UI
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Ein unbekannter Fehler ist aufgetreten');
       setStatus('error');
@@ -69,7 +93,12 @@ export const KiVocabPrototype: React.FC<KiVocabPrototypeProps> = ({ onClose }) =
       case 'fetching':
         return <div className="text-amber-700 flex items-center gap-2"><span className="animate-spin inline-block w-4 h-4 border-2 border-amber-400 border-t-transparent rounded-full"></span>Vokabeln werden abgefragt...</div>;
       case 'checking-duplicates':
-        return <div className="text-amber-700 flex items-center gap-2"><span className="animate-spin inline-block w-4 h-4 border-2 border-amber-400 border-t-transparent rounded-full"></span>Duplikate werden identifiziert...</div>;
+        return (
+          <div className="text-amber-700 flex flex-col gap-1 items-start">
+            <div className="flex items-center gap-2"><span className="animate-spin inline-block w-4 h-4 border-2 border-amber-400 border-t-transparent rounded-full"></span>Duplikate werden identifiziert...</div>
+            <div className="text-xs text-stone-600">{duplicateCount} Duplikate gefunden, {missingCount} Vokabel(n) fehlen noch.</div>
+          </div>
+        );
       case 'refetching':
         return <div className="text-amber-700 flex items-center gap-2"><span className="animate-spin inline-block w-4 h-4 border-2 border-amber-400 border-t-transparent rounded-full"></span>Ersatz für Duplikate wird abgefragt...</div>;
       case 'error':
@@ -84,7 +113,7 @@ export const KiVocabPrototype: React.FC<KiVocabPrototypeProps> = ({ onClose }) =
       <div className="bg-white rounded-lg shadow-lg p-6 max-w-md w-full max-h-[90vh] overflow-y-auto">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-light text-stone-700">KI Vokabel Generator</h2>
-          <span className="text-xs text-stone-400 ml-2">v0.06</span>
+          <span className="text-xs text-stone-400 ml-2">v0.07</span>
           <button
             onClick={onClose}
             className="text-stone-400 hover:text-stone-600"
@@ -113,7 +142,7 @@ export const KiVocabPrototype: React.FC<KiVocabPrototypeProps> = ({ onClose }) =
 
           <button
             onClick={handleGenerate}
-            disabled={status === 'fetching' || status === 'checking-duplicates' || status === 'refetching'}
+            disabled={status === 'fetching' || status === 'checking-duplicates' || status === 'refetching' || vocabLoading}
             className="w-full bg-amber-600 text-white py-2 px-4 rounded-md hover:bg-amber-700 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {status === 'fetching' ? 'Generiere...' : 'Vokabeln generieren'}
