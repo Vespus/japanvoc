@@ -32,7 +32,7 @@ export const KiVocabPrototype: React.FC<KiVocabPrototypeProps> = ({ onClose }) =
   const [missingCount, setMissingCount] = useState<number>(0);
   const [refetchProgress, setRefetchProgress] = useState<{current: number, total: number, attempts: number}>({current: 0, total: 0, attempts: 0});
   const [apiPrompts, setApiPrompts] = useState<string[]>([]);
-  const { vocabulary: existingVocabulary, isLoading: vocabLoading, addVocabulary } = useVocabularyManager();
+  const { vocabulary: existingVocabulary, isLoading: vocabLoading, addVocabulary, addVocabularies } = useVocabularyManager();
   const [successMsg, setSuccessMsg] = useState<string | null>(null);
 
   // Simulierte Statuswechsel für Testzwecke
@@ -151,14 +151,13 @@ export const KiVocabPrototype: React.FC<KiVocabPrototypeProps> = ({ onClose }) =
   // Übernahme-Handler
   const handleAccept = () => {
     try {
-      vocabularies.forEach(vocab => {
-        addVocabulary({
-          kanji: vocab.japanese,
-          kana: vocab.kana,
-          romaji: '', // KI liefert aktuell kein Romaji
-          de: vocab.german
-        });
-      });
+      const newVocabs = vocabularies.map(vocab => ({
+        kanji: vocab.japanese,
+        kana: vocab.kana,
+        romaji: '',
+        de: vocab.german
+      }));
+      addVocabularies(newVocabs);
       setSuccessMsg(`${vocabularies.length} neue Vokabel(n) übernommen!`);
       setTimeout(() => {
         setSuccessMsg(null);

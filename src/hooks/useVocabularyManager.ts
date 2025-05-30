@@ -114,6 +114,28 @@ export const useVocabularyManager = () => {
     }
   }, []);
 
+  // Mehrere neue Vokabeln als Batch hinzufügen
+  const addVocabularies = useCallback((newVocabs: Omit<VocabularyCard, 'id' | 'sm2'>[]) => {
+    const now = Date.now();
+    const batch = newVocabs.map((v, i) => ({
+      ...v,
+      id: `custom-${now + i}-${Math.random().toString(36).substr(2, 9)}`,
+      sm2: {
+        easeFactor: 2.5,
+        interval: 1,
+        repetitions: 0,
+        nextReview: null,
+        lastReview: null,
+        quality: null
+      }
+    }));
+    const updatedVocabs = [...vocabulary, ...batch];
+    setVocabulary(updatedVocabs);
+    saveToStorage(updatedVocabs);
+    console.log(`➕ Batch: ${batch.length} neue Vokabeln hinzugefügt.`);
+    return batch;
+  }, [vocabulary, saveToStorage]);
+
   // Neue Vokabel hinzufügen
   const addVocabulary = useCallback((newVocab: Omit<VocabularyCard, 'id' | 'sm2'>) => {
     const id = `custom-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
@@ -216,6 +238,7 @@ export const useVocabularyManager = () => {
     isLoading,
     error,
     addVocabulary,
+    addVocabularies,
     updateVocabulary,
     deleteVocabulary,
     updateSM2Data,
