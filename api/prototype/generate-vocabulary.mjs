@@ -56,7 +56,9 @@ Wichtige Regeln:
 2. Korrekte Kanji und Kana
 3. Präzise deutsche Übersetzungen
 4. Beispielsätze sind optional
-5. Keine Duplikate`;
+5. Keine Duplikate
+6. Vermeide unbedingt gängige Wörter und Substantive wie Haus, Lehrer, Wald, Strasse, etc.
+7. Gehe bei der Vokabelgenerierung davon aus, dass jemand Japanisch Vokabeln lernen will, der schon einen guten Grundwortschatz hat.`;
 
     console.log('API: Sending request to Anthropic', { count });
 
