@@ -15,6 +15,7 @@ export interface VocabularyCard {
   kana: string;
   romaji: string;
   de: string;
+  example?: string;
   sm2: SM2Data;
 }
 

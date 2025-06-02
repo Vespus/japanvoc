@@ -22,7 +22,8 @@ export const EditVocabulary: React.FC<EditVocabularyProps> = ({
     kanji: '',
     kana: '',
     romaji: '',
-    de: ''
+    de: '',
+    example: ''
   });
   
   const [originalVocab, setOriginalVocab] = useState<VocabType | null>(null);
@@ -43,7 +44,8 @@ export const EditVocabulary: React.FC<EditVocabularyProps> = ({
         kanji: vocab.kanji,
         kana: vocab.kana,
         romaji: vocab.romaji,
-        de: vocab.de
+        de: vocab.de,
+        example: vocab.example || ''
       });
       // Lösche eventuelle Load-Fehler
       setErrors(prev => {
@@ -102,7 +104,8 @@ export const EditVocabulary: React.FC<EditVocabularyProps> = ({
         kanji: formData.kanji.trim(),
         kana: formData.kana.trim(),
         romaji: formData.romaji.trim(),
-        de: formData.de.trim()
+        de: formData.de.trim(),
+        example: formData.example.trim()
       });
       
       console.log('Vokabel aktualisiert:', updatedVocab);
@@ -162,7 +165,8 @@ export const EditVocabulary: React.FC<EditVocabularyProps> = ({
     formData.kanji !== originalVocab.kanji ||
     formData.kana !== originalVocab.kana ||
     formData.romaji !== originalVocab.romaji ||
-    formData.de !== originalVocab.de
+    formData.de !== originalVocab.de ||
+    formData.example !== (originalVocab.example || '')
   );
 
   // Loading-Zustand anzeigen
@@ -346,6 +350,20 @@ export const EditVocabulary: React.FC<EditVocabularyProps> = ({
                 {errors.de}
               </p>
             )}
+          </div>
+
+          {/* Beispiel */}
+          <div>
+            <label htmlFor="example" className="block text-sm font-light text-stone-700 mb-3 tracking-wide">
+              Beispiel (optional)
+            </label>
+            <textarea
+              id="example"
+              value={formData.example}
+              onChange={(e) => handleInputChange('example', e.target.value)}
+              className="w-full px-4 py-3 border rounded-2xl focus:ring-2 focus:ring-amber-500 focus:border-transparent font-light bg-white/80 backdrop-blur-sm tracking-wide min-h-[60px]"
+              placeholder="Beispielsatz auf Japanisch oder mit Übersetzung"
+            />
           </div>
 
           {/* Duplikat-Fehler */}

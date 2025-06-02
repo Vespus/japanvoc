@@ -180,7 +180,8 @@ export const KiVocabPrototype: React.FC<KiVocabPrototypeProps> = ({ onClose }) =
         kanji: vocabularies[idx].japanese,
         kana: vocabularies[idx].kana,
         romaji: vocabularies[idx].romaji,
-        de: vocabularies[idx].german
+        de: vocabularies[idx].german,
+        example: vocabularies[idx].example
       }));
       addVocabularies(newVocabs);
       setSuccessMsg(`${newVocabs.length} neue Vokabel(n) übernommen!`);
@@ -224,7 +225,7 @@ export const KiVocabPrototype: React.FC<KiVocabPrototypeProps> = ({ onClose }) =
       <div className="bg-white rounded-lg shadow-lg p-6 max-w-md w-full max-h-[90vh] overflow-y-auto">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-light text-stone-700">KI Vokabel Generator</h2>
-          <span className="text-xs text-stone-400 ml-2">v0.23</span>
+          <span className="text-xs text-stone-400 ml-2">v0.24</span>
           <button
             onClick={onClose}
             className="text-stone-400 hover:text-stone-600"
