@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { ArrowLeft, Eye, EyeOff, RotateCcw, CheckCircle } from 'lucide-react';
+import { ArrowLeft, Eye, EyeOff } from 'lucide-react';
 import { useVocabularyManager } from '../hooks/useVocabularyManager';
 import { QuizMode } from './QuizSelection';
 import { useQuizSettings, QuizDirection } from './Settings';
@@ -25,19 +25,20 @@ export const Quiz: React.FC<QuizProps> = ({
 }) => {
   const { vocabulary, updateSM2Data, isLoading } = useVocabularyManager();
   const quizSettings = useQuizSettings();
+  
+  // Zentrale States für Quiz-Flow
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isQuizComplete, setIsQuizComplete] = useState(false);
   const [showAnswer, setShowAnswer] = useState(false);
-  const [isInitialized, setIsInitialized] = useState(false);
   const [currentDirection, setCurrentDirection] = useState<QuizDirection>('jp-to-de');
+  
+  // Statistiken und Ergebnisse
   const [sessionStats, setSessionStats] = useState({
     correct: 0,
     total: 0,
     streak: 0,
     maxStreak: 0
   });
-  const [showStats, setShowStats] = useState(false);
-  const [repeatQueue, setRepeatQueue] = useState<VocabularyCard[]>([]);
-  const [isRepeatMode, setIsRepeatMode] = useState(false);
   const [results, setResults] = useState<{vocab: VocabularyCard, quality: number}[]>([]);
 
   // Vokabeln für das Quiz basierend auf dem Modus filtern
@@ -80,16 +81,13 @@ export const Quiz: React.FC<QuizProps> = ({
     return result;
   }, [vocabulary, mode, quizSettings.wordsPerQuiz]);
 
-  const isLastCard = currentIndex >= quizVocabulary.length - 1;
-
-  // Initialisierung nach dem Laden der Daten
+  // Quiz beenden wenn keine Vokabeln vorhanden
   useEffect(() => {
-    if (!isLoading && vocabulary.length > 0 && !isInitialized) {
-      console.log('🚀 Quiz initialisiert mit', vocabulary.length, 'Vokabeln');
-      console.log('⚙️ Quiz-Einstellungen:', quizSettings);
-      setIsInitialized(true);
+    if (!isLoading && quizVocabulary.length === 0) {
+      console.log('⚠️ Keine Quiz-Vokabeln verfügbar, beende Quiz');
+      setTimeout(() => onComplete(), 1000);
     }
-  }, [isLoading, vocabulary.length, isInitialized, quizSettings]);
+  }, [isLoading, quizVocabulary.length, onComplete]);
 
   // Abfragerichtung für aktuelle Vokabel bestimmen
   useEffect(() => {
@@ -101,14 +99,6 @@ export const Quiz: React.FC<QuizProps> = ({
       setCurrentDirection(quizSettings.direction);
     }
   }, [currentIndex, quizSettings.direction]);
-
-  // Quiz beenden wenn keine Vokabeln vorhanden (aber erst nach Initialisierung)
-  useEffect(() => {
-    if (isInitialized && quizVocabulary.length === 0) {
-      console.log('⚠️ Keine Quiz-Vokabeln verfügbar, beende Quiz');
-      setTimeout(() => onComplete(), 1000); // Kurze Verzögerung für bessere UX
-    }
-  }, [isInitialized, quizVocabulary.length, onComplete]);
 
   // Antwort bewerten und zur nächsten Vokabel
   const handleQualityRating = (quality: number) => {
@@ -137,10 +127,10 @@ export const Quiz: React.FC<QuizProps> = ({
     
     // Ergebnis speichern
     setResults(prev => [...prev, { vocab: quizVocabulary[currentIndex], quality }]);
-    if (isLastCard) {
-      setShowAnswer(false);
-      // Kein currentIndex mehr erhöhen!
-      // Ergebnisbildschirm wird im nächsten Render angezeigt
+    
+    // Prüfen ob Quiz beendet
+    if (currentIndex + 1 >= quizVocabulary.length) {
+      setIsQuizComplete(true);
     } else {
       setCurrentIndex(prev => prev + 1);
       setShowAnswer(false);
@@ -152,23 +142,17 @@ export const Quiz: React.FC<QuizProps> = ({
     setShowAnswer(!showAnswer);
   };
 
-  // Karte wiederholen (ohne SM-2 Update)
-  const repeatCard = () => {
-    setShowAnswer(false);
-  };
-
-  // Quiz-Vokabeln für Wiederholung anpassen
-  const quizVocabs = isRepeatMode && repeatQueue.length > 0 ? repeatQueue : quizVocabulary;
-
-  // Ergebnisbildschirm ganz am Anfang des Render-Teils
-  if (currentIndex >= quizVocabs.length && results.length > 0) {
+  // Ergebnisbildschirm
+  if (isQuizComplete) {
     // Daten für Chart aufbereiten
     const qualityCounts = QUALITY_LABELS.map(q => ({
       name: q.label,
       value: results.filter(r => r.quality === q.value).length,
-      color: q.color.replace('bg-', '').replace('text-', '') // z.B. 'rose-400'
+      color: q.color.replace('bg-', '').replace('text-', '')
     })).filter(d => d.value > 0);
+    
     const wrongVocabs = results.filter(r => r.quality < 3).map(r => r.vocab);
+    
     return (
       <div className="min-h-screen bg-gradient-to-br from-amber-50 via-stone-50 to-orange-50 flex flex-col items-center justify-center p-4">
         <div className="bg-white rounded-3xl shadow-2xl p-8 max-w-md w-full border border-amber-200/80 flex flex-col items-center">
@@ -206,15 +190,14 @@ export const Quiz: React.FC<QuizProps> = ({
             </ResponsiveContainer>
           </div>
           <div className="mt-6 w-full text-center">
-            <div className="text-lg font-light text-stone-700 mb-2">Richtige Antworten: {results.filter(r => r.quality >= 3).length} / {results.length}</div>
+            <div className="text-lg font-light text-stone-700 mb-2">
+              Richtige Antworten: {results.filter(r => r.quality >= 3).length} / {results.length}
+            </div>
             {wrongVocabs.length > 0 ? (
               <button
                 onClick={() => {
-                  setRepeatQueue(wrongVocabs);
-                  setIsRepeatMode(true);
-                  setCurrentIndex(0);
-                  setShowAnswer(false);
-                  setResults([]);
+                  // TODO: Implementiere Wiederholungsmodus als separates Quiz
+                  onComplete();
                 }}
                 className="mt-2 px-6 py-3 bg-gradient-to-r from-rose-500 to-amber-600 text-white rounded-2xl shadow-lg font-light text-lg hover:from-rose-600 hover:to-amber-700 transition-all"
               >
@@ -227,33 +210,21 @@ export const Quiz: React.FC<QuizProps> = ({
               onClick={onComplete}
               className="mt-4 px-6 py-3 bg-stone-300 text-stone-700 rounded-2xl shadow font-light text-base hover:bg-stone-400 transition-all"
             >
-              Zurück</button>
+              Zurück
+            </button>
           </div>
         </div>
       </div>
     );
   }
 
-  // Nur wenn currentIndex < quizVocabs.length die Quizkarte rendern
-  if (currentIndex < quizVocabs.length) {
-    const getModeTitle = () => {
-      switch (mode) {
-        case 'due': return 'Fällige Wiederholungen';
-        case 'new': return 'Neue Vokabeln';
-        case 'review': return 'Wiederholung';
-        case 'random': return 'Zufällige Auswahl';
-      }
-    };
-
-    // Quiz-Vokabeln für Wiederholung anpassen
-    const quizVocabs = isRepeatMode && repeatQueue.length > 0 ? repeatQueue : quizVocabulary;
-
+  // Quiz-Karte
+  if (currentIndex < quizVocabulary.length) {
     return (
       <div className="h-screen bg-gradient-to-br from-amber-50 via-stone-50 to-orange-50 flex flex-col">
         {/* Header */}
         <header className="bg-gradient-to-r from-stone-700 via-amber-800 to-stone-800 text-amber-50 shadow-2xl px-4 py-2">
           <div className="flex items-center justify-between">
-            {/* Kompakter Zurück-Pfeil */}
             <button
               onClick={onBack}
               className="mr-2 p-2 hover:bg-stone-700/50 rounded-lg transition-all duration-300 min-h-[36px] min-w-[36px] flex items-center justify-center"
@@ -261,15 +232,13 @@ export const Quiz: React.FC<QuizProps> = ({
             >
               <ArrowLeft size={20} className="text-amber-50 opacity-90" />
             </button>
-            {/* Fortschritt + Statistiken in einer Zeile */}
             <div className="flex-1 flex flex-col items-center">
               <div className="flex items-center space-x-4 text-sm font-light">
-                <span className="text-amber-100">{currentIndex + 1} von {quizVocabs.length}</span>
+                <span className="text-amber-100">{currentIndex + 1} von {quizVocabulary.length}</span>
                 <span className="text-amber-100">Richtig: {sessionStats.correct}/{sessionStats.total}</span>
                 <span className="text-amber-200">Serie: {sessionStats.streak}</span>
               </div>
             </div>
-            {/* Platzhalter für zentrierten Header */}
             <div style={{ width: 36 }} />
           </div>
         </header>
@@ -279,15 +248,15 @@ export const Quiz: React.FC<QuizProps> = ({
           <div className="h-3 bg-stone-200 rounded-full overflow-hidden">
             <div 
               className="h-full bg-gradient-to-r from-amber-600 to-stone-700 transition-all duration-500 ease-out rounded-full"
-              style={{ width: `${((currentIndex + 1) / quizVocabs.length) * 100}%` }}
+              style={{ width: `${((currentIndex + 1) / quizVocabulary.length) * 100}%` }}
             />
           </div>
           <div className="text-xs text-stone-500 text-center mt-1 font-light">
-            {Math.round(((currentIndex + 1) / quizVocabs.length) * 100)}% abgeschlossen
+            {Math.round(((currentIndex + 1) / quizVocabulary.length) * 100)}% abgeschlossen
           </div>
         </div>
 
-        {/* Quiz Card - Vollbild optimiert */}
+        {/* Quiz Card */}
         <div className="flex-1 flex flex-col justify-center px-6 py-4">
           <div className="bg-gradient-to-br from-amber-25 via-stone-25 to-amber-50 rounded-3xl shadow-2xl p-6 mx-auto w-full max-w-lg border border-amber-100/80 relative" style={{ backgroundColor: '#fefdfb' }}>
             {/* Abfragerichtung Indikator */}
@@ -298,62 +267,61 @@ export const Quiz: React.FC<QuizProps> = ({
                 {currentDirection === 'de-to-jp' && 'Deutsch → Japanisch'}
                 {currentDirection === 'kanji-to-reading' && 'Kanji → Lesung'}
               </div>
-              {/* Statistik-Icon */}
-              <button onClick={() => setShowStats(true)} className="absolute top-4 right-4 text-stone-400 hover:text-amber-700" title="Lernstatistik anzeigen">
-                ℹ️
-              </button>
             </div>
-            {/* Frage/Auflösung gemeinsam anzeigen */}
+
+            {/* Frage/Auflösung */}
             <div className="flex flex-col items-center justify-center min-h-[120px] mb-4 gap-4">
-              {/* Frage immer oben */}
+              {/* Frage */}
               {currentDirection === 'jp-to-de' && (
                 <div className="flex flex-row items-end justify-center gap-6">
                   <div className="text-6xl font-extralight text-stone-800 leading-tight" style={{ fontFamily: 'serif' }}>
-                    {quizVocabs[currentIndex].kanji}
+                    {quizVocabulary[currentIndex].kanji}
                   </div>
                   <div className="flex flex-col items-start justify-center gap-1">
-                    <div className="text-2xl text-stone-700 font-light">{quizVocabs[currentIndex].kana}</div>
-                    <div className="text-lg text-stone-500 font-light">{quizVocabs[currentIndex].romaji}</div>
+                    <div className="text-2xl text-stone-700 font-light">{quizVocabulary[currentIndex].kana}</div>
+                    <div className="text-lg text-stone-500 font-light">{quizVocabulary[currentIndex].romaji}</div>
                   </div>
                 </div>
               )}
               {currentDirection === 'de-to-jp' && (
                 <div className="text-4xl font-light text-stone-800 leading-tight tracking-wide mb-2">
-                  {quizVocabs[currentIndex].de}
+                  {quizVocabulary[currentIndex].de}
                 </div>
               )}
               {currentDirection === 'kanji-to-reading' && (
                 <div className="text-7xl font-extralight text-stone-800 leading-tight mb-2" style={{ fontFamily: 'serif' }}>
-                  {quizVocabs[currentIndex].kanji}
+                  {quizVocabulary[currentIndex].kanji}
                 </div>
               )}
-              {/* Antwort nur wenn aufgedeckt, klar abgesetzt */}
+
+              {/* Antwort */}
               {showAnswer && (
                 <div className="w-full flex flex-col items-center justify-center mt-2">
                   {currentDirection === 'jp-to-de' && (
                     <div className="text-3xl font-light text-amber-800 tracking-wide bg-amber-50 rounded-xl px-6 py-3 shadow-inner border border-amber-100/60">
-                      {quizVocabs[currentIndex].de}
+                      {quizVocabulary[currentIndex].de}
                     </div>
                   )}
                   {currentDirection === 'de-to-jp' && (
                     <div className="flex flex-row items-end justify-center gap-6 mt-2 bg-amber-50 rounded-xl px-6 py-3 shadow-inner border border-amber-100/60">
-                      <div className="text-3xl font-extralight text-stone-800" style={{ fontFamily: 'serif' }}>{quizVocabs[currentIndex].kanji}</div>
+                      <div className="text-3xl font-extralight text-stone-800" style={{ fontFamily: 'serif' }}>{quizVocabulary[currentIndex].kanji}</div>
                       <div className="flex flex-col items-start justify-center gap-1">
-                        <div className="text-2xl text-stone-700 font-light">{quizVocabs[currentIndex].kana}</div>
-                        <div className="text-lg text-stone-500 font-light">{quizVocabs[currentIndex].romaji}</div>
+                        <div className="text-2xl text-stone-700 font-light">{quizVocabulary[currentIndex].kana}</div>
+                        <div className="text-lg text-stone-500 font-light">{quizVocabulary[currentIndex].romaji}</div>
                       </div>
                     </div>
                   )}
                   {currentDirection === 'kanji-to-reading' && (
                     <div className="flex flex-col items-center justify-center gap-1 bg-amber-50 rounded-xl px-6 py-3 shadow-inner border border-amber-100/60">
-                      <div className="text-3xl font-light text-amber-800 tracking-wide">{quizVocabs[currentIndex].kana}</div>
-                      <div className="text-2xl text-stone-600 font-light">{quizVocabs[currentIndex].romaji}</div>
-                      <div className="text-lg text-stone-500 font-light mt-2">{quizVocabs[currentIndex].de}</div>
+                      <div className="text-3xl font-light text-amber-800 tracking-wide">{quizVocabulary[currentIndex].kana}</div>
+                      <div className="text-2xl text-stone-600 font-light">{quizVocabulary[currentIndex].romaji}</div>
+                      <div className="text-lg text-stone-500 font-light mt-2">{quizVocabulary[currentIndex].de}</div>
                     </div>
                   )}
                 </div>
               )}
             </div>
+
             {/* Antwort anzeigen/verstecken Button */}
             <button
               onClick={toggleAnswer}
@@ -371,6 +339,7 @@ export const Quiz: React.FC<QuizProps> = ({
                 </>
               )}
             </button>
+
             {/* Antwort-Buttons */}
             {showAnswer && (
               <div className="w-full flex flex-col items-center mt-4">
@@ -388,43 +357,14 @@ export const Quiz: React.FC<QuizProps> = ({
                 </div>
               </div>
             )}
-            {/* Statistik-Modal */}
-            {showStats && (
-              <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
-                <div className="bg-white rounded-2xl p-6 shadow-2xl border border-amber-200/80 max-w-xs w-full">
-                  <div className="flex justify-between items-center mb-4">
-                    <div className="font-light text-stone-700 text-lg">Lernstatistik</div>
-                    <button onClick={() => setShowStats(false)} className="text-stone-400 hover:text-amber-700 text-xl">×</button>
-                  </div>
-                  <div className="space-y-2 text-stone-700 font-light">
-                    <div>Wiederholungen: {quizVocabs[currentIndex].sm2.repetitions}</div>
-                    <div>Intervall: {quizVocabs[currentIndex].sm2.interval} Tag{quizVocabs[currentIndex].sm2.interval !== 1 ? 'e' : ''}</div>
-                    <div>Schwierigkeit: {quizVocabs[currentIndex].sm2.easeFactor.toFixed(2)}</div>
-                  </div>
-                </div>
-              </div>
-            )}
           </div>
         </div>
-
-        {/* Quiz Complete Preview */}
-        {isLastCard && showAnswer && (
-          <div className="fixed bottom-4 left-4 right-4 bg-gradient-to-r from-teal-100 to-emerald-100 border border-teal-300/60 text-teal-800 px-4 py-3 rounded-2xl max-w-md mx-auto shadow-lg">
-            <div className="text-center">
-              <div className="font-light tracking-wide">Letzte Vokabel!</div>
-              <div className="text-sm font-light">
-                Session: {sessionStats.correct}/{sessionStats.total + 1} richtig • 
-                Beste Serie: {sessionStats.maxStreak}
-              </div>
-            </div>
-          </div>
-        )}
       </div>
     );
   }
 
-  // Ladeansicht während Initialisierung
-  if (isLoading || !isInitialized) {
+  // Ladeansicht
+  if (isLoading) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-amber-50 via-stone-50 to-orange-50 flex items-center justify-center">
         <div className="text-center">
