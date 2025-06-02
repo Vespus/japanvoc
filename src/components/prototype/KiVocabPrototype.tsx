@@ -34,6 +34,7 @@ export const KiVocabPrototype: React.FC<KiVocabPrototypeProps> = ({ onClose }) =
   const [apiPrompts, setApiPrompts] = useState<string[]>([]);
   const { vocabulary: existingVocabulary, isLoading: vocabLoading, addVocabulary, addVocabularies } = useVocabularyManager();
   const [successMsg, setSuccessMsg] = useState<string | null>(null);
+  const [selectedIndices, setSelectedIndices] = useState<number[]>([]);
 
   // Simulierte Statuswechsel für Testzwecke
   const simulateStatus = (newStatus: Status) => {
@@ -148,17 +149,40 @@ export const KiVocabPrototype: React.FC<KiVocabPrototypeProps> = ({ onClose }) =
     }
   };
 
-  // Übernahme-Handler
+  // Nach Generierung: alle Vokabeln standardmäßig selektieren
+  React.useEffect(() => {
+    if (status === 'done' && vocabularies.length > 0) {
+      setSelectedIndices(vocabularies.map((_, i) => i));
+    }
+  }, [status, vocabularies]);
+
+  // Einzelne Vokabel selektieren/de-selektieren
+  const toggleSelect = (idx: number) => {
+    setSelectedIndices((prev) =>
+      prev.includes(idx) ? prev.filter(i => i !== idx) : [...prev, idx]
+    );
+  };
+
+  // Alle auswählen
+  const selectAll = () => {
+    setSelectedIndices(vocabularies.map((_, i) => i));
+  };
+  // Alle abwählen
+  const deselectAll = () => {
+    setSelectedIndices([]);
+  };
+
+  // Übernahme-Handler (nur selektierte Vokabeln)
   const handleAccept = () => {
     try {
-      const newVocabs = vocabularies.map(vocab => ({
-        kanji: vocab.japanese,
-        kana: vocab.kana,
+      const newVocabs = selectedIndices.map(idx => ({
+        kanji: vocabularies[idx].japanese,
+        kana: vocabularies[idx].kana,
         romaji: '',
-        de: vocab.german
+        de: vocabularies[idx].german
       }));
       addVocabularies(newVocabs);
-      setSuccessMsg(`${vocabularies.length} neue Vokabel(n) übernommen!`);
+      setSuccessMsg(`${newVocabs.length} neue Vokabel(n) übernommen!`);
       setTimeout(() => {
         setSuccessMsg(null);
         onClose();
@@ -199,7 +223,7 @@ export const KiVocabPrototype: React.FC<KiVocabPrototypeProps> = ({ onClose }) =
       <div className="bg-white rounded-lg shadow-lg p-6 max-w-md w-full max-h-[90vh] overflow-y-auto">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-light text-stone-700">KI Vokabel Generator</h2>
-          <span className="text-xs text-stone-400 ml-2">v0.2</span>
+          <span className="text-xs text-stone-400 ml-2">v0.21</span>
           <button
             onClick={onClose}
             className="text-stone-400 hover:text-stone-600"
@@ -237,32 +261,45 @@ export const KiVocabPrototype: React.FC<KiVocabPrototypeProps> = ({ onClose }) =
           {status === 'done' && vocabularies.length > 0 && (
             <div className="mt-6 space-y-4">
               <h3 className="text-lg font-medium text-stone-700">Generierte Vokabeln</h3>
+              {/* Select/Deselect All Buttons */}
+              <div className="flex gap-2 mb-2">
+                <button onClick={selectAll} className="px-3 py-1 bg-amber-100 text-amber-800 rounded hover:bg-amber-200 text-xs">Alle auswählen</button>
+                <button onClick={deselectAll} className="px-3 py-1 bg-stone-100 text-stone-700 rounded hover:bg-stone-200 text-xs">Alle abwählen</button>
+              </div>
               <div className="space-y-3">
                 {vocabularies.map((vocab, index) => (
                   <div
                     key={index}
-                    className="p-4 border border-amber-200 rounded-lg bg-amber-50"
+                    className={`p-4 border border-amber-200 rounded-lg bg-amber-50 flex items-start gap-3 ${selectedIndices.includes(index) ? '' : 'opacity-50'}`}
                   >
-                    <div className="flex justify-between items-start">
-                      <div>
-                        <div className="text-xl font-medium text-stone-800">
-                          {vocab.japanese}
+                    <input
+                      type="checkbox"
+                      checked={selectedIndices.includes(index)}
+                      onChange={() => toggleSelect(index)}
+                      className="mt-1 accent-amber-600"
+                    />
+                    <div className="flex-1">
+                      <div className="flex justify-between items-start">
+                        <div>
+                          <div className="text-xl font-medium text-stone-800">
+                            {vocab.japanese}
+                          </div>
+                          <div className="text-sm text-stone-600">
+                            {vocab.kana}
+                          </div>
                         </div>
-                        <div className="text-sm text-stone-600">
-                          {vocab.kana}
+                        <div className="text-right">
+                          <div className="font-medium text-stone-800">
+                            {vocab.german}
+                          </div>
                         </div>
                       </div>
-                      <div className="text-right">
-                        <div className="font-medium text-stone-800">
-                          {vocab.german}
+                      {vocab.example && (
+                        <div className="mt-2 text-sm text-stone-600">
+                          {vocab.example}
                         </div>
-                      </div>
+                      )}
                     </div>
-                    {vocab.example && (
-                      <div className="mt-2 text-sm text-stone-600">
-                        {vocab.example}
-                      </div>
-                    )}
                   </div>
                 ))}
               </div>
@@ -271,7 +308,7 @@ export const KiVocabPrototype: React.FC<KiVocabPrototypeProps> = ({ onClose }) =
                 <button
                   onClick={handleAccept}
                   className="flex-1 bg-amber-600 text-white py-2 rounded-md hover:bg-amber-700 transition"
-                  disabled={!!successMsg}
+                  disabled={selectedIndices.length === 0 || !!successMsg}
                 >
                   Übernehmen
                 </button>
