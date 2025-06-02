@@ -34,7 +34,7 @@ export const Quiz: React.FC<QuizProps> = ({
   const [currentDirection, setCurrentDirection] = useState<QuizDirection>('jp-to-de');
   const [showExitConfirm, setShowExitConfirm] = useState(false);
   const [showRepeatQuiz, setShowRepeatQuiz] = useState(false);
-  const [wrongVocabs, setWrongVocabs] = useState<VocabularyCard[]>([]);
+  const [repeatVocabs, setRepeatVocabs] = useState<VocabularyCard[]>([]);
   
   // Statistiken und Ergebnisse
   const [sessionStats, setSessionStats] = useState({
@@ -187,7 +187,6 @@ export const Quiz: React.FC<QuizProps> = ({
                   innerRadius={60}
                   outerRadius={100}
                   paddingAngle={2}
-                  label={({ name, percent }) => `${name} (${Math.round(percent * 100)}%)`}
                 >
                   {qualityCounts.map((entry, idx) => (
                     <Cell key={`cell-${idx}`} fill={
@@ -237,7 +236,7 @@ export const Quiz: React.FC<QuizProps> = ({
             {wrongVocabsResult.length > 0 ? (
               <button
                 onClick={() => {
-                  setWrongVocabs(wrongVocabsResult);
+                  setRepeatVocabs(wrongVocabsResult);
                   setShowRepeatQuiz(true);
                 }}
                 className="mt-2 px-6 py-3 bg-gradient-to-r from-rose-500 to-amber-600 text-white rounded-2xl shadow-lg font-light text-lg hover:from-rose-600 hover:to-amber-700 transition-all"
@@ -263,7 +262,7 @@ export const Quiz: React.FC<QuizProps> = ({
   if (showRepeatQuiz) {
     return (
       <RepeatQuiz
-        vocabulary={wrongVocabs}
+        vocabulary={repeatVocabs}
         onBack={() => setShowRepeatQuiz(false)}
         onComplete={onComplete}
       />
