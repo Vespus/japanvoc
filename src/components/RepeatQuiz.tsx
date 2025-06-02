@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowLeft, Eye, EyeOff } from 'lucide-react';
+import { ArrowLeft, Eye, EyeOff, AlertCircle } from 'lucide-react';
 import { VocabularyCard } from '../types/vocabulary';
 import { QuizDirection } from './Settings';
 import { QUALITY_LABELS } from '../utils/sm2Algorithm';
