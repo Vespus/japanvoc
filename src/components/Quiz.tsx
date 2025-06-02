@@ -241,42 +241,40 @@ export const Quiz: React.FC<QuizProps> = ({
               ℹ️
             </button>
           </div>
-          {/* Frage/Auflösung */}
-          <div className="flex flex-col items-center justify-center min-h-[120px] mb-4">
-            {/* Frage je nach Richtung */}
-            {!showAnswer && (
-              <>
+          {/* Frage/Auflösung gemeinsam anzeigen */}
+          <div className="flex flex-col items-center justify-center min-h-[120px] mb-4 gap-4">
+            {/* Frage immer oben */}
+            {currentDirection === 'jp-to-de' && (
+              <div className="flex flex-row items-end justify-center gap-6">
+                <div className="text-6xl font-extralight text-stone-800 leading-tight" style={{ fontFamily: 'serif' }}>
+                  {currentVocab.kanji}
+                </div>
+                <div className="flex flex-col items-start justify-center gap-1">
+                  <div className="text-2xl text-stone-700 font-light">{currentVocab.kana}</div>
+                  <div className="text-lg text-stone-500 font-light">{currentVocab.romaji}</div>
+                </div>
+              </div>
+            )}
+            {currentDirection === 'de-to-jp' && (
+              <div className="text-4xl font-light text-stone-800 leading-tight tracking-wide mb-2">
+                {currentVocab.de}
+              </div>
+            )}
+            {currentDirection === 'kanji-to-reading' && (
+              <div className="text-7xl font-extralight text-stone-800 leading-tight mb-2" style={{ fontFamily: 'serif' }}>
+                {currentVocab.kanji}
+              </div>
+            )}
+            {/* Antwort nur wenn aufgedeckt, klar abgesetzt */}
+            {showAnswer && (
+              <div className="w-full flex flex-col items-center justify-center mt-2">
                 {currentDirection === 'jp-to-de' && (
-                  <div className="flex flex-row items-end justify-center gap-6">
-                    <div className="text-6xl font-extralight text-stone-800 leading-tight" style={{ fontFamily: 'serif' }}>
-                      {currentVocab.kanji}
-                    </div>
-                    <div className="flex flex-col items-start justify-center gap-1">
-                      <div className="text-2xl text-stone-700 font-light">{currentVocab.kana}</div>
-                      <div className="text-lg text-stone-500 font-light">{currentVocab.romaji}</div>
-                    </div>
-                  </div>
-                )}
-                {currentDirection === 'de-to-jp' && (
-                  <div className="text-4xl font-light text-stone-800 leading-tight tracking-wide mb-2">
+                  <div className="text-3xl font-light text-amber-800 tracking-wide bg-amber-50 rounded-xl px-6 py-3 shadow-inner border border-amber-100/60">
                     {currentVocab.de}
                   </div>
                 )}
-                {currentDirection === 'kanji-to-reading' && (
-                  <div className="text-7xl font-extralight text-stone-800 leading-tight mb-2" style={{ fontFamily: 'serif' }}>
-                    {currentVocab.kanji}
-                  </div>
-                )}
-              </>
-            )}
-            {/* Antwort je nach Richtung */}
-            {showAnswer && (
-              <>
-                {currentDirection === 'jp-to-de' && (
-                  <div className="text-3xl font-light text-amber-800 tracking-wide">{currentVocab.de}</div>
-                )}
                 {currentDirection === 'de-to-jp' && (
-                  <div className="flex flex-row items-end justify-center gap-6 mt-2">
+                  <div className="flex flex-row items-end justify-center gap-6 mt-2 bg-amber-50 rounded-xl px-6 py-3 shadow-inner border border-amber-100/60">
                     <div className="text-3xl font-extralight text-stone-800" style={{ fontFamily: 'serif' }}>{currentVocab.kanji}</div>
                     <div className="flex flex-col items-start justify-center gap-1">
                       <div className="text-2xl text-stone-700 font-light">{currentVocab.kana}</div>
@@ -285,13 +283,13 @@ export const Quiz: React.FC<QuizProps> = ({
                   </div>
                 )}
                 {currentDirection === 'kanji-to-reading' && (
-                  <div className="flex flex-col items-center justify-center gap-1">
+                  <div className="flex flex-col items-center justify-center gap-1 bg-amber-50 rounded-xl px-6 py-3 shadow-inner border border-amber-100/60">
                     <div className="text-3xl font-light text-amber-800 tracking-wide">{currentVocab.kana}</div>
                     <div className="text-2xl text-stone-600 font-light">{currentVocab.romaji}</div>
                     <div className="text-lg text-stone-500 font-light mt-2">{currentVocab.de}</div>
                   </div>
                 )}
-              </>
+              </div>
             )}
           </div>
           {/* Antwort anzeigen/verstecken Button */}
