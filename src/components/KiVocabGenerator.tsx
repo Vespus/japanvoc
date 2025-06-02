@@ -9,7 +9,7 @@ interface Vocabulary {
   example?: string;
 }
 
-interface KiVocabPrototypeProps {
+interface KiVocabGeneratorProps {
   onClose: () => void;
 }
 
@@ -24,7 +24,7 @@ type Status =
 const MAX_REFETCH_ATTEMPTS = 3;
 const BATCH_SIZE = 10;
 
-export const KiVocabPrototype: React.FC<KiVocabPrototypeProps> = ({ onClose }) => {
+export const KiVocabGenerator: React.FC<KiVocabGeneratorProps> = ({ onClose }) => {
   const [count, setCount] = useState<number>(5);
   const [status, setStatus] = useState<Status>('idle');
   const [error, setError] = useState<string | null>(null);
@@ -79,7 +79,7 @@ export const KiVocabPrototype: React.FC<KiVocabPrototypeProps> = ({ onClose }) =
       // Initialer KI-Call
       const initialPrompt = JSON.stringify({ count });
       prompts.push(initialPrompt);
-      const response = await fetch('/api/prototype/generate-vocabulary', {
+      const response = await fetch('/api/generate-vocabulary', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -118,7 +118,7 @@ export const KiVocabPrototype: React.FC<KiVocabPrototypeProps> = ({ onClose }) =
         if (toFetch >= 11) batchSize = BATCH_SIZE;
         const refetchPrompt = JSON.stringify({ count: batchSize });
         prompts.push(refetchPrompt);
-        const refetchResponse = await fetch('/api/prototype/generate-vocabulary', {
+        const refetchResponse = await fetch('/api/generate-vocabulary', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

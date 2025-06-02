@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Save, RotateCcw, Info, Sparkles } from 'lucide-react';
 import { initDB, loadVocabulary, loadFromLocalStorage } from '../utils/storage';
-import { KiVocabPrototype } from './prototype/KiVocabPrototype';
+import { KiVocabGenerator } from './KiVocabGenerator';
 
 interface SettingsProps {
   // Keine Props mehr benötigt - Navigation über Tab Bar
@@ -201,7 +201,7 @@ export const Settings: React.FC<SettingsProps> = () => {
   const wordsPerQuizOptions = [5, 10, 15, 20, 25, 30, 50];
 
   if (showKiVocab) {
-    return <KiVocabPrototype onClose={() => setShowKiVocab(false)} />;
+    return <KiVocabGenerator onClose={() => setShowKiVocab(false)} />;
   }
 
   return (
@@ -346,7 +346,7 @@ export const Settings: React.FC<SettingsProps> = () => {
       {showDebug && <DebugVocabularyStorage onClose={() => setShowDebug(false)} />}
 
       {showKiVocab && (
-        <KiVocabPrototype onClose={() => setShowKiVocab(false)} />
+        <KiVocabGenerator onClose={() => setShowKiVocab(false)} />
       )}
     </div>
   );
