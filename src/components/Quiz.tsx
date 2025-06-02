@@ -10,6 +10,7 @@ import {
   QUALITY_LABELS 
 } from '../utils/sm2Algorithm';
 import { VocabularyCard } from '../types/vocabulary';
+import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 
 interface QuizProps {
   mode: QuizMode;
@@ -35,6 +36,9 @@ export const Quiz: React.FC<QuizProps> = ({
     maxStreak: 0
   });
   const [showStats, setShowStats] = useState(false);
+  const [repeatQueue, setRepeatQueue] = useState<VocabularyCard[]>([]);
+  const [isRepeatMode, setIsRepeatMode] = useState(false);
+  const [results, setResults] = useState<{vocab: VocabularyCard, quality: number}[]>([]);
 
   // Vokabeln für das Quiz basierend auf dem Modus filtern
   const quizVocabulary = useMemo(() => {
@@ -139,6 +143,7 @@ export const Quiz: React.FC<QuizProps> = ({
       setCurrentIndex(prev => prev + 1);
       setShowAnswer(false);
     }
+    setResults(prev => [...prev, { vocab: currentVocab, quality }]);
   };
 
   // Antwort anzeigen/verstecken
@@ -165,13 +170,74 @@ export const Quiz: React.FC<QuizProps> = ({
   }
 
   // Quiz abgeschlossen
-  if (!currentVocab) {
+  if (!currentVocab && results.length > 0) {
+    // Daten für Chart aufbereiten
+    const qualityCounts = QUALITY_LABELS.map(q => ({
+      name: q.label,
+      value: results.filter(r => r.quality === q.value).length,
+      color: q.color.replace('bg-', '').replace('text-', '') // z.B. 'rose-400'
+    })).filter(d => d.value > 0);
+    const wrongVocabs = results.filter(r => r.quality < 3).map(r => r.vocab);
     return (
-      <div className="min-h-screen bg-gradient-to-br from-amber-50 via-stone-50 to-orange-50 flex items-center justify-center">
-        <div className="text-center">
-          <CheckCircle className="mx-auto mb-4 text-teal-600" size={64} />
-          <h2 className="text-2xl font-light text-stone-800 mb-2 tracking-wide">Quiz abgeschlossen!</h2>
-          <p className="text-stone-600 font-light">Keine weiteren Vokabeln verfügbar.</p>
+      <div className="min-h-screen bg-gradient-to-br from-amber-50 via-stone-50 to-orange-50 flex flex-col items-center justify-center p-4">
+        <div className="bg-white rounded-3xl shadow-2xl p-8 max-w-md w-full border border-amber-200/80 flex flex-col items-center">
+          <h2 className="text-2xl font-light text-stone-800 mb-4">Quiz-Ergebnis</h2>
+          <div className="w-full flex flex-col items-center">
+            <ResponsiveContainer width={220} height={220}>
+              <PieChart>
+                <Pie
+                  data={qualityCounts}
+                  dataKey="value"
+                  nameKey="name"
+                  cx="50%"
+                  cy="50%"
+                  innerRadius={60}
+                  outerRadius={100}
+                  paddingAngle={2}
+                  label={({ name, percent }) => `${name} (${Math.round(percent * 100)}%)`}
+                >
+                  {qualityCounts.map((entry, idx) => (
+                    <Cell key={`cell-${idx}`} fill={
+                      entry.color.includes('rose') ? '#fb7185' :
+                      entry.color.includes('amber') ? '#f59e42' :
+                      entry.color.includes('emerald') ? '#10b981' :
+                      entry.color.includes('teal') ? '#14b8a6' :
+                      entry.color.includes('stone') ? '#78716c' :
+                      entry.color.includes('green') ? '#22c55e' :
+                      entry.color.includes('yellow') ? '#eab308' :
+                      entry.color.includes('red') ? '#ef4444' :
+                      '#a3a3a3'
+                    } />
+                  ))}
+                </Pie>
+                <Tooltip formatter={(value) => `${value}x`} />
+              </PieChart>
+            </ResponsiveContainer>
+          </div>
+          <div className="mt-6 w-full text-center">
+            <div className="text-lg font-light text-stone-700 mb-2">Richtige Antworten: {results.filter(r => r.quality >= 3).length} / {results.length}</div>
+            {wrongVocabs.length > 0 ? (
+              <button
+                onClick={() => {
+                  setRepeatQueue(wrongVocabs);
+                  setIsRepeatMode(true);
+                  setCurrentIndex(0);
+                  setShowAnswer(false);
+                  setResults([]);
+                }}
+                className="mt-2 px-6 py-3 bg-gradient-to-r from-rose-500 to-amber-600 text-white rounded-2xl shadow-lg font-light text-lg hover:from-rose-600 hover:to-amber-700 transition-all"
+              >
+                Falsche wiederholen ({wrongVocabs.length})
+              </button>
+            ) : (
+              <div className="text-emerald-600 font-light mt-2">Alle Vokabeln richtig! 🎉</div>
+            )}
+            <button
+              onClick={onComplete}
+              className="mt-4 px-6 py-3 bg-stone-300 text-stone-700 rounded-2xl shadow font-light text-base hover:bg-stone-400 transition-all"
+            >
+              Zurück</button>
+          </div>
         </div>
       </div>
     );
@@ -185,6 +251,10 @@ export const Quiz: React.FC<QuizProps> = ({
       case 'random': return 'Zufällige Auswahl';
     }
   };
+
+  // Quiz-Vokabeln für Wiederholung anpassen
+  const quizVocabs = isRepeatMode && repeatQueue.length > 0 ? repeatQueue : quizVocabulary;
+  const currentVocab = quizVocabs[currentIndex];
 
   return (
     <div className="h-screen bg-gradient-to-br from-amber-50 via-stone-50 to-orange-50 flex flex-col">
