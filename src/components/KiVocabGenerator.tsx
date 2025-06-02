@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useVocabularyManager } from '../../hooks/useVocabularyManager';
+import { useVocabularyManager } from '../hooks/useVocabularyManager';
 
 interface Vocabulary {
   japanese: string;
