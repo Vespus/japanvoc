@@ -199,7 +199,7 @@ export const KiVocabPrototype: React.FC<KiVocabPrototypeProps> = ({ onClose }) =
       <div className="bg-white rounded-lg shadow-lg p-6 max-w-md w-full max-h-[90vh] overflow-y-auto">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-light text-stone-700">KI Vokabel Generator</h2>
-          <span className="text-xs text-stone-400 ml-2">v0.10</span>
+          <span className="text-xs text-stone-400 ml-2">v0.2</span>
           <button
             onClick={onClose}
             className="text-stone-400 hover:text-stone-600"
@@ -233,16 +233,6 @@ export const KiVocabPrototype: React.FC<KiVocabPrototypeProps> = ({ onClose }) =
           >
             {status === 'fetching' ? 'Generiere...' : 'Vokabeln generieren'}
           </button>
-
-          {/* Test-Buttons für Statuswechsel */}
-          <div className="flex flex-wrap gap-2 mt-2">
-            <button onClick={() => simulateStatus('fetching')} className="text-xs px-2 py-1 bg-amber-100 rounded">fetching</button>
-            <button onClick={() => simulateStatus('checking-duplicates')} className="text-xs px-2 py-1 bg-amber-100 rounded">checking-duplicates</button>
-            <button onClick={() => simulateStatus('refetching')} className="text-xs px-2 py-1 bg-amber-100 rounded">refetching</button>
-            <button onClick={() => simulateStatus('done')} className="text-xs px-2 py-1 bg-amber-100 rounded">done</button>
-            <button onClick={() => simulateStatus('error')} className="text-xs px-2 py-1 bg-rose-100 rounded">error</button>
-            <button onClick={() => simulateStatus('idle')} className="text-xs px-2 py-1 bg-stone-100 rounded">idle</button>
-          </div>
 
           {status === 'done' && vocabularies.length > 0 && (
             <div className="mt-6 space-y-4">
