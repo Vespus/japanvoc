@@ -169,7 +169,7 @@ export const Quiz: React.FC<QuizProps> = ({
       color: q.color.replace('bg-', '').replace('text-', '')
     })).filter(d => d.value > 0);
     
-    const wrongVocabs = results.filter(r => r.quality < 3).map(r => r.vocab);
+    const wrongVocabsResult = results.filter(r => r.quality < 3).map(r => r.vocab);
     
     return (
       <div className="min-h-screen bg-gradient-to-br from-amber-50 via-stone-50 to-orange-50 flex flex-col items-center justify-center p-4">
@@ -211,15 +211,15 @@ export const Quiz: React.FC<QuizProps> = ({
             <div className="text-lg font-light text-stone-700 mb-2">
               Richtige Antworten: {results.filter(r => r.quality >= 3).length} / {results.length}
             </div>
-            {wrongVocabs.length > 0 ? (
+            {wrongVocabsResult.length > 0 ? (
               <button
                 onClick={() => {
-                  setWrongVocabs(wrongVocabs);
+                  setWrongVocabs(wrongVocabsResult);
                   setShowRepeatQuiz(true);
                 }}
                 className="mt-2 px-6 py-3 bg-gradient-to-r from-rose-500 to-amber-600 text-white rounded-2xl shadow-lg font-light text-lg hover:from-rose-600 hover:to-amber-700 transition-all"
               >
-                Falsche wiederholen ({wrongVocabs.length})
+                Falsche wiederholen ({wrongVocabsResult.length})
               </button>
             ) : (
               <div className="text-emerald-600 font-light mt-2">Alle Vokabeln richtig! 🎉</div>
