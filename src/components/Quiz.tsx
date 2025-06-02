@@ -135,14 +135,16 @@ export const Quiz: React.FC<QuizProps> = ({
       };
     });
     
-    // Zur nächsten Karte oder Quiz beenden
+    // Ergebnis speichern
+    setResults(prev => [...prev, { vocab: quizVocabulary[currentIndex], quality }]);
     if (isLastCard) {
-      setTimeout(() => onComplete(), 1000);
+      setShowAnswer(false);
+      // Kein currentIndex mehr erhöhen!
+      // Ergebnisbildschirm wird im nächsten Render angezeigt
     } else {
       setCurrentIndex(prev => prev + 1);
       setShowAnswer(false);
     }
-    setResults(prev => [...prev, { vocab: quizVocabulary[currentIndex], quality }]);
   };
 
   // Antwort anzeigen/verstecken
