@@ -80,7 +80,6 @@ export const Quiz: React.FC<QuizProps> = ({
     return result;
   }, [vocabulary, mode, quizSettings.wordsPerQuiz]);
 
-  const currentVocab = quizVocabulary[currentIndex];
   const isLastCard = currentIndex >= quizVocabulary.length - 1;
 
   // Initialisierung nach dem Laden der Daten
@@ -113,13 +112,13 @@ export const Quiz: React.FC<QuizProps> = ({
 
   // Antwort bewerten und zur nächsten Vokabel
   const handleQualityRating = (quality: number) => {
-    if (!currentVocab) return;
+    if (!quizVocabulary[currentIndex]) return;
     
     // SM-2 Berechnung
-    const sm2Result = calculateSM2(currentVocab, quality);
+    const sm2Result = calculateSM2(quizVocabulary[currentIndex], quality);
     
     // Daten aktualisieren
-    updateSM2Data(currentVocab.id, {
+    updateSM2Data(quizVocabulary[currentIndex].id, {
       ...sm2Result,
       quality
     });
@@ -143,7 +142,7 @@ export const Quiz: React.FC<QuizProps> = ({
       setCurrentIndex(prev => prev + 1);
       setShowAnswer(false);
     }
-    setResults(prev => [...prev, { vocab: currentVocab, quality }]);
+    setResults(prev => [...prev, { vocab: quizVocabulary[currentIndex], quality }]);
   };
 
   // Antwort anzeigen/verstecken
@@ -170,7 +169,7 @@ export const Quiz: React.FC<QuizProps> = ({
   }
 
   // Quiz abgeschlossen
-  if (!currentVocab && results.length > 0) {
+  if (!quizVocabulary[currentIndex] && results.length > 0) {
     // Daten für Chart aufbereiten
     const qualityCounts = QUALITY_LABELS.map(q => ({
       name: q.label,
@@ -254,7 +253,6 @@ export const Quiz: React.FC<QuizProps> = ({
 
   // Quiz-Vokabeln für Wiederholung anpassen
   const quizVocabs = isRepeatMode && repeatQueue.length > 0 ? repeatQueue : quizVocabulary;
-  const currentVocab = quizVocabs[currentIndex];
 
   return (
     <div className="h-screen bg-gradient-to-br from-amber-50 via-stone-50 to-orange-50 flex flex-col">
@@ -317,22 +315,22 @@ export const Quiz: React.FC<QuizProps> = ({
             {currentDirection === 'jp-to-de' && (
               <div className="flex flex-row items-end justify-center gap-6">
                 <div className="text-6xl font-extralight text-stone-800 leading-tight" style={{ fontFamily: 'serif' }}>
-                  {currentVocab.kanji}
+                  {quizVocabs[currentIndex].kanji}
                 </div>
                 <div className="flex flex-col items-start justify-center gap-1">
-                  <div className="text-2xl text-stone-700 font-light">{currentVocab.kana}</div>
-                  <div className="text-lg text-stone-500 font-light">{currentVocab.romaji}</div>
+                  <div className="text-2xl text-stone-700 font-light">{quizVocabs[currentIndex].kana}</div>
+                  <div className="text-lg text-stone-500 font-light">{quizVocabs[currentIndex].romaji}</div>
                 </div>
               </div>
             )}
             {currentDirection === 'de-to-jp' && (
               <div className="text-4xl font-light text-stone-800 leading-tight tracking-wide mb-2">
-                {currentVocab.de}
+                {quizVocabs[currentIndex].de}
               </div>
             )}
             {currentDirection === 'kanji-to-reading' && (
               <div className="text-7xl font-extralight text-stone-800 leading-tight mb-2" style={{ fontFamily: 'serif' }}>
-                {currentVocab.kanji}
+                {quizVocabs[currentIndex].kanji}
               </div>
             )}
             {/* Antwort nur wenn aufgedeckt, klar abgesetzt */}
@@ -340,23 +338,23 @@ export const Quiz: React.FC<QuizProps> = ({
               <div className="w-full flex flex-col items-center justify-center mt-2">
                 {currentDirection === 'jp-to-de' && (
                   <div className="text-3xl font-light text-amber-800 tracking-wide bg-amber-50 rounded-xl px-6 py-3 shadow-inner border border-amber-100/60">
-                    {currentVocab.de}
+                    {quizVocabs[currentIndex].de}
                   </div>
                 )}
                 {currentDirection === 'de-to-jp' && (
                   <div className="flex flex-row items-end justify-center gap-6 mt-2 bg-amber-50 rounded-xl px-6 py-3 shadow-inner border border-amber-100/60">
-                    <div className="text-3xl font-extralight text-stone-800" style={{ fontFamily: 'serif' }}>{currentVocab.kanji}</div>
+                    <div className="text-3xl font-extralight text-stone-800" style={{ fontFamily: 'serif' }}>{quizVocabs[currentIndex].kanji}</div>
                     <div className="flex flex-col items-start justify-center gap-1">
-                      <div className="text-2xl text-stone-700 font-light">{currentVocab.kana}</div>
-                      <div className="text-lg text-stone-500 font-light">{currentVocab.romaji}</div>
+                      <div className="text-2xl text-stone-700 font-light">{quizVocabs[currentIndex].kana}</div>
+                      <div className="text-lg text-stone-500 font-light">{quizVocabs[currentIndex].romaji}</div>
                     </div>
                   </div>
                 )}
                 {currentDirection === 'kanji-to-reading' && (
                   <div className="flex flex-col items-center justify-center gap-1 bg-amber-50 rounded-xl px-6 py-3 shadow-inner border border-amber-100/60">
-                    <div className="text-3xl font-light text-amber-800 tracking-wide">{currentVocab.kana}</div>
-                    <div className="text-2xl text-stone-600 font-light">{currentVocab.romaji}</div>
-                    <div className="text-lg text-stone-500 font-light mt-2">{currentVocab.de}</div>
+                    <div className="text-3xl font-light text-amber-800 tracking-wide">{quizVocabs[currentIndex].kana}</div>
+                    <div className="text-2xl text-stone-600 font-light">{quizVocabs[currentIndex].romaji}</div>
+                    <div className="text-lg text-stone-500 font-light mt-2">{quizVocabs[currentIndex].de}</div>
                   </div>
                 )}
               </div>
@@ -405,9 +403,9 @@ export const Quiz: React.FC<QuizProps> = ({
                   <button onClick={() => setShowStats(false)} className="text-stone-400 hover:text-amber-700 text-xl">×</button>
                 </div>
                 <div className="space-y-2 text-stone-700 font-light">
-                  <div>Wiederholungen: {currentVocab.sm2.repetitions}</div>
-                  <div>Intervall: {currentVocab.sm2.interval} Tag{currentVocab.sm2.interval !== 1 ? 'e' : ''}</div>
-                  <div>Schwierigkeit: {currentVocab.sm2.easeFactor.toFixed(2)}</div>
+                  <div>Wiederholungen: {quizVocabs[currentIndex].sm2.repetitions}</div>
+                  <div>Intervall: {quizVocabs[currentIndex].sm2.interval} Tag{quizVocabs[currentIndex].sm2.interval !== 1 ? 'e' : ''}</div>
+                  <div>Schwierigkeit: {quizVocabs[currentIndex].sm2.easeFactor.toFixed(2)}</div>
                 </div>
               </div>
             </div>
