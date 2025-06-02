@@ -206,6 +206,29 @@ export const Quiz: React.FC<QuizProps> = ({
                 <Tooltip formatter={(value) => `${value}x`} />
               </PieChart>
             </ResponsiveContainer>
+            {/* Eigene Legende unterhalb des Charts */}
+            <div className="flex flex-wrap justify-center gap-3 mt-4">
+              {qualityCounts.map((entry, idx) => (
+                <div key={entry.name} className="flex items-center space-x-2 text-sm font-light">
+                  <span
+                    className="inline-block w-4 h-4 rounded-full"
+                    style={{
+                      background:
+                        entry.color.includes('rose') ? '#fb7185' :
+                        entry.color.includes('amber') ? '#f59e42' :
+                        entry.color.includes('emerald') ? '#10b981' :
+                        entry.color.includes('teal') ? '#14b8a6' :
+                        entry.color.includes('stone') ? '#78716c' :
+                        entry.color.includes('green') ? '#22c55e' :
+                        entry.color.includes('yellow') ? '#eab308' :
+                        entry.color.includes('red') ? '#ef4444' :
+                        '#a3a3a3'
+                    }}
+                  />
+                  <span>{entry.name}</span>
+                </div>
+              ))}
+            </div>
           </div>
           <div className="mt-6 w-full text-center">
             <div className="text-lg font-light text-stone-700 mb-2">
