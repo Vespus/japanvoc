@@ -270,7 +270,7 @@ export const Quiz: React.FC<QuizProps> = ({
           {/* Fortschritt + Statistiken in einer Zeile */}
           <div className="flex-1 flex flex-col items-center">
             <div className="flex items-center space-x-4 text-sm font-light">
-              <span className="text-amber-100">{currentIndex + 1} von {quizVocabulary.length}</span>
+              <span className="text-amber-100">{currentIndex + 1} von {quizVocabs.length}</span>
               <span className="text-amber-100">Richtig: {sessionStats.correct}/{sessionStats.total}</span>
               <span className="text-amber-200">Serie: {sessionStats.streak}</span>
             </div>
@@ -285,11 +285,11 @@ export const Quiz: React.FC<QuizProps> = ({
         <div className="h-3 bg-stone-200 rounded-full overflow-hidden">
           <div 
             className="h-full bg-gradient-to-r from-amber-600 to-stone-700 transition-all duration-500 ease-out rounded-full"
-            style={{ width: `${((currentIndex + 1) / quizVocabulary.length) * 100}%` }}
+            style={{ width: `${((currentIndex + 1) / quizVocabs.length) * 100}%` }}
           />
         </div>
         <div className="text-xs text-stone-500 text-center mt-1 font-light">
-          {Math.round(((currentIndex + 1) / quizVocabulary.length) * 100)}% abgeschlossen
+          {Math.round(((currentIndex + 1) / quizVocabs.length) * 100)}% abgeschlossen
         </div>
       </div>
 
