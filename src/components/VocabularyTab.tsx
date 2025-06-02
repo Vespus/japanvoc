@@ -98,22 +98,38 @@ export const VocabularyTab: React.FC<VocabularyTabProps> = ({
             {displayVocabs.map((vocab: VocabularyCard) => (
               <div
                 key={vocab.id}
-                className="bg-gradient-to-br from-white to-amber-50 rounded-2xl border border-amber-300/60 p-5 hover:shadow-xl transition-all duration-300 hover:scale-[1.01] shadow-md"
+                className="bg-gradient-to-br from-white to-amber-50 rounded-2xl border border-amber-300/60 p-5 hover:shadow-xl transition-all duration-300 hover:scale-[1.01] shadow-md cursor-pointer active:scale-95 group"
+                onClick={() => onEditVocab(vocab)}
+                tabIndex={0}
+                role="button"
+                aria-label="Vokabel anzeigen und bearbeiten"
               >
                 <div className="flex items-start justify-between">
                   <div className="flex-1 min-w-0">
                     {/* Japanisch */}
                     <div className="flex items-center space-x-3 mb-3">
+                      <span className="text-xs text-stone-400 font-light mr-1">Kanji:</span>
                       <span className="text-xl font-light text-stone-800" style={{ fontFamily: 'serif' }}>{vocab.kanji}</span>
+                      <span className="text-xs text-stone-400 font-light ml-3">Kana:</span>
                       <span className="text-lg text-stone-700 font-light">{vocab.kana}</span>
                     </div>
-                    
                     {/* Romaji */}
-                    <div className="text-sm text-stone-500 mb-3 font-light tracking-wide">{vocab.romaji}</div>
-                    
+                    <div className="flex items-center mb-3">
+                      <span className="text-xs text-stone-400 font-light mr-1">Romaji:</span>
+                      <span className="text-sm text-stone-500 font-light tracking-wide">{vocab.romaji}</span>
+                    </div>
                     {/* Deutsche Bedeutung */}
-                    <div className="text-base text-amber-800 font-light tracking-wide">{vocab.de}</div>
-                    
+                    <div className="flex items-center mb-1">
+                      <span className="text-xs text-stone-400 font-light mr-1">Deutsch:</span>
+                      <span className="text-base text-amber-800 font-light tracking-wide">{vocab.de}</span>
+                    </div>
+                    {/* Beispiel-Hinweis */}
+                    {vocab.example && (
+                      <div className="flex items-center mt-1 text-xs text-amber-700 font-light gap-1">
+                        <span role="img" aria-label="Beispiel">💬</span>
+                        <span>Mit Beispiel</span>
+                      </div>
+                    )}
                     {/* SM-2 Info */}
                     <div className="mt-3 text-xs text-stone-400 font-light">
                       {vocab.sm2.repetitions > 0 ? (
@@ -122,24 +138,6 @@ export const VocabularyTab: React.FC<VocabularyTabProps> = ({
                         'Noch nicht gelernt'
                       )}
                     </div>
-                  </div>
-                  
-                  {/* Action Buttons */}
-                  <div className="flex items-center space-x-2 ml-4">
-                    <button
-                      onClick={() => onEditVocab(vocab)}
-                      className="p-2 text-stone-500 hover:text-amber-700 hover:bg-amber-100/60 rounded-xl transition-all duration-300"
-                      aria-label="Bearbeiten"
-                    >
-                      <Edit3 size={18} className="opacity-80" />
-                    </button>
-                    <button
-                      onClick={() => setShowDeleteConfirm(vocab.id)}
-                      className="p-2 text-stone-500 hover:text-rose-600 hover:bg-rose-100/60 rounded-xl transition-all duration-300"
-                      aria-label="Löschen"
-                    >
-                      <Trash2 size={18} className="opacity-80" />
-                    </button>
                   </div>
                 </div>
               </div>
