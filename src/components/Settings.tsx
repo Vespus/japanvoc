@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Save, RotateCcw, Info, Sparkles } from 'lucide-react';
 import { initDB, loadVocabulary, loadFromLocalStorage } from '../utils/storage';
 import { KiVocabGenerator } from './KiVocabGenerator';
+import { useVocabularyManager } from '../hooks/useVocabularyManager';
 
 interface SettingsProps {
   // Keine Props mehr benötigt - Navigation über Tab Bar
