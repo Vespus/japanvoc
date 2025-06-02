@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Save, RotateCcw, Info, Sparkles } from 'lucide-react';
 import { initDB, loadVocabulary, loadFromLocalStorage } from '../utils/storage';
-import { FabQuizTest } from './FabQuizTest';
 import { KiVocabPrototype } from './prototype/KiVocabPrototype';
 
 interface SettingsProps {
@@ -137,7 +136,6 @@ export const Settings: React.FC<SettingsProps> = () => {
   const [hasChanges, setHasChanges] = useState(false);
   const [showSaved, setShowSaved] = useState(false);
   const [showDebug, setShowDebug] = useState(false);
-  const [showFabTest, setShowFabTest] = useState(false);
   const [showKiVocab, setShowKiVocab] = useState(false);
 
   // Einstellungen laden
@@ -247,6 +245,17 @@ export const Settings: React.FC<SettingsProps> = () => {
       {/* Settings Content */}
       <div className="flex-1 overflow-y-auto">
         <div className="p-4 max-w-md mx-auto space-y-6">
+          {/* KI Vokabel Generator Button (jetzt ganz oben) */}
+          <div className="mb-6">
+            <button
+              onClick={() => setShowKiVocab(true)}
+              className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition"
+            >
+              <Sparkles size={20} />
+              <span>KI Vokabel Generator</span>
+            </button>
+          </div>
+
           {/* Quiz-Konfiguration */}
           <div className="bg-gradient-to-br from-white to-amber-50 rounded-3xl border border-amber-300/60 shadow-lg p-6">
             <h2 className="text-lg font-light text-stone-800 mb-4 tracking-wide">
@@ -320,13 +329,6 @@ export const Settings: React.FC<SettingsProps> = () => {
               <RotateCcw size={16} className="mr-2 opacity-80" />
               Auf Standardwerte zurücksetzen
             </button>
-            {/* FAB-Test Button */}
-            <button
-              onClick={() => setShowFabTest(true)}
-              className="w-full flex items-center justify-center px-4 py-3 border border-amber-400 text-amber-800 rounded-2xl hover:bg-amber-50 hover:border-amber-500 transition-all duration-300 font-light tracking-wide shadow-sm"
-            >
-              <span className="mr-2">FAB-Test anzeigen</span>
-            </button>
           </div>
 
           {/* Info */}
@@ -337,17 +339,6 @@ export const Settings: React.FC<SettingsProps> = () => {
               Du kannst sie jederzeit hier ändern.
             </p>
           </div>
-
-          {/* KI Vokabel Generator Button */}
-          <div className="mb-6">
-            <button
-              onClick={() => setShowKiVocab(true)}
-              className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition"
-            >
-              <Sparkles size={20} />
-              <span>KI Vokabel Generator</span>
-            </button>
-          </div>
         </div>
       </div>
 
@@ -356,9 +347,6 @@ export const Settings: React.FC<SettingsProps> = () => {
 
       {showKiVocab && (
         <KiVocabPrototype onClose={() => setShowKiVocab(false)} />
-      )}
-      {showFabTest && (
-        <FabQuizTest onBack={() => setShowFabTest(false)} />
       )}
     </div>
   );
