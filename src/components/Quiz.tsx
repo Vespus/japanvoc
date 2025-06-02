@@ -34,6 +34,7 @@ export const Quiz: React.FC<QuizProps> = ({
     streak: 0,
     maxStreak: 0
   });
+  const [showStats, setShowStats] = useState(false);
 
   // Vokabeln für das Quiz basierend auf dem Modus filtern
   const quizVocabulary = useMemo(() => {
@@ -226,36 +227,55 @@ export const Quiz: React.FC<QuizProps> = ({
 
       {/* Quiz Card - Vollbild optimiert */}
       <div className="flex-1 flex flex-col justify-center px-6 py-4">
-        <div className="bg-gradient-to-br from-amber-25 via-stone-25 to-amber-50 rounded-3xl shadow-2xl p-6 mx-auto w-full max-w-lg border border-amber-100/80" style={{ backgroundColor: '#fefdfb' }}>
-          {/* Abfragerichtung Indikator - Klar als Info-Badge */}
-          <div className="text-center mb-6">
+        <div className="bg-gradient-to-br from-amber-25 via-stone-25 to-amber-50 rounded-3xl shadow-2xl p-6 mx-auto w-full max-w-lg border border-amber-100/80 relative" style={{ backgroundColor: '#fefdfb' }}>
+          {/* Abfragerichtung Indikator */}
+          <div className="text-center mb-4">
             <div className="inline-flex items-center px-5 py-2 bg-stone-100/80 text-stone-600 text-sm font-light rounded-full border border-stone-200/60 shadow-sm">
               <div className="w-2 h-2 bg-amber-600 rounded-full mr-3 opacity-80"></div>
               {currentDirection === 'jp-to-de' && 'Japanisch → Deutsch'}
               {currentDirection === 'de-to-jp' && 'Deutsch → Japanisch'}
               {currentDirection === 'kanji-to-reading' && 'Kanji → Lesung'}
             </div>
+            {/* Statistik-Icon */}
+            <button onClick={() => setShowStats(true)} className="absolute top-4 right-4 text-stone-400 hover:text-amber-700" title="Lernstatistik anzeigen">
+              ℹ️
+            </button>
           </div>
-
-          {/* Frage - Prominenter */}
-          <div className="text-center mb-6">
-            {currentDirection === 'jp-to-de' && (
-              <div className="flex flex-row items-end justify-center gap-6">
-                <div className="text-6xl font-extralight text-stone-800 leading-tight" style={{ fontFamily: 'serif' }}>
-                  {currentVocab.kanji}
-                </div>
-                <div className="flex flex-col items-start justify-center gap-1">
-                  <div className="text-2xl text-stone-700 font-light">{currentVocab.kana}</div>
-                  <div className="text-lg text-stone-500 font-light">{currentVocab.romaji}</div>
-                </div>
-              </div>
-            )}
-            {currentDirection === 'de-to-jp' && (
+          {/* Frage/Auflösung */}
+          <div className="flex flex-col items-center justify-center min-h-[120px] mb-4">
+            {/* Frage je nach Richtung */}
+            {!showAnswer && (
               <>
-                <div className="text-4xl font-light text-stone-800 leading-tight tracking-wide mb-2">
-                  {currentVocab.de}
-                </div>
-                {showAnswer && (
+                {currentDirection === 'jp-to-de' && (
+                  <div className="flex flex-row items-end justify-center gap-6">
+                    <div className="text-6xl font-extralight text-stone-800 leading-tight" style={{ fontFamily: 'serif' }}>
+                      {currentVocab.kanji}
+                    </div>
+                    <div className="flex flex-col items-start justify-center gap-1">
+                      <div className="text-2xl text-stone-700 font-light">{currentVocab.kana}</div>
+                      <div className="text-lg text-stone-500 font-light">{currentVocab.romaji}</div>
+                    </div>
+                  </div>
+                )}
+                {currentDirection === 'de-to-jp' && (
+                  <div className="text-4xl font-light text-stone-800 leading-tight tracking-wide mb-2">
+                    {currentVocab.de}
+                  </div>
+                )}
+                {currentDirection === 'kanji-to-reading' && (
+                  <div className="text-7xl font-extralight text-stone-800 leading-tight mb-2" style={{ fontFamily: 'serif' }}>
+                    {currentVocab.kanji}
+                  </div>
+                )}
+              </>
+            )}
+            {/* Antwort je nach Richtung */}
+            {showAnswer && (
+              <>
+                {currentDirection === 'jp-to-de' && (
+                  <div className="text-3xl font-light text-amber-800 tracking-wide">{currentVocab.de}</div>
+                )}
+                {currentDirection === 'de-to-jp' && (
                   <div className="flex flex-row items-end justify-center gap-6 mt-2">
                     <div className="text-3xl font-extralight text-stone-800" style={{ fontFamily: 'serif' }}>{currentVocab.kanji}</div>
                     <div className="flex flex-col items-start justify-center gap-1">
@@ -264,108 +284,67 @@ export const Quiz: React.FC<QuizProps> = ({
                     </div>
                   </div>
                 )}
-              </>
-            )}
-            {currentDirection === 'kanji-to-reading' && (
-              <>
-                <div className="text-7xl font-extralight text-stone-800 leading-tight mb-2" style={{ fontFamily: 'serif' }}>
-                  {currentVocab.kanji}
-                </div>
-                {showAnswer && (
-                  <div className="flex flex-row items-end justify-center gap-6 mt-2">
-                    <div className="flex flex-col items-center justify-center gap-1">
-                      <div className="text-3xl font-light text-amber-800 tracking-wide">{currentVocab.kana}</div>
-                      <div className="text-2xl text-stone-600 font-light">{currentVocab.romaji}</div>
-                      <div className="text-lg text-stone-500 font-light mt-2">{currentVocab.de}</div>
-                    </div>
+                {currentDirection === 'kanji-to-reading' && (
+                  <div className="flex flex-col items-center justify-center gap-1">
+                    <div className="text-3xl font-light text-amber-800 tracking-wide">{currentVocab.kana}</div>
+                    <div className="text-2xl text-stone-600 font-light">{currentVocab.romaji}</div>
+                    <div className="text-lg text-stone-500 font-light mt-2">{currentVocab.de}</div>
                   </div>
                 )}
               </>
             )}
           </div>
-
-          {/* Answer Section - Größer und zentraler */}
-          <div className="border-t border-amber-200/60 pt-6">
-            <div className="text-center mb-6">
-              <h3 className="text-lg font-light text-stone-700 mb-4 tracking-wide">
-                {currentDirection === 'jp-to-de' && 'Deutsche Bedeutung:'}
-                {currentDirection === 'de-to-jp' && 'Japanische Schreibung:'}
-                {currentDirection === 'kanji-to-reading' && 'Lesung:'}
-              </h3>
-              
-              <button
-                onClick={toggleAnswer}
-                className="w-full py-4 px-6 bg-gradient-to-r from-stone-600 to-amber-700 text-amber-50 rounded-2xl hover:from-stone-700 hover:to-amber-800 transition-all duration-500 font-light text-lg shadow-xl min-h-[56px] flex items-center justify-center tracking-wide"
-              >
-                {showAnswer ? (
-                  <>
-                    <EyeOff size={22} className="mr-3 opacity-90" />
-                    Antwort verstecken
-                  </>
-                ) : (
-                  <>
-                    <Eye size={22} className="mr-3 opacity-90" />
-                    Antwort anzeigen
-                  </>
-                )}
-              </button>
-            </div>
-            
-            <div className="min-h-[120px] flex items-center justify-center bg-gradient-to-br from-amber-50 to-stone-50 rounded-2xl p-6 border border-amber-100/60 shadow-inner">
-              {showAnswer ? (
-                <div className="text-center">
-                  {currentDirection === 'jp-to-de' && (
-                    <div className="text-3xl font-light text-amber-800 tracking-wide">{currentVocab.de}</div>
-                  )}
-                  {currentDirection === 'de-to-jp' && (
-                    <>
-                      <div className="text-4xl font-light text-stone-800 mb-3" style={{ fontFamily: 'serif' }}>{currentVocab.kanji}</div>
-                      <div className="text-2xl text-stone-700 mb-2 font-light">{currentVocab.kana}</div>
-                      <div className="text-lg text-stone-500 font-light">{currentVocab.romaji}</div>
-                    </>
-                  )}
-                  {currentDirection === 'kanji-to-reading' && (
-                    <></>
-                  )}
-                </div>
-              ) : (
-                <div className="text-stone-400 text-center text-lg font-extralight tracking-wide">
-                  Versuche zuerst die Antwort zu erraten
-                </div>
-              )}
-            </div>
-          </div>
-
-          {/* SM-2 Info - Besser lesbar */}
-          <div className="border-t border-amber-200/60 pt-6 mt-8">
-            <div className="text-sm text-stone-500 text-center bg-gradient-to-br from-amber-50 to-stone-100 rounded-xl p-4 border border-amber-200/50">
-              <div className="font-light text-stone-600 mb-2 tracking-wide">Lernstatistik</div>
-              <div className="space-y-1 font-light">
-                <div>Wiederholungen: {currentVocab.sm2.repetitions}</div>
-                <div>Intervall: {currentVocab.sm2.interval} Tag{currentVocab.sm2.interval !== 1 ? 'e' : ''}</div>
-                <div>Schwierigkeit: {currentVocab.sm2.easeFactor.toFixed(2)}</div>
+          {/* Antwort anzeigen/verstecken Button */}
+          <button
+            onClick={toggleAnswer}
+            className="w-full py-4 px-6 bg-gradient-to-r from-stone-600 to-amber-700 text-amber-50 rounded-2xl hover:from-stone-700 hover:to-amber-800 transition-all duration-500 font-light text-lg shadow-xl min-h-[56px] flex items-center justify-center tracking-wide mb-2"
+          >
+            {showAnswer ? (
+              <>
+                <EyeOff size={22} className="mr-3 opacity-90" />
+                Antwort verstecken
+              </>
+            ) : (
+              <>
+                <Eye size={22} className="mr-3 opacity-90" />
+                Antwort anzeigen
+              </>
+            )}
+          </button>
+          {/* Antwort-Buttons */}
+          {showAnswer && (
+            <div className="w-full flex flex-col items-center mt-4">
+              <div className="w-full max-w-md mx-auto grid grid-cols-3 gap-3 bg-white/80 rounded-2xl shadow-2xl p-4 border border-amber-200/60">
+                {QUALITY_LABELS.map(q => (
+                  <button
+                    key={q.value}
+                    onClick={() => handleQualityRating(q.value)}
+                    className={`min-w-[90px] max-w-[120px] py-3 px-1 rounded-2xl text-white font-light text-center transition-all duration-200 shadow-lg text-[0.98rem] leading-tight ${q.color}`}
+                    style={{ touchAction: 'manipulation' }}
+                  >
+                    <span className="block break-words whitespace-pre-line">{q.label}</span>
+                  </button>
+                ))}
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* Action Buttons - Touch-optimiert */}
-        {showAnswer && (
-          <div className="fixed bottom-0 left-0 right-0 pb-4 flex flex-col items-center z-40">
-            <div className="w-full max-w-md mx-auto grid grid-cols-3 gap-3 bg-white/80 rounded-2xl shadow-2xl p-4 border border-amber-200/60">
-              {QUALITY_LABELS.map(q => (
-                <button
-                  key={q.value}
-                  onClick={() => handleQualityRating(q.value)}
-                  className={`min-w-[90px] max-w-[120px] py-3 px-1 rounded-2xl text-white font-light text-center transition-all duration-200 shadow-lg text-[0.98rem] leading-tight ${q.color}`}
-                  style={{ touchAction: 'manipulation' }}
-                >
-                  <span className="block break-words whitespace-pre-line">{q.label}</span>
-                </button>
-              ))}
+          )}
+          {/* Statistik-Modal */}
+          {showStats && (
+            <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
+              <div className="bg-white rounded-2xl p-6 shadow-2xl border border-amber-200/80 max-w-xs w-full">
+                <div className="flex justify-between items-center mb-4">
+                  <div className="font-light text-stone-700 text-lg">Lernstatistik</div>
+                  <button onClick={() => setShowStats(false)} className="text-stone-400 hover:text-amber-700 text-xl">×</button>
+                </div>
+                <div className="space-y-2 text-stone-700 font-light">
+                  <div>Wiederholungen: {currentVocab.sm2.repetitions}</div>
+                  <div>Intervall: {currentVocab.sm2.interval} Tag{currentVocab.sm2.interval !== 1 ? 'e' : ''}</div>
+                  <div>Schwierigkeit: {currentVocab.sm2.easeFactor.toFixed(2)}</div>
+                </div>
+              </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
 
       {/* Quiz Complete Preview */}
