@@ -45,6 +45,7 @@ export default async function handler(req, res) {
     {
       "japanese": "漢字", // Japanische Schreibweise (Kanji)
       "kana": "かんじ",   // Hiragana/Katakana Lesung
+      "romaji": "kanji", // Lateinische Umschrift (Romaji)
       "german": "Kanji",  // Deutsche Bedeutung
       "example": "これは漢字です。" // Optional: Beispielsatz
     }
@@ -55,10 +56,11 @@ Wichtige Regeln:
 1. Nur gültige japanische Vokabeln
 2. Korrekte Kanji und Kana
 3. Präzise deutsche Übersetzungen
-4. Beispielsätze sind optional
-5. Keine Duplikate
-6. Vermeide unbedingt gängige Wörter und Substantive wie Haus, Lehrer, Wald, Strasse, etc.
-7. Gehe bei der Vokabelgenerierung davon aus, dass jemand Japanisch Vokabeln lernen will, der schon einen guten Grundwortschatz hat.`;
+4. Korrekte lateinische Umschrift (Romaji) für jedes Wort
+5. Beispielsätze sind optional
+6. Keine Duplikate
+7. Vermeide unbedingt gängige Wörter und Substantive wie Haus, Lehrer, Wald, Strasse, etc.
+8. Gehe bei der Vokabelgenerierung davon aus, dass jemand Japanisch Vokabeln lernen will, der schon einen guten Grundwortschatz hat.`;
 
     console.log('API: Sending request to Anthropic', { count });
 

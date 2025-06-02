@@ -4,6 +4,7 @@ import { useVocabularyManager } from '../../hooks/useVocabularyManager';
 interface Vocabulary {
   japanese: string;
   kana: string;
+  romaji: string;
   german: string;
   example?: string;
 }
@@ -178,7 +179,7 @@ export const KiVocabPrototype: React.FC<KiVocabPrototypeProps> = ({ onClose }) =
       const newVocabs = selectedIndices.map(idx => ({
         kanji: vocabularies[idx].japanese,
         kana: vocabularies[idx].kana,
-        romaji: '',
+        romaji: vocabularies[idx].romaji,
         de: vocabularies[idx].german
       }));
       addVocabularies(newVocabs);
