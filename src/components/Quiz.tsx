@@ -216,7 +216,7 @@ export const Quiz: React.FC<QuizProps> = ({
                 }, null, 2)}
               </pre>
             </div>
-            {wrongVocabsResult.length > 0 && !repeatVocabulary ? (
+            {wrongVocabsResult.length > 0 ? (
               <button
                 onClick={() => {
                   if (typeof onComplete === 'function') {
