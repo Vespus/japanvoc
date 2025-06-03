@@ -11,11 +11,10 @@ export interface SM2Data {
 // Einzelne Vokabelkarte
 export interface VocabularyCard {
   id: string;
-  kanji: string;
-  kana: string;
-  romaji: string;
+  it: string;
   de: string;
-  example?: string;
+  notes: string;
+  tags: string[];
   sm2: SM2Data;
 }
 
@@ -80,4 +79,7 @@ export interface VocabularyManagerReturnType {
   getStats: () => VocabularyStats;
   reloadVocabulary: () => Promise<void>;
   saveVocabulary: (data: VocabularyCard[]) => Promise<void>;
-} 
+}
+
+export type QuizMode = 'due' | 'new' | 'review' | 'random';
+export type QuizDirection = 'it-to-de' | 'de-to-it' | 'random'; 

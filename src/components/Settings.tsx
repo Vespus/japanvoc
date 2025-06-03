@@ -3,12 +3,12 @@ import { Save, RotateCcw, Info, Sparkles } from 'lucide-react';
 import { initDB, loadVocabulary, loadFromLocalStorage } from '../utils/storage';
 import { KiVocabGenerator } from './KiVocabGenerator';
 import { useVocabularyManager } from '../hooks/useVocabularyManager';
+import { useQuizSettings } from '../hooks/useQuizSettings';
+import { QuizDirection } from '../types/vocabulary';
 
 interface SettingsProps {
-  // Keine Props mehr benötigt - Navigation über Tab Bar
+  onBack: () => void;
 }
-
-export type QuizDirection = 'jp-to-de' | 'de-to-jp' | 'kanji-to-reading' | 'random';
 
 export interface QuizSettings {
   direction: QuizDirection;
@@ -132,223 +132,97 @@ function DebugVocabularyStorage({ onClose }: { onClose: () => void }) {
   );
 }
 
-export const Settings: React.FC<SettingsProps> = () => {
-  const [settings, setSettings] = useState<QuizSettings>(DEFAULT_SETTINGS);
-  const [hasChanges, setHasChanges] = useState(false);
-  const [showSaved, setShowSaved] = useState(false);
+const directionOptions = [
+  {
+    value: 'it-to-de' as QuizDirection,
+    label: 'Italienisch → Deutsch',
+    description: 'Italienische Vokabeln werden abgefragt'
+  },
+  {
+    value: 'de-to-it' as QuizDirection,
+    label: 'Deutsch → Italienisch',
+    description: 'Deutsche Vokabeln werden abgefragt'
+  },
+  {
+    value: 'random' as QuizDirection,
+    label: 'Zufällig',
+    description: 'Die Richtung wechselt zufällig'
+  }
+];
+
+export const Settings: React.FC<SettingsProps> = ({ onBack }) => {
+  const { settings, updateSetting } = useQuizSettings();
   const [showDebug, setShowDebug] = useState(false);
   const [showKiVocab, setShowKiVocab] = useState(false);
-
-  // Einstellungen laden
-  useEffect(() => {
-    const stored = localStorage.getItem(SETTINGS_KEY);
-    if (stored) {
-      try {
-        const parsedSettings = JSON.parse(stored);
-        setSettings({ ...DEFAULT_SETTINGS, ...parsedSettings });
-      } catch (error) {
-        console.error('Fehler beim Laden der Einstellungen:', error);
-      }
-    }
-  }, []);
-
-  // Einstellungen speichern
-  const saveSettings = () => {
-    localStorage.setItem(SETTINGS_KEY, JSON.stringify(settings));
-    setHasChanges(false);
-    setShowSaved(true);
-    setTimeout(() => setShowSaved(false), 2000);
-    console.log('⚙️ Einstellungen gespeichert:', settings);
-  };
-
-  // Einstellungen zurücksetzen
-  const resetSettings = () => {
-    setSettings(DEFAULT_SETTINGS);
-    setHasChanges(true);
-  };
-
-  // Änderungen verfolgen
-  const updateSetting = <K extends keyof QuizSettings>(
-    key: K, 
-    value: QuizSettings[K]
-  ) => {
-    setSettings(prev => ({ ...prev, [key]: value }));
-    setHasChanges(true);
-  };
-
-  const directionOptions = [
-    {
-      value: 'jp-to-de' as QuizDirection,
-      label: 'Japanisch → Deutsch',
-      description: 'Kanji + Kana → Bedeutung'
-    },
-    {
-      value: 'de-to-jp' as QuizDirection,
-      label: 'Deutsch → Japanisch',
-      description: 'Bedeutung → Kanji + Kana'
-    },
-    {
-      value: 'kanji-to-reading' as QuizDirection,
-      label: 'Kanji → Lesung',
-      description: 'Kanji → Kana + Romaji'
-    },
-    {
-      value: 'random' as QuizDirection,
-      label: 'Zufällig',
-      description: 'Gemischte Abfragerichtungen'
-    }
-  ];
-
-  const wordsPerQuizOptions = [5, 10, 15, 20, 25, 30, 50];
 
   if (showKiVocab) {
     return <KiVocabGenerator onClose={() => setShowKiVocab(false)} />;
   }
 
   return (
-    <div className="min-h-[100dvh] bg-gradient-to-br from-amber-50 via-stone-50 to-orange-50 pb-32 flex flex-col h-full">
-      {/* Header */}
-      <header className="bg-gradient-to-r from-stone-700 via-amber-800 to-stone-800 text-amber-50 shadow-2xl">
-        <div className="flex items-center justify-between p-4">
-          <div className="flex items-center space-x-4">
-            <h1 className="text-xl font-extralight tracking-widest">Einstellungen</h1>
-            <span className="text-xs align-top ml-2 text-amber-100">V0.827</span>
-          </div>
-          <div className="flex items-center space-x-2">
-            {hasChanges && (
-              <button
-                onClick={saveSettings}
-                className="flex items-center px-4 py-2 bg-gradient-to-r from-amber-600 to-amber-700 text-white rounded-xl hover:from-amber-700 hover:to-amber-800 transition-all duration-300 shadow-lg font-light tracking-wide"
-              >
-                <Save size={16} className="mr-2 opacity-90" />
-                Speichern
-              </button>
-            )}
-            {/* Info-Icon für Debug */}
-            <button
-              onClick={() => setShowDebug(v => !v)}
-              className="ml-2 p-2 rounded-full hover:bg-amber-200/30 transition"
-              title="Speicher-Info anzeigen"
-            >
-              <Info size={22} className="text-amber-100 hover:text-amber-400" />
-            </button>
-          </div>
-        </div>
-      </header>
+    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-stone-50 to-orange-50">
+      <div className="max-w-2xl mx-auto p-6">
+        <div className="bg-white rounded-3xl shadow-lg p-6">
+          <h1 className="text-2xl font-light text-stone-800 mb-6 tracking-wide">Einstellungen</h1>
 
-      {/* Success Message */}
-      {showSaved && (
-        <div className="bg-gradient-to-r from-teal-100 to-emerald-100 border border-teal-300/60 text-teal-800 px-4 py-3 mx-4 mt-4 rounded-2xl shadow-lg font-light">
-          ✅ Einstellungen erfolgreich gespeichert!
-        </div>
-      )}
-
-      {/* Settings Content */}
-      <div className="flex-1 overflow-y-auto">
-        <div className="p-4 max-w-md mx-auto space-y-6">
-          {/* KI Vokabel Generator Button (jetzt ganz oben) */}
+          {/* Abfragerichtung */}
           <div className="mb-6">
-            <button
-              onClick={() => setShowKiVocab(true)}
-              className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition"
-            >
-              <Sparkles size={20} />
-              <span>KI Vokabel Generator</span>
-            </button>
-          </div>
-
-          {/* Quiz-Konfiguration */}
-          <div className="bg-gradient-to-br from-white to-amber-50 rounded-3xl border border-amber-300/60 shadow-lg p-6">
-            <h2 className="text-lg font-light text-stone-800 mb-4 tracking-wide">
-              Quiz-Konfiguration
-            </h2>
-            
-            {/* Abfragerichtung */}
-            <div className="mb-6">
-              <label className="block text-sm font-light text-stone-700 mb-3 tracking-wide">
-                Abfragerichtung
-              </label>
-              <div className="space-y-3">
-                {directionOptions.map((option) => (
-                  <label
-                    key={option.value}
-                    className="flex items-start p-4 border border-amber-200/60 rounded-2xl cursor-pointer hover:bg-amber-50/50 transition-all duration-300 hover:shadow-md"
-                  >
-                    <input
-                      type="radio"
-                      name="direction"
-                      value={option.value}
-                      checked={settings.direction === option.value}
-                      onChange={(e) => updateSetting('direction', e.target.value as QuizDirection)}
-                      className="mt-1 mr-3 text-amber-600 focus:ring-amber-500"
-                    />
-                    <div>
-                      <div className="font-light text-stone-800 tracking-wide">{option.label}</div>
-                      <div className="text-sm text-stone-600 font-light">{option.description}</div>
-                    </div>
-                  </label>
-                ))}
-              </div>
-            </div>
-
-            {/* Anzahl Vokabeln pro Quiz */}
-            <div>
-              <label className="block text-sm font-light text-stone-700 mb-3 tracking-wide">
-                Vokabeln pro Quiz
-              </label>
-              <div className="grid grid-cols-4 gap-3">
-                {wordsPerQuizOptions.map((count) => (
-                  <button
-                    key={count}
-                    onClick={() => updateSetting('wordsPerQuiz', count)}
-                    className={`p-3 text-center rounded-xl border transition-all duration-300 font-light ${
-                      settings.wordsPerQuiz === count
-                        ? 'bg-gradient-to-br from-amber-600 to-amber-700 text-white border-amber-600 shadow-lg'
-                        : 'bg-white text-stone-700 border-stone-300 hover:bg-amber-50 hover:border-amber-300 shadow-sm'
-                    }`}
-                  >
-                    {count}
-                  </button>
-                ))}
-              </div>
-              <p className="text-sm text-stone-600 mt-3 font-light">
-                Aktuell: {settings.wordsPerQuiz} Vokabeln pro Quiz-Session
-              </p>
+            <label className="block text-sm font-light text-stone-700 mb-3 tracking-wide">
+              Abfragerichtung
+            </label>
+            <div className="space-y-3">
+              {directionOptions.map((option) => (
+                <label
+                  key={option.value}
+                  className="flex items-start p-4 border border-amber-200/60 rounded-2xl cursor-pointer hover:bg-amber-50/50 transition-all duration-300 hover:shadow-md"
+                >
+                  <input
+                    type="radio"
+                    name="direction"
+                    value={option.value}
+                    checked={settings.direction === option.value}
+                    onChange={(e) => updateSetting('direction', e.target.value as QuizDirection)}
+                    className="mt-1 mr-3 text-amber-600 focus:ring-amber-500"
+                  />
+                  <div>
+                    <div className="font-light text-stone-800 tracking-wide">{option.label}</div>
+                    <div className="text-sm text-stone-600 font-light">{option.description}</div>
+                  </div>
+                </label>
+              ))}
             </div>
           </div>
 
-          {/* Aktionen */}
-          <div className="bg-gradient-to-br from-white to-amber-50 rounded-3xl border border-amber-300/60 shadow-lg p-6">
-            <h2 className="text-lg font-light text-stone-800 mb-4 tracking-wide">
-              Aktionen
-            </h2>
-            
-            <button
-              onClick={resetSettings}
-              className="w-full flex items-center justify-center px-4 py-3 border border-stone-300 text-stone-700 rounded-2xl hover:bg-stone-50 hover:border-stone-400 transition-all duration-300 font-light tracking-wide shadow-sm mb-3"
-            >
-              <RotateCcw size={16} className="mr-2 opacity-80" />
-              Auf Standardwerte zurücksetzen
-            </button>
+          {/* Anzahl Vokabeln pro Quiz */}
+          <div className="mb-6">
+            <label className="block text-sm font-light text-stone-700 mb-3 tracking-wide">
+              Vokabeln pro Quiz
+            </label>
+            <div className="flex items-center space-x-4">
+              <input
+                type="range"
+                min="5"
+                max="50"
+                step="5"
+                value={settings.wordsPerQuiz}
+                onChange={(e) => updateSetting('wordsPerQuiz', parseInt(e.target.value))}
+                className="flex-1 h-2 bg-stone-200 rounded-lg appearance-none cursor-pointer"
+              />
+              <span className="text-stone-700 font-light min-w-[3rem] text-center">
+                {settings.wordsPerQuiz}
+              </span>
+            </div>
           </div>
 
-          {/* Info */}
-          <div className="bg-gradient-to-br from-amber-50 to-amber-100 border border-amber-200/60 rounded-3xl p-5 shadow-sm">
-            <h3 className="font-light text-amber-800 mb-2 tracking-wide">💡 Tipp</h3>
-            <p className="text-amber-700 text-sm font-light leading-relaxed">
-              Die Einstellungen werden automatisch für alle zukünftigen Quiz-Sessions übernommen. 
-              Du kannst sie jederzeit hier ändern.
-            </p>
-          </div>
+          {/* Zurück Button */}
+          <button
+            onClick={onBack}
+            className="w-full py-3 bg-stone-300 text-stone-700 rounded-2xl shadow font-light text-base hover:bg-stone-400 transition-all"
+          >
+            Zurück
+          </button>
         </div>
       </div>
-
-      {/* Debug-Overlay (immer verfügbar, auch in Produktion) */}
-      {showDebug && <DebugVocabularyStorage onClose={() => setShowDebug(false)} />}
-
-      {showKiVocab && (
-        <KiVocabGenerator onClose={() => setShowKiVocab(false)} />
-      )}
     </div>
   );
 };
