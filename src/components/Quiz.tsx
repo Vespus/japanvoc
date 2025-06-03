@@ -203,6 +203,19 @@ export const Quiz: React.FC<QuizProps> = ({
             <div className="text-lg font-light text-stone-700 mb-2">
               Richtige Antworten: {results.filter(r => r.quality >= 3).length} / {results.length}
             </div>
+            {/* Debug-Ausgabe */}
+            <div className="mt-4 text-xs text-stone-400">
+              <pre>
+                {JSON.stringify({
+                  repeatVocabulary,
+                  quizVocabularyLength: quizVocabulary.length,
+                  resultsLength: results.length,
+                  currentIndex,
+                  isQuizComplete,
+                  results,
+                }, null, 2)}
+              </pre>
+            </div>
             {wrongVocabsResult.length > 0 && !repeatVocabulary ? (
               <button
                 onClick={() => {
