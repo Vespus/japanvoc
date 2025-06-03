@@ -190,14 +190,14 @@ export const Quiz: React.FC<QuizProps> = ({
                 >
                   {qualityCounts.map((entry, idx) => (
                     <Cell key={`cell-${idx}`} fill={
-                      entry.color.includes('rose') ? '#fb7185' :
-                      entry.color.includes('amber') ? '#f59e42' :
-                      entry.color.includes('emerald') ? '#10b981' :
-                      entry.color.includes('teal') ? '#14b8a6' :
-                      entry.color.includes('stone') ? '#78716c' :
-                      entry.color.includes('green') ? '#22c55e' :
-                      entry.color.includes('yellow') ? '#eab308' :
-                      entry.color.includes('red') ? '#ef4444' :
+                      entry.color.includes('rose-500') ? '#f43f5e' :
+                      entry.color.includes('amber-600') ? '#d97706' :
+                      entry.color.includes('emerald-500') ? '#10b981' :
+                      entry.color.includes('teal-500') ? '#14b8a6' :
+                      entry.color.includes('stone-500') ? '#78716c' :
+                      entry.color.includes('green-500') ? '#22c55e' :
+                      entry.color.includes('yellow-500') ? '#eab308' :
+                      entry.color.includes('red-500') ? '#ef4444' :
                       '#a3a3a3'
                     } />
                   ))}
@@ -210,19 +210,7 @@ export const Quiz: React.FC<QuizProps> = ({
               {qualityCounts.map((entry, idx) => (
                 <div key={entry.name} className="flex items-center space-x-2 text-sm font-light">
                   <span
-                    className="inline-block w-4 h-4 rounded-full"
-                    style={{
-                      background:
-                        entry.color.includes('rose') ? '#fb7185' :
-                        entry.color.includes('amber') ? '#f59e42' :
-                        entry.color.includes('emerald') ? '#10b981' :
-                        entry.color.includes('teal') ? '#14b8a6' :
-                        entry.color.includes('stone') ? '#78716c' :
-                        entry.color.includes('green') ? '#22c55e' :
-                        entry.color.includes('yellow') ? '#eab308' :
-                        entry.color.includes('red') ? '#ef4444' :
-                        '#a3a3a3'
-                    }}
+                    className={`inline-block w-4 h-4 rounded-full ${entry.color}`}
                   />
                   <span>{entry.name}</span>
                 </div>
