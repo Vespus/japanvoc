@@ -16,7 +16,7 @@ import { RepeatQuiz } from './RepeatQuiz';
 interface QuizProps {
   mode: QuizMode;
   onBack: () => void;
-  onComplete: () => void;
+  onComplete?: (wrongVocabs?: VocabularyCard[]) => void;
   repeatVocabulary?: VocabularyCard[];
 }
 
@@ -81,7 +81,7 @@ export const Quiz: React.FC<QuizProps> = ({
   useEffect(() => {
     if (!isLoading && quizVocabulary.length === 0) {
       console.log('⚠️ Keine Quiz-Vokabeln verfügbar, beende Quiz');
-      setTimeout(() => onComplete(), 1000);
+      setTimeout(() => onComplete && onComplete(), 1000);
     }
   }, [isLoading, quizVocabulary.length, onComplete]);
 
@@ -401,7 +401,7 @@ export const Quiz: React.FC<QuizProps> = ({
                 <button
                   onClick={() => {
                     setShowExitConfirm(false);
-                    onComplete();
+                    onComplete && onComplete();
                   }}
                   className="w-full py-3 px-4 bg-gradient-to-r from-rose-500 to-amber-600 text-white rounded-xl font-light hover:from-rose-600 hover:to-amber-700 transition-all"
                 >
