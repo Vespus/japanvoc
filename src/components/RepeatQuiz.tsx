@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ArrowLeft, Eye, EyeOff, AlertCircle } from 'lucide-react';
 import { VocabularyCard } from '../types/vocabulary';
 import { QuizDirection } from './Settings';
-import { QUALITY_LABELS } from '../utils/sm2Algorithm';
+import { QUALITY_COLORS } from '../utils/sm2Algorithm';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 
 interface RepeatQuizProps {
@@ -54,11 +54,10 @@ export const RepeatQuiz: React.FC<RepeatQuizProps> = ({
 
   // Ergebnisbildschirm
   if (isQuizComplete) {
-    const qualityCounts = QUALITY_LABELS.map(q => ({
-      name: q.label,
-      value: results.filter(r => r.quality === q.value).length,
-      color: q.color.replace('bg-', '').replace('text-', '')
-    })).filter(d => d.value > 0);
+    const qualityCounts = QUALITY_COLORS.map(q => ({
+      ...q,
+      count: results.filter(r => r.quality === q.value).length
+    })).filter(d => d.count > 0);
 
     return (
       <div className="min-h-screen bg-gradient-to-br from-amber-50 via-stone-50 to-orange-50 flex flex-col items-center justify-center p-4">
@@ -69,8 +68,8 @@ export const RepeatQuiz: React.FC<RepeatQuizProps> = ({
               <PieChart>
                 <Pie
                   data={qualityCounts}
-                  dataKey="value"
-                  nameKey="name"
+                  dataKey="count"
+                  nameKey="label"
                   cx="50%"
                   cy="50%"
                   innerRadius={60}
@@ -79,17 +78,7 @@ export const RepeatQuiz: React.FC<RepeatQuizProps> = ({
                   label={({ name, percent }) => `${name} (${Math.round(percent * 100)}%)`}
                 >
                   {qualityCounts.map((entry, idx) => (
-                    <Cell key={`cell-${idx}`} fill={
-                      entry.color.includes('rose') ? '#fb7185' :
-                      entry.color.includes('amber') ? '#f59e42' :
-                      entry.color.includes('emerald') ? '#10b981' :
-                      entry.color.includes('teal') ? '#14b8a6' :
-                      entry.color.includes('stone') ? '#78716c' :
-                      entry.color.includes('green') ? '#22c55e' :
-                      entry.color.includes('yellow') ? '#eab308' :
-                      entry.color.includes('red') ? '#ef4444' :
-                      '#a3a3a3'
-                    } />
+                    <Cell key={`cell-${idx}`} fill={entry.hex} />
                   ))}
                 </Pie>
                 <Tooltip formatter={(value) => `${value}x`} />
@@ -236,11 +225,11 @@ export const RepeatQuiz: React.FC<RepeatQuizProps> = ({
             {showAnswer && (
               <div className="w-full flex flex-col items-center mt-4">
                 <div className="w-full max-w-md mx-auto grid grid-cols-3 gap-3 bg-white/80 rounded-2xl shadow-2xl p-4 border border-amber-200/60">
-                  {QUALITY_LABELS.map(q => (
+                  {QUALITY_COLORS.map(q => (
                     <button
                       key={q.value}
                       onClick={() => handleQualityRating(q.value)}
-                      className={`min-w-[90px] max-w-[120px] py-3 px-1 rounded-2xl text-white font-light text-center transition-all duration-200 shadow-lg text-[0.98rem] leading-tight ${q.color}`}
+                      className={`min-w-[90px] max-w-[120px] py-3 px-1 rounded-2xl text-white font-light text-center transition-all duration-200 shadow-lg text-[0.98rem] leading-tight ${q.tailwind}`}
                       style={{ touchAction: 'manipulation' }}
                     >
                       <span className="block break-words whitespace-pre-line">{q.label}</span>

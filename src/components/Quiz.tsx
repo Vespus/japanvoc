@@ -7,7 +7,7 @@ import {
   calculateSM2, 
   getDueVocabulary, 
   sortByPriority, 
-  QUALITY_LABELS 
+  QUALITY_COLORS 
 } from '../utils/sm2Algorithm';
 import { VocabularyCard } from '../types/vocabulary';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
@@ -163,11 +163,10 @@ export const Quiz: React.FC<QuizProps> = ({
 
   // Ergebnisbildschirm
   if (isQuizComplete) {
-    const qualityCounts = QUALITY_LABELS.map(q => ({
-      name: q.label,
-      value: results.filter(r => r.quality === q.value).length,
-      color: q.color.replace('bg-', '').replace('text-', '')
-    })).filter(d => d.value > 0);
+    const qualityCounts = QUALITY_COLORS.map(q => ({
+      ...q,
+      count: results.filter(r => r.quality === q.value).length
+    })).filter(d => d.count > 0);
     
     const wrongVocabsResult = results.filter(r => r.quality < 3).map(r => r.vocab);
     
@@ -180,8 +179,8 @@ export const Quiz: React.FC<QuizProps> = ({
               <PieChart>
                 <Pie
                   data={qualityCounts}
-                  dataKey="value"
-                  nameKey="name"
+                  dataKey="count"
+                  nameKey="label"
                   cx="50%"
                   cy="50%"
                   innerRadius={60}
@@ -189,17 +188,7 @@ export const Quiz: React.FC<QuizProps> = ({
                   paddingAngle={2}
                 >
                   {qualityCounts.map((entry, idx) => (
-                    <Cell key={`cell-${idx}`} fill={
-                      entry.color.includes('rose-500') ? '#f43f5e' :
-                      entry.color.includes('amber-600') ? '#d97706' :
-                      entry.color.includes('emerald-500') ? '#10b981' :
-                      entry.color.includes('teal-500') ? '#14b8a6' :
-                      entry.color.includes('stone-500') ? '#78716c' :
-                      entry.color.includes('green-500') ? '#22c55e' :
-                      entry.color.includes('yellow-500') ? '#eab308' :
-                      entry.color.includes('red-500') ? '#ef4444' :
-                      '#a3a3a3'
-                    } />
+                    <Cell key={`cell-${idx}`} fill={entry.hex} />
                   ))}
                 </Pie>
                 <Tooltip formatter={(value) => `${value}x`} />
@@ -208,11 +197,12 @@ export const Quiz: React.FC<QuizProps> = ({
             {/* Eigene Legende unterhalb des Charts */}
             <div className="flex flex-wrap justify-center gap-3 mt-4">
               {qualityCounts.map((entry, idx) => (
-                <div key={entry.name} className="flex items-center space-x-2 text-sm font-light">
+                <div key={entry.label} className="flex items-center space-x-2 text-sm font-light">
                   <span
-                    className={`inline-block w-4 h-4 rounded-full ${entry.color}`}
+                    className="inline-block w-4 h-4 rounded-full"
+                    style={{ background: entry.hex }}
                   />
-                  <span>{entry.name}</span>
+                  <span>{entry.label}</span>
                 </div>
               ))}
             </div>
@@ -383,11 +373,11 @@ export const Quiz: React.FC<QuizProps> = ({
             {showAnswer && (
               <div className="w-full flex flex-col items-center mt-4">
                 <div className="w-full max-w-md mx-auto grid grid-cols-3 gap-3 bg-white/80 rounded-2xl shadow-2xl p-4 border border-amber-200/60">
-                  {QUALITY_LABELS.map(q => (
+                  {QUALITY_COLORS.map(q => (
                     <button
                       key={q.value}
                       onClick={() => handleQualityRating(q.value)}
-                      className={`min-w-[90px] max-w-[120px] py-3 px-1 rounded-2xl text-white font-light text-center transition-all duration-200 shadow-lg text-[0.98rem] leading-tight ${q.color}`}
+                      className={`min-w-[90px] max-w-[120px] py-3 px-1 rounded-2xl text-white font-light text-center transition-all duration-200 shadow-lg text-[0.98rem] leading-tight ${q.tailwind}`}
                       style={{ touchAction: 'manipulation' }}
                     >
                       <span className="block break-words whitespace-pre-line">{q.label}</span>

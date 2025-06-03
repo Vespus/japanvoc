@@ -192,13 +192,13 @@ export function getLearningStats(vocabulary: VocabularyCard[]) {
 }
 
 /**
- * Qualitäts-Labels für die UI
+ * Zentrale Farblogik für Qualitätswerte (0-5)
  */
-export const QUALITY_LABELS = [
-  { value: 0, label: 'Keine Ahnung', color: 'bg-rose-400' },
-  { value: 1, label: 'Falsch aber vertraut', color: 'bg-rose-500' },
-  { value: 2, label: 'Falsch aber erinnert', color: 'bg-amber-400' },
-  { value: 3, label: 'Richtig aber mühsam', color: 'bg-amber-500' },
-  { value: 4, label: 'Richtig nach Zögern', color: 'bg-teal-500' },
-  { value: 5, label: 'Sofort richtig', color: 'bg-emerald-500' }
+export const QUALITY_COLORS = [
+  { value: 0, label: 'Keine Ahnung', tailwind: 'bg-rose-400', hex: '#fb7185' },
+  { value: 1, label: 'Falsch aber vertraut', tailwind: 'bg-rose-500', hex: '#f43f5e' },
+  { value: 2, label: 'Falsch aber erinnert', tailwind: 'bg-amber-400', hex: '#fbbf24' },
+  { value: 3, label: 'Richtig aber mühsam', tailwind: 'bg-amber-500', hex: '#f59e42' },
+  { value: 4, label: 'Richtig nach Zögern', tailwind: 'bg-teal-500', hex: '#14b8a6' },
+  { value: 5, label: 'Sofort richtig', tailwind: 'bg-emerald-500', hex: '#10b981' }
 ] as const; 
