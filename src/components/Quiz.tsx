@@ -239,7 +239,7 @@ export const Quiz: React.FC<QuizProps> = ({
       <RepeatQuiz
         vocabulary={repeatQuizState.vocabs}
         onBack={() => setRepeatQuizState({ show: false, vocabs: [] })}
-        onComplete={onComplete}
+        onComplete={() => onComplete && onComplete()}
       />
     );
   }
