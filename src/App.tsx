@@ -18,6 +18,7 @@ function App() {
   const [activeTab, setActiveTab] = useState<TabType>('quiz');
   const [editingVocabId, setEditingVocabId] = useState<string | null>(null);
   const [quizMode, setQuizMode] = useState<QuizMode>('due');
+  const [repeatVocabulary, setRepeatVocabulary] = useState<VocabType[] | null>(null);
 
   // Handler für Vokabel-Aktionen
   const handleEditVocab = (vocab: VocabType) => {
@@ -87,19 +88,25 @@ function App() {
     );
   }
 
-
-
   if (currentView === 'quiz') {
     return (
       <Quiz
         mode={quizMode}
+        repeatVocabulary={repeatVocabulary || undefined}
         onBack={() => {
+          setRepeatVocabulary(null);
           setActiveTab('quiz');
           navigateTo('tab');
         }}
-        onComplete={() => {
-          setActiveTab('quiz');
-          navigateTo('tab');
+        onComplete={(wrongVocabs?: VocabType[]) => {
+          if (wrongVocabs && wrongVocabs.length > 0) {
+            setRepeatVocabulary(wrongVocabs);
+            // Quiz wird mit repeatVocabulary neu gestartet
+          } else {
+            setRepeatVocabulary(null);
+            setActiveTab('quiz');
+            navigateTo('tab');
+          }
         }}
       />
     );
@@ -108,8 +115,6 @@ function App() {
   if (currentView === 'settings') {
     return <Settings />;
   }
-
-
 
   // Tab-basierte Navigation (Standard)
   return (

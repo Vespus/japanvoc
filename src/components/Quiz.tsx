@@ -17,12 +17,14 @@ interface QuizProps {
   mode: QuizMode;
   onBack: () => void;
   onComplete: () => void;
+  repeatVocabulary?: VocabularyCard[];
 }
 
 export const Quiz: React.FC<QuizProps> = ({
   mode,
   onBack,
-  onComplete
+  onComplete,
+  repeatVocabulary
 }) => {
   const { vocabulary, updateSM2Data, isLoading } = useVocabularyManager();
   const quizSettings = useQuizSettings();
@@ -44,45 +46,36 @@ export const Quiz: React.FC<QuizProps> = ({
   });
   const [results, setResults] = useState<{vocab: VocabularyCard, quality: number}[]>([]);
 
-  // Vokabeln für das Quiz basierend auf dem Modus filtern
+  // Vokabeln für das Quiz bestimmen
   const quizVocabulary = useMemo(() => {
+    if (repeatVocabulary && repeatVocabulary.length > 0) {
+      console.log(`🔁 Wiederholungsquiz mit ${repeatVocabulary.length} Vokabeln`);
+      return repeatVocabulary;
+    }
     console.log(`🎯 Quiz-Modus: ${mode}, Verfügbare Vokabeln: ${vocabulary.length}`);
-    
     let filtered: VocabularyCard[] = [];
-    
     switch (mode) {
       case 'due':
         filtered = getDueVocabulary(vocabulary);
-        console.log(`📅 Fällige Vokabeln: ${filtered.length}`);
         break;
       case 'new':
         filtered = vocabulary.filter(v => v.sm2.repetitions === 0);
-        console.log(`🆕 Neue Vokabeln: ${filtered.length}`);
         break;
       case 'review':
         filtered = vocabulary.filter(v => v.sm2.repetitions > 0);
-        console.log(`🔄 Review Vokabeln: ${filtered.length}`);
         break;
       case 'random':
         filtered = [...vocabulary];
-        console.log(`🎲 Zufällige Vokabeln: ${filtered.length}`);
         break;
     }
-    
-    // Sortiere nach Priorität (außer bei random)
     if (mode !== 'random') {
       filtered = sortByPriority(filtered);
     } else {
-      // Zufällige Reihenfolge
       filtered = filtered.sort(() => Math.random() - 0.5);
     }
-    
-    // Begrenze auf konfigurierte Anzahl Vokabeln pro Session
     const result = filtered.slice(0, quizSettings.wordsPerQuiz);
-    console.log(`✅ Quiz-Vokabeln nach Filterung: ${result.length} (max: ${quizSettings.wordsPerQuiz})`);
-    
     return result;
-  }, [vocabulary, mode, quizSettings.wordsPerQuiz]);
+  }, [vocabulary, mode, quizSettings.wordsPerQuiz, repeatVocabulary]);
 
   // Quiz beenden wenn keine Vokabeln vorhanden
   useEffect(() => {
@@ -210,10 +203,12 @@ export const Quiz: React.FC<QuizProps> = ({
             <div className="text-lg font-light text-stone-700 mb-2">
               Richtige Antworten: {results.filter(r => r.quality >= 3).length} / {results.length}
             </div>
-            {wrongVocabsResult.length > 0 ? (
+            {wrongVocabsResult.length > 0 && !repeatVocabulary ? (
               <button
                 onClick={() => {
-                  setRepeatQuizState({ show: true, vocabs: wrongVocabsResult });
+                  if (typeof onComplete === 'function') {
+                    onComplete(wrongVocabsResult);
+                  }
                 }}
                 className="mt-2 px-6 py-3 bg-gradient-to-r from-rose-500 to-amber-600 text-white rounded-2xl shadow-lg font-light text-lg hover:from-rose-600 hover:to-amber-700 transition-all"
               >
@@ -223,7 +218,11 @@ export const Quiz: React.FC<QuizProps> = ({
               <div className="text-emerald-600 font-light mt-2">Alle Vokabeln richtig! 🎉</div>
             )}
             <button
-              onClick={onComplete}
+              onClick={() => {
+                if (typeof onComplete === 'function') {
+                  onComplete();
+                }
+              }}
               className="mt-4 px-6 py-3 bg-stone-300 text-stone-700 rounded-2xl shadow font-light text-base hover:bg-stone-400 transition-all"
             >
               Zurück
