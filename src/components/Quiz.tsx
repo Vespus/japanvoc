@@ -96,6 +96,15 @@ export const Quiz: React.FC<QuizProps> = ({
     }
   }, [currentIndex, quizSettings.direction]);
 
+  // States zurücksetzen, wenn ein neues Quiz (Modus oder Wiederholung) gestartet wird
+  useEffect(() => {
+    setCurrentIndex(0);
+    setResults([]);
+    setIsQuizComplete(false);
+    setSessionStats({ correct: 0, total: 0, streak: 0, maxStreak: 0 });
+    setShowAnswer(false);
+  }, [repeatVocabulary, mode]);
+
   // Antwort bewerten und zur nächsten Vokabel
   const handleQualityRating = (quality: number) => {
     // Sicherheitscheck
@@ -446,15 +455,6 @@ export const Quiz: React.FC<QuizProps> = ({
       </div>
     );
   }
-
-  // States zurücksetzen, wenn ein neues Quiz (Modus oder Wiederholung) gestartet wird
-  useEffect(() => {
-    setCurrentIndex(0);
-    setResults([]);
-    setIsQuizComplete(false);
-    setSessionStats({ correct: 0, total: 0, streak: 0, maxStreak: 0 });
-    setShowAnswer(false);
-  }, [repeatVocabulary, mode]);
 
   return null;
 }; 
