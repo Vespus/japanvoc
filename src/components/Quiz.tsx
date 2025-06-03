@@ -33,8 +33,7 @@ export const Quiz: React.FC<QuizProps> = ({
   const [showAnswer, setShowAnswer] = useState(false);
   const [currentDirection, setCurrentDirection] = useState<QuizDirection>('jp-to-de');
   const [showExitConfirm, setShowExitConfirm] = useState(false);
-  const [showRepeatQuiz, setShowRepeatQuiz] = useState(false);
-  const [repeatVocabs, setRepeatVocabs] = useState<VocabularyCard[]>([]);
+  const [repeatQuizState, setRepeatQuizState] = useState<{ show: boolean, vocabs: VocabularyCard[] }>({ show: false, vocabs: [] });
   
   // Statistiken und Ergebnisse
   const [sessionStats, setSessionStats] = useState({
@@ -214,8 +213,7 @@ export const Quiz: React.FC<QuizProps> = ({
             {wrongVocabsResult.length > 0 ? (
               <button
                 onClick={() => {
-                  setRepeatVocabs(wrongVocabsResult);
-                  setShowRepeatQuiz(true);
+                  setRepeatQuizState({ show: true, vocabs: wrongVocabsResult });
                 }}
                 className="mt-2 px-6 py-3 bg-gradient-to-r from-rose-500 to-amber-600 text-white rounded-2xl shadow-lg font-light text-lg hover:from-rose-600 hover:to-amber-700 transition-all"
               >
@@ -237,11 +235,11 @@ export const Quiz: React.FC<QuizProps> = ({
   }
 
   // Wiederholungsquiz
-  if (showRepeatQuiz) {
+  if (repeatQuizState.show) {
     return (
       <RepeatQuiz
-        vocabulary={repeatVocabs}
-        onBack={() => setShowRepeatQuiz(false)}
+        vocabulary={repeatQuizState.vocabs}
+        onBack={() => setRepeatQuizState({ show: false, vocabs: [] })}
         onComplete={onComplete}
       />
     );
